@@ -34,6 +34,25 @@
     background: #808080;
 }
 
+/* Domyślny kursor dla wszystkich elementów, które są interaktywne */
+.baddonz-jsx-root {
+    cursor: url("https://margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
+}
+
+/* Kursor dla klikalnych elementów, zmieniony na 5n.png */
+.baddonz-button,
+.baddonz-tab-selector,
+.baddonz-opacity-button,
+.baddonz-close-button,
+.baddonz-checkbox,
+.baddonz-settings-button,
+.baddonz-input.keybind,
+.baddonz-input.color-selector,
+.baddonz-item-display.clickable,
+.baddonz-window-title { /* Dodany baddonz-window-title dla przeciągania */
+    cursor: url("https://margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
+}
+
 .baddonz-flex {
     flex: 1;
     justify-content: center;
@@ -69,7 +88,7 @@
 .baddonz-window {
     pointer-events: all;
     text-shadow: 1px 1px 1px #000;
-    color: #fff; /* Poprawiono: Było #0000, co oznaczało przezroczysty czarny */
+    color: #fff;
     background: #0009;
     border-radius: 7px;
     flex-direction: column;
@@ -160,7 +179,8 @@
 .baddonz-window-title {
     text-align: center;
     color: beige;
-    cursor: pointer;
+    /* Kursor 5n.png już jest zdefiniowany wyżej, ale można go powtórzyć dla jasności */
+    cursor: url("https://margonem.pl/img/gui/cursor/5n.png") 4 0, pointer; 
     flex: 3;
     font-size: 11px;
     line-height: 25px;
@@ -262,7 +282,7 @@
 }
 
 .baddonz-input.color-selector {
-    cursor: pointer;
+    box-sizing: border-box; /* Dodane dla spójności */
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     width: 50px;
@@ -271,9 +291,8 @@
 .baddonz-input.keybind {
     text-align: center;
     caret-color: #0000;
-    cursor: pointer;
-    max-width: 140px;
     transition: border .15s;
+    max-width: 140px;
 }
 
 .baddonz-input.keybind:hover {
@@ -305,7 +324,8 @@
 
 .baddonz-item-display.clickable,
 .baddonz-item-display.clickable * {
-    cursor: pointer;
+    /* Kursor 5n.png już jest zdefiniowany wyżej, ale można go powtórzyć dla jasności */
+    cursor: url("https://margonem.pl/img/gui/cursor/5n.png") 4 0, pointer; 
 }
 
 .baddonz-input {
@@ -425,7 +445,6 @@
 }
 
 .baddonz-button {
-    cursor: pointer;
     background: #3c3c3c99;
     border: 1px solid gray;
     border-radius: 5px;
@@ -482,7 +501,6 @@
 }
 
 .baddonz-tab-selector {
-    cursor: pointer;
     background: linear-gradient(90deg, #4646464d 40%, #46464600);
     padding: 6px;
     font-size: 13px;
@@ -525,7 +543,6 @@
 
 .baddonz-checkbox {
     box-sizing: border-box;
-    cursor: pointer;
     background-color: #54545479;
     border: 1px solid #545454;
     width: 16px;
@@ -537,7 +554,6 @@
 
 .baddonz-checkbox:after {
     content: "";
-    /* Poprawiono: Dodano zamykający tag </svg> */
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%230dff00' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
     width: 100%;
     height: 100%;
@@ -551,7 +567,6 @@
 }
 
 .baddonz-settings-button {
-    cursor: pointer;
     background: url(../img/gui/buttony.png) -607px -117px;
     width: 12px;
     height: 12px;
