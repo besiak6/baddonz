@@ -13,6 +13,8 @@
 
 .baddonz-jsx-root {
     line-height: 1;
+    /* Domyślny kursor dla całego głównego kontenera baddonz - usunięto !important */
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
 }
 
 .baddonz-jsx-root ::-webkit-scrollbar {
@@ -34,27 +36,11 @@
     background: #808080;
 }
 
-/* Kursor dla klikalnych elementów (5n.png) */
-.baddonz-jsx-root .baddonz-button,
-.baddonz-jsx-root .baddonz-tab-selector,
-.baddonz-jsx-root .baddonz-opacity-button,
-.baddonz-jsx-root .baddonz-close-button,
-.baddonz-jsx-root .baddonz-checkbox,
-.baddonz-jsx-root .baddonz-settings-button,
-.baddonz-jsx-root .baddonz-input.keybind,
-.baddonz-jsx-root .baddonz-input.color-selector,
-.baddonz-jsx-root .baddonz-item-display.clickable,
-.baddonz-jsx-root .baddonz-item-display.clickable *,
-.baddonz-jsx-root .baddonz-window-title {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-/* Kursor dla elementów tekstowych/inputów, gdzie pointer może być mylący */
+/* Kursor dla elementów tekstowych/inputów, gdzie pointer może być mylący - domyślny kursor tekstowy */
 .baddonz-jsx-root .baddonz-textarea,
 .baddonz-jsx-root .baddonz-input:not(.keybind):not(.color-selector) {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, text !important;
 }
-
 
 .baddonz-flex {
     flex: 1;
@@ -101,8 +87,8 @@
     display: flex;
     position: absolute;
     box-shadow: 0 0 1px #010101, 0 0 0 1px #ccc, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66;
-    /* Domyślny kursor dla okna, jeśli nie jest nadpisywany przez inne elementy wewnątrz */
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
+    /* Domyślny kursor dla okna, jeśli nie jest nadpisywany przez inne elementy wewnątrz - usunięto !important */
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
 }
 
 .baddonz-window.anon {
@@ -184,7 +170,7 @@
 .baddonz-window-title {
     text-align: center;
     color: beige;
-    /* Kursor dla tytułu okna, który jest przeciągalny */
+    /* Kursor dla tytułu okna, który jest przeciągalny - 5n */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, move !important;
     flex: 3;
     font-size: 11px;
@@ -323,12 +309,6 @@
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.baddonz-item-display.clickable,
-.baddonz-item-display.clickable * {
-    /* Kursor dla klikalnych elementów w item-display */
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 
 .baddonz-input {
@@ -588,4 +568,32 @@
     padding: 3px;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
     /* user-select: none; */ /* Opcjonalnie, jeśli tekst ma być niewybieralny */
+}
+
+/* --- Sekcja z kursorami 5n (klikalnymi) - Zaktualizowane selektory dla lepszej specyficzności --- */
+/* Kursor dla WSZYSTKICH klikalnych elementów (5n.png) */
+.baddonz-jsx-root .baddonz-button,
+.baddonz-jsx-root .baddonz-tab-selector,
+.baddonz-jsx-root .baddonz-opacity-button,
+.baddonz-jsx-root .baddonz-close-button,
+.baddonz-jsx-root .baddonz-checkbox,
+.baddonz-jsx-root .baddonz-settings-button,
+.baddonz-jsx-root .baddonz-input.keybind,
+.baddonz-jsx-root .baddonz-input.color-selector,
+.baddonz-jsx-root .baddonz-item-display.clickable,
+.baddonz-jsx-root .baddonz-item-display.clickable *,
+/* Dodatkowe selektory dla elementów wewnątrz okna/kontroli */
+.baddonz-window .baddonz-button,
+.baddonz-window .baddonz-opacity-button,
+.baddonz-window .baddonz-close-button,
+.baddonz-window .baddonz-checkbox,
+.baddonz-window .baddonz-settings-button,
+.baddonz-window .baddonz-input.keybind,
+.baddonz-window .baddonz-input.color-selector,
+.baddonz-window .baddonz-item-display.clickable,
+.baddonz-window .baddonz-item-display.clickable *,
+.baddonz-window-controls .baddonz-opacity-button, /* Specyficzne dla przycisków w kontrolach okna */
+.baddonz-window-controls .baddonz-close-button
+{
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
