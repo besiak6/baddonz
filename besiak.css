@@ -14,7 +14,7 @@
 .baddonz-jsx-root {
     line-height: 1;
     /* Domyślny kursor dla całego głównego kontenera baddonz */
-    cursor: url("../img/gui/cursor/1n.png") 4 0, auto;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
 }
 
 .baddonz-jsx-root ::-webkit-scrollbar {
@@ -48,13 +48,13 @@
 .baddonz-jsx-root .baddonz-item-display.clickable,
 .baddonz-jsx-root .baddonz-item-display.clickable *,
 .baddonz-jsx-root .baddonz-window-title {
-    cursor: url("../img/gui/cursor/5n.png") 4 0, pointer;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
 }
 
 /* Kursor dla elementów tekstowych/inputów, gdzie pointer może być mylący */
 .baddonz-jsx-root .baddonz-textarea,
 .baddonz-jsx-root .baddonz-input:not(.keybind):not(.color-selector) {
-    cursor: url("../img/gui/cursor/1n.png") 4 0, text;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, text;
 }
 
 
@@ -104,7 +104,7 @@
     position: absolute;
     box-shadow: 0 0 1px #010101, 0 0 0 1px #ccc, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66;
     /* Domyślny kursor dla okna, jeśli nie jest nadpisywany przez inne elementy wewnątrz */
-    cursor: url("../img/gui/cursor/1n.png") 4 0, auto;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
 }
 
 .baddonz-window.anon {
@@ -187,7 +187,7 @@
     text-align: center;
     color: beige;
     /* Kursor dla tytułu okna, który jest przeciągalny */
-    cursor: url("../img/gui/cursor/5n.png") 4 0, move;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, move;
     flex: 3;
     font-size: 11px;
     line-height: 25px;
@@ -207,7 +207,7 @@
 }
 
 .baddonz-opacity-button {
-    background: url(../img/gui/buttony.png) -725px -131px;
+    background: url(https://gordion.margonem.pl/img/gui/buttony.png) -725px -131px;
     width: 13px;
     height: 13px;
 }
@@ -217,7 +217,7 @@
 }
 
 .baddonz-close-button {
-    background: url(../img/gui/buttony.png) -624px -117px;
+    background: url(https://gordion.margonem.pl/img/gui/buttony.png) -624px -117px;
     width: 12px;
     height: 12px;
 }
@@ -330,7 +330,7 @@
 .baddonz-item-display.clickable,
 .baddonz-item-display.clickable * {
     /* Kursor dla klikalnych elementów w item-display */
-    cursor: url("../img/gui/cursor/5n.png") 4 0, pointer;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
 }
 
 .baddonz-input {
@@ -572,7 +572,7 @@
 }
 
 .baddonz-settings-button {
-    background: url(../img/gui/buttony.png) -607px -117px;
+    background: url(https://gordion.margonem.pl/img/gui/buttony.png) -607px -117px;
     width: 12px;
     height: 12px;
 }
