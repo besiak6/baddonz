@@ -11,10 +11,34 @@
     width: 512px;
 }
 
-/* Usunięto ogólny kursor z .baddonz-jsx-root. Kursory będą przypisywane indywidualnie. */
-.baddonz-jsx-root {
-    line-height: 1;
+/* KURSORY: Ustawienie DOMYŚLNEGO kursora dla CAŁEGO baddonz-jsx-root i WSZYSTKICH JEGO ELEMENTÓW potomnych */
+/* To powinno wymusić 1n.png wszędzie, chyba że zostanie to nadpisane. */
+.baddonz-jsx-root,
+.baddonz-jsx-root * { /* Stosuje styl do baddonz-jsx-root i do KAŻDEGO elementu wewnątrz niego */
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
 }
+
+/* KURSORY: Nadpisywanie kursora TYLKO dla klikalnych elementów na 5n.png */
+/* Używamy bardzo specyficznych selektorów i !important, aby to zadziałało. */
+.baddonz-jsx-root .baddonz-button,
+.baddonz-jsx-root .baddonz-tab-selector,
+.baddonz-jsx-root .baddonz-opacity-button,
+.baddonz-jsx-root .baddonz-close-button,
+.baddonz-jsx-root .baddonz-checkbox,
+.baddonz-jsx-root .baddonz-settings-button,
+.baddonz-jsx-root .baddonz-input.keybind,
+.baddonz-jsx-root .baddonz-input.color-selector,
+.baddonz-jsx-root .baddonz-item-display.clickable,
+.baddonz-jsx-root .baddonz-window-title {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+
+/* KURSORY: Specjalne przypadki (np. inputy tekstowe) - nadal 1n.png, ale z inną wartością awaryjną */
+.baddonz-jsx-root .baddonz-textarea,
+.baddonz-jsx-root .baddonz-input:not(.keybind):not(.color-selector) {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, text !important;
+}
+
 
 .baddonz-jsx-root ::-webkit-scrollbar {
     width: 6px;
@@ -35,88 +59,6 @@
     background: #808080;
 }
 
-/* Kursor dla przycisków */
-.baddonz-button {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-/* Kursor dla przełączników zakładek */
-.baddonz-tab-selector {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-/* Kursor dla przycisku przezroczystości */
-.baddonz-opacity-button {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-/* Kursor dla przycisku zamykania */
-.baddonz-close-button {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-/* Kursor dla checkboxów */
-.baddonz-checkbox {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-/* Kursor dla przycisku ustawień */
-.baddonz-settings-button {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-/* Kursor dla inputów typu keybind i color-selector (klikalne) */
-.baddonz-input.keybind,
-.baddonz-input.color-selector {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-/* Kursor dla klikalnych elementów item-display */
-.baddonz-item-display.clickable,
-.baddonz-item-display.clickable * {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-/* Kursor dla tytułu okna (przeciągalny) */
-.baddonz-window-title {
-    text-align: center;
-    color: beige;
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, move !important;
-    flex: 3;
-    font-size: 11px;
-    line-height: 25px;
-}
-
-/* Kursor dla ogólnych tekstów (domyślny) */
-.baddonz-text,
-.baddonz-label { /* Dodałem też .baddonz-label, bo to też jest tekst */
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
-}
-
-/* Kursor dla pól tekstowych/inputów (tekstowy) */
-.baddonz-textarea,
-.baddonz-input:not(.keybind):not(.color-selector) {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, text !important;
-}
-
-/* Kursor dla całego okna (domyślny), jeśli nie jest nadpisywany przez inne elementy wewnątrz */
-.baddonz-window {
-    pointer-events: all;
-    text-shadow: 1px 1px 1px #000;
-    color: #fff;
-    background: #0009;
-    border-radius: 7px;
-    flex-direction: column;
-    min-width: 191px;
-    min-height: 22px;
-    font-family: sans-serif;
-    display: flex;
-    position: absolute;
-    box-shadow: 0 0 1px #010101, 0 0 0 1px #ccc, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66;
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
-}
-
-/* --- Reszta Twojego kodu CSS bez zmian w regułach cursor --- */
 
 .baddonz-flex {
     flex: 1;
@@ -150,6 +92,21 @@
     justify-content: flex-end;
 }
 
+.baddonz-window {
+    pointer-events: all;
+    text-shadow: 1px 1px 1px #000;
+    color: #fff;
+    background: #0009;
+    border-radius: 7px;
+    flex-direction: column;
+    min-width: 191px;
+    min-height: 22px;
+    font-family: sans-serif;
+    display: flex;
+    position: absolute;
+    box-shadow: 0 0 1px #010101, 0 0 0 1px #ccc, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66;
+    /* Kursor domyślny dla okna jest już pokryty przez .baddonz-jsx-root * */
+}
 
 .baddonz-window.anon {
     min-width: unset;
@@ -225,6 +182,15 @@
 
 .baddonz-window-controls.left {
     justify-content: start;
+}
+
+.baddonz-window-title {
+    text-align: center;
+    color: beige;
+    /* Kursor dla tytułu okna, który jest przeciągalny - już jest w grupie klikalnych */
+    flex: 3;
+    font-size: 11px;
+    line-height: 25px;
 }
 
 .baddonz-window-body {
@@ -359,6 +325,11 @@
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.baddonz-item-display.clickable,
+.baddonz-item-display.clickable * {
+    /* Kursor dla klikalnych elementów w item-display - już w grupie klikalnych */
 }
 
 .baddonz-input {
@@ -561,6 +532,11 @@
     display: flex;
 }
 
+.baddonz-label-wrapper .baddonz-label,
+.baddonz-label-wrapper .baddonz-labeled {
+    padding: 3px;
+}
+
 .baddonz-label-wrapper.inline {
     display: inline-flex;
 }
@@ -602,4 +578,15 @@
 
 .baddonz-settings-button:hover {
     background-position: -659px -117px;
+}
+
+/* Nowa klasa dla tekstów w stylu baddonz-window - jest już pokryta przez .baddonz-jsx-root * */
+.baddonz-text {
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    font-family: sans-serif;
+    font-size: 12px;
+    padding: 3px;
+    /* cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important; */
+    /* user-select: none; */ /* Opcjonalnie, jeśli tekst ma być niewybieralny */
 }
