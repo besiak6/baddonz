@@ -149,17 +149,6 @@
     padding: 6px;
     display: flex;
 }
-
-.baddonz-window-controls .baddonz-icon {
-    cursor: pointer;
-    width: 13px;
-    height: 13px;
-}
-
-.baddonz-window-controls .baddonz-icon:hover {
-    filter: brightness(200);
-}
-
 .baddonz-window-controls.right {
     justify-content: end;
 }
