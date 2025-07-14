@@ -1,0 +1,440 @@
+/* Podstawowe style dla menadżera i okien */
+.baddon-manager {
+    width: 640px;
+    height: 412px;
+}
+.baddon-manager .baddon-tab-switcher {
+    width: 128px;
+}
+.baddon-manager .baddon-tab {
+    width: 512px;
+}
+
+.baddon-window {
+    pointer-events: all;
+    text-shadow: 1px 1px 1px #000;
+    color: #0000;
+    background: #0009;
+    border-radius: 7px;
+    flex-direction: column;
+    min-width: 191px;
+    min-height: 22px;
+    font-family: sans-serif;
+    display: flex;
+    position: absolute;
+    box-shadow: 0 0 1px #010101, 0 0 0 1px #ccc, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66;
+}
+.baddon-window.anon {
+    min-width: unset;
+}
+.baddon-window.anon .baddon-window-controls {
+    width: 26px;
+}
+.baddon-window.top {
+    z-index: 1;
+}
+.baddon-window.resizable {
+    resize: both;
+    overflow: hidden;
+}
+.baddon-window.resizable-x {
+    resize: horizontal;
+    overflow-x: hidden;
+}
+.baddon-window.resizable-y {
+    resize: vertical;
+    overflow-y: hidden;
+}
+
+/* Przezroczystość okna */
+.baddon-window.blur {
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+.baddon-window.opacity-0 {
+    background: 0 0;
+}
+.baddon-window.opacity-1 {
+    background: #0000004d;
+}
+.baddon-window.opacity-2 {
+    background: #0009;
+}
+.baddon-window.opacity-3 {
+    background: #000c;
+}
+.baddon-window.opacity-4 {
+    background: #000;
+}
+
+/* Nagłówek i kontrolki okna */
+.baddon-window-header {
+    white-space: nowrap;
+    box-sizing: border-box;
+    flex-direction: row;
+    height: 25px;
+    display: flex;
+}
+.baddon-window-controls {
+    flex-direction: row;
+    align-items: start;
+    column-gap: 3px;
+    width: 40px;
+    padding: 6px;
+    display: flex;
+}
+.baddon-window-controls .baddon-icon {
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+}
+.baddon-window-controls .baddon-icon:hover {
+    filter: brightness(200);
+}
+.baddon-window-controls.right {
+    justify-content: end;
+}
+.baddon-window-controls.left {
+    justify-content: start;
+}
+.baddon-window-title {
+    text-align: center;
+    color: beige;
+    cursor: pointer;
+    flex: 3;
+    font-size: 11px;
+    line-height: 25px;
+}
+.baddon-window-body {
+    color: #fff;
+    box-sizing: border-box;
+    flex-direction: column;
+    flex: 1;
+    height: calc(100% - 25px);
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    display: flex;
+}
+
+/* Ogólne elementy układu (flex, box, display przedmiotów) */
+.baddon-flex {
+    flex: 1;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+}
+.baddon-flex.column {
+    flex-direction: column;
+}
+.baddon-flex.inline {
+    display: inline-flex;
+}
+.baddon-flex.around {
+    justify-content: space-around;
+}
+.baddon-flex.between {
+    justify-content: space-between;
+}
+.baddon-flex.centered {
+    align-items: center;
+}
+.baddon-flex.end {
+    justify-content: flex-end;
+}
+.baddon-box {
+    box-sizing: border-box;
+    background: #0003;
+    border: 1px solid gray;
+    flex-grow: 1;
+    padding: 12px;
+    overflow: auto;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+.baddon-item-display {
+    background: #73737312;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    position: relative;
+    box-shadow: inset 0 0 2px 1px #6f6f6fbf;
+}
+.baddon-item-display .highlight {
+    z-index: -1;
+}
+.baddon-item-display img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.baddon-item-display.clickable,
+.baddon-item-display.clickable * {
+    cursor: pointer;
+}
+
+/* Przełączniki zakładek */
+.baddon-tab-switcher {
+    box-sizing: border-box;
+    background: #0003;
+    border: 1px solid gray;
+    min-width: 128px;
+    margin-right: 6px;
+    overflow-y: auto;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+.baddon-tab {
+    box-sizing: border-box;
+    max-width: calc(100% - 134px);
+    display: flex;
+}
+.baddon-flex .baddon-tab {
+    flex: 1;
+}
+.baddon-tab-selector {
+    cursor: pointer;
+    background: linear-gradient(90deg, #4646464d 40%, #46464600);
+    padding: 6px;
+    font-size: 13px;
+    transition: background 0.1s, padding-left 0.1s;
+}
+.baddon-tab-selector:hover {
+    background: linear-gradient(90deg, #46464659 50%, #46464600);
+    padding-left: 10px;
+}
+.baddon-tab-selector:not(:last-child) {
+    margin-bottom: 1px;
+}
+.baddon-tab-selector.active {
+    background: linear-gradient(90deg, #46464666 50%, #46464600);
+    padding-left: 10px;
+    font-weight: 700;
+}
+
+/* Etykiety i opakowania */
+.baddon-label-wrapper {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.baddon-label-wrapper .baddon-label,
+.baddon-label-wrapper .baddon-labeled {
+    padding: 3px;
+}
+.baddon-label-wrapper.inline {
+    display: inline-flex;
+}
+.baddon-label-wrapper.reverse {
+    justify-content: unset;
+}
+
+/* Style scrollbarów (globalne dla elementów baddon) */
+.baddon-jsx-root ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.baddon-jsx-root ::-webkit-scrollbar-track {
+    background: #1414148f;
+    border-radius: 3px;
+}
+.baddon-jsx-root ::-webkit-scrollbar-thumb {
+    background: #636363;
+    border-radius: 3px;
+}
+.baddon-jsx-root ::-webkit-scrollbar-thumb:hover {
+    background: #8c8c8c;
+}
+
+/* Style tytułów (ogólne dla kart i okien) */
+.baddon-card-title {
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 5px;
+    font-weight: 700;
+    display: flex;
+}
+
+/* Style checkboxów */
+.baddon-card-title .baddon-checkbox {
+    margin-right: 5px;
+}
+.baddon-checkbox {
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #54545479;
+    border: 1px solid #545454;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    min-height: 16px;
+    box-shadow: inset 0 2px 5px #00000080;
+}
+.baddon-checkbox:after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%230dff00' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s;
+    display: inline-block;
+    transform: scale(0);
+}
+.baddon-checkbox.active:after {
+    transform: scale(1);
+}
+
+/* Style inputów i textarea */
+.baddon-textarea {
+    color: #fff;
+    resize: none;
+    background: #0003;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: 0;
+    height: 100px;
+    padding: 2px 3px;
+    font-size: 12px;
+    line-height: 1.5em;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+.baddon-input.color-text {
+    text-align: center;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 56px;
+    font-family: monospace;
+    font-size: 11px;
+}
+.baddon-input.color {
+    box-sizing: border-box;
+    visibility: hidden;
+    border-width: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+.baddon-input.color-selector {
+    cursor: pointer;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 50px;
+}
+.baddon-input.keybind {
+    text-align: center;
+    caret-color: #0000;
+    cursor: pointer;
+    max-width: 140px;
+    transition: border 0.15s;
+}
+.baddon-input.keybind:hover {
+    border: 1px solid #6a806a;
+}
+.baddon-input.keybind:focus {
+    border: 1px solid #96f096;
+}
+.baddon-input {
+    color: #fff;
+    box-sizing: border-box;
+    background: #0003;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: 0;
+    min-width: 0;
+    padding: 2px 3px;
+    line-height: 1.5em;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+.baddon-input[type="number"] {
+    text-align: right;
+    appearance: textfield;
+    width: 50px;
+    min-width: 30px;
+}
+.baddon-input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.baddon-select {
+    color: #fff;
+    box-sizing: border-box;
+    background: #0003;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: 0;
+    min-width: 0;
+    padding: 2px 3px;
+    line-height: 1.5em;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+.baddon-select option {
+    background: #090909;
+    border-color: #000;
+}
+
+/* Style przycisków */
+.baddon-update-button {
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 120%;
+    transition: transform 0.15s;
+    display: inline-block;
+}
+.baddon-update-button:hover {
+    transform: rotate(15deg);
+}
+.baddon-settings-button {
+    cursor: pointer;
+    background: url(homepage/buttony.ee4f2d56.png) -607px -117px;
+    width: 12px;
+    height: 12px;
+}
+.baddon-settings-button:hover {
+    background-position: -659px -117px;
+}
+.baddon-close-button {
+    cursor: pointer;
+    background: url(homepage/buttony.ee4f2d56.png) -624px -117px;
+    width: 12px;
+    height: 12px;
+}
+.baddon-close-button:hover {
+    background-position: -726px -117px;
+}
+.baddon-alert-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    display: flex;
+}
+.baddon-alert-buttons.connected {
+    gap: 0;
+}
+.baddon-alert-buttons .baddon-button {
+    text-wrap: nowrap;
+    flex: 1;
+}
+.baddon-button {
+    cursor: pointer;
+    background: #3c3c3c99;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 3px 16px;
+    font-size: 12px;
+    transition: background 0.15s, border-color 0.15s;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+.baddon-button:hover {
+    background: #5a5a5a99;
+}
+.baddon-button.no-margin {
+    margin: 0;
+}
+.baddon-button.icon {
+    width: 32px;
+    padding: 0;
+    font-family: monospace;
+}
