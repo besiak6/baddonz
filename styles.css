@@ -192,7 +192,7 @@
 
 .baddonz-opacity-button {
     cursor: pointer;
-    background: url(homepage/buttony.ee4f2d56.png) -725px -131px;
+    background: url(../img/gui/buttony.png) -725px -131px;
     width: 13px;
     height: 13px;
 }
@@ -203,7 +203,7 @@
 
 .baddonz-close-button {
     cursor: pointer;
-    background: url(homepage/buttony.ee4f2d56.png) -624px -117px;
+    background: url(../img/gui/buttony.png) -624px -117px;
     width: 12px;
     height: 12px;
 }
@@ -562,7 +562,7 @@
 
 .baddonz-settings-button {
     cursor: pointer;
-    background: url(homepage/buttony.ee4f2d56.png) -607px -117px;
+    background: url(../img/gui/buttony.png) -607px -117px;
     width: 12px;
     height: 12px;
 }
