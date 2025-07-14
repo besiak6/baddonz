@@ -13,8 +13,6 @@
 
 .baddonz-jsx-root {
     line-height: 1;
-    /* Domyślny kursor dla całego głównego kontenera baddonz */
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
 }
 
 .baddonz-jsx-root ::-webkit-scrollbar {
