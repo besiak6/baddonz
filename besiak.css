@@ -311,6 +311,7 @@
     left: 0;
 }
 
+/* Zachowanie oryginalnego stylu dla baddonz-input (w tym selecta), który Ci się podobał */
 .baddonz-input {
     color: #fff;
     box-sizing: border-box;
@@ -322,31 +323,31 @@
     padding: 2px 3px;
     line-height: 1.5em;
     box-shadow: inset 0 0 6px 1px #000000bf;
+    /* Domyślny kursor, jeśli nie jest to keybind lub color-selector */
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
 }
 
-/* NOWE STYLE DLA SELECT */
-.baddonz-input.baddonz-select {
-    -webkit-appearance: none; /* Usuwa domyślny wygląd przeglądarki dla selecta */
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="white" points="8 12 2 4 14 4"/></svg>'); /* Biała strzałka w dół */
-    background-repeat: no-repeat;
-    background-position: right 5px center;
-    padding-right: 25px; /* Dodatkowy padding, żeby strzałka nie nachodziła na tekst */
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
+/* NOWE STYLE DLA OPCJI W ROZWIJANEJ LIŚCIE SELECTA */
+/* Te style mają na celu wpłynąć na wygląd rozwiniętych opcji, ale ich efekt może się różnić w zależności od przeglądarki */
 .baddonz-input.baddonz-select option {
-    background-color: #0009; /* Ciemne tło dla opcji */
-    color: #fff; /* Biały tekst opcji */
-    text-shadow: 1px 1px 1px #000;
+    background-color: #0009 !important; /* Ciemne tło dla opcji */
+    color: #fff !important; /* Biały tekst opcji */
+    text-shadow: 1px 1px 1px #000 !important;
+    padding: 2px 5px !important; /* Wyrównanie paddingu */
+    /* Jeśli chcesz spróbować usunąć domyślne ikony przeglądarki, to możesz spróbować */
+    /* list-style: none !important; */
+    /* Zdarza się, że przeglądarki ignorują te style dla opcji, bo okienko jest renderowane natywnie */
+}
+
+.baddonz-input.baddonz-select option:checked {
+    background-color: #3c3c3c99 !important; /* Podświetlenie zaznaczonej opcji */
 }
 
 .baddonz-input.baddonz-select option:hover {
-    background-color: #3c3c3c99; /* Lekkie podświetlenie po najechaniu */
+    background-color: #5a5a5a99 !important; /* Podświetlenie opcji po najechaniu myszką */
 }
 
-/* Koniec NOWYCH STYLÓW DLA SELECT */
+/* Koniec NOWYCH STYLÓW DLA OPCJI */
 
 
 .baddonz-input[type="number"] {
