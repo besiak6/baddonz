@@ -311,7 +311,6 @@
     left: 0;
 }
 
-/* Zachowanie oryginalnego stylu dla baddonz-input (w tym selecta), który Ci się podobał */
 .baddonz-input {
     color: #fff;
     box-sizing: border-box;
@@ -323,31 +322,40 @@
     padding: 2px 3px;
     line-height: 1.5em;
     box-shadow: inset 0 0 6px 1px #000000bf;
-    /* Domyślny kursor, jeśli nie jest to keybind lub color-selector */
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
 }
 
-/* NOWE STYLE DLA OPCJI W ROZWIJANEJ LIŚCIE SELECTA */
-/* Te style mają na celu wpłynąć na wygląd rozwiniętych opcji, ale ich efekt może się różnić w zależności od przeglądarki */
+/* POPRAWIONE STYLE DLA ROZWIJANYCH OPCJI (SELECT OPTION) */
+/* Standardowe style dla inputu (select też jest inputem w tym przypadku) */
+.baddonz-input.baddonz-select {
+    /* Upewnia się, że appearance jest domyślna dla selekta, jeśli ma być jak input */
+    /* Jeśli wciąż chcesz niestandardową strzałkę, dodaj tutaj appearance: none i tło SVG */
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: none; */
+    /* appearance: none; */
+    /* background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="white" points="8 12 2 4 14 4"/></svg>'); */
+    /* background-repeat: no-repeat; */
+    /* background-position: right 5px center; */
+    /* padding-right: 25px; */
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+
+/* Style dla samych rozwijanych opcji */
 .baddonz-input.baddonz-select option {
-    background-color: #0009 !important; /* Ciemne tło dla opcji */
-    color: #fff !important; /* Biały tekst opcji */
-    text-shadow: 1px 1px 1px #000 !important;
-    padding: 2px 5px !important; /* Wyrównanie paddingu */
-    /* Jeśli chcesz spróbować usunąć domyślne ikony przeglądarki, to możesz spróbować */
-    /* list-style: none !important; */
-    /* Zdarza się, że przeglądarki ignorują te style dla opcji, bo okienko jest renderowane natywnie */
+    background-color: #0009; /* Ciemne tło dla opcji */
+    color: #fff; /* Biały tekst opcji */
+    text-shadow: 1px 1px 1px #000;
+    /* Upewnij się, że opcje dziedziczą font i padding z selecta, lub ustaw je tutaj */
+    font-family: sans-serif;
+    font-size: 12px;
+    padding: 2px 3px; /* Padding jak w inputach */
 }
 
-.baddonz-input.baddonz-select option:checked {
-    background-color: #3c3c3c99 !important; /* Podświetlenie zaznaczonej opcji */
+.baddonz-input.baddonz-select option:checked, /* Wybrana opcja (po rozwinięciu) */
+.baddonz-input.baddonz-select option:hover { /* Podświetlenie po najechaniu */
+    background-color: #3c3c3c99; /* Lekkie podświetlenie po najechaniu/wyborze */
+    color: #fff; /* Utrzymanie białego tekstu */
 }
-
-.baddonz-input.baddonz-select option:hover {
-    background-color: #5a5a5a99 !important; /* Podświetlenie opcji po najechaniu myszką */
-}
-
-/* Koniec NOWYCH STYLÓW DLA OPCJI */
+/* Koniec POPRAWIONYCH STYLÓW DLA ROZWIJANYCH OPCJI */
 
 
 .baddonz-input[type="number"] {
