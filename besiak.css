@@ -603,9 +603,38 @@
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
     /* user-select: none; */ /* Opcjonalnie, jeśli tekst ma być niewybieralny */
 }
+.baddonz-input-plus {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+}
 
-/* --- Sekcja z kursorami 5n (klikalnymi) - Zaktualizowane selektory dla lepszej specyficzności --- */
-/* Kursor dla WSZYSTKICH klikalnych elementów (5n.png) */
+.baddonz-input-plus .baddonz-input {
+    flex-grow: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 24px;
+    padding: 2px 5px;
+    font-size: 13px;
+    cursor: text !important;
+}
+
+.baddonz-input-plus .baddonz-button {
+    height: 24px;
+    width: 24px;
+    padding: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
 .baddonz-jsx-root .baddonz-button,
 .baddonz-jsx-root .baddonz-tab-selector,
 .baddonz-jsx-root .baddonz-opacity-button,
