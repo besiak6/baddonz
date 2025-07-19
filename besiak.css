@@ -1,839 +1,47 @@
-/* Główne style dla kontenera menedżera */
 .baddonz-manager {
     width: 640px;
     height: 412px;
 }
 
-/* Usunięto baddonz-tab-switcher i jego width: 128px; bo nie jest już potrzebny w poziomym układzie */
+.baddonz-manager .baddonz-tab-switcher {
+    width: 128px;
+}
 
-/* Układ dla głównego menedżera (nie używamy już baddonz-tab-switcher jako głównego kontenera) */
 .baddonz-manager .baddonz-tab {
-    /* To będzie kontener na zawartość zakładek, pod paskiem selektorów */
-    flex: 1; /* Zajmuje całą dostępną przestrzeń pionową */
-    width: 100%; /* Zajmuje całą szerokość */
-    box-sizing: border-box;
-    /* Domyślnie ukryte, aktywne będą miały display: flex */
-    display: none;
-    flex-direction: column; /* Zawartość zakładki zazwyczaj jest w kolumnie */
+    width: 512px;
 }
 
-/* Globalny kontener root dla menedżera, ustawienia domyślne kursorów i scrollbarów */
 .baddonz-jsx-root {
-    line-height: 1; /* Przywrócone oryginalne line-height */
+    line-height: 1;
+    /* Domyślny kursor dla całego głównego kontenera baddonz - usunięto !important */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
-    font-family: sans-serif;
-    color: #fff; /* Przywrócony oryginalny kolor tekstu */
-    text-shadow: 1px 1px 1px #000;
-    /* Usunięto font-size, aby wrócić do domyślnego lub zdefiniowanego niżej */
 }
 
-/* Scrollbary - spójne z Margonem */
 .baddonz-jsx-root ::-webkit-scrollbar {
-    width: 6px; /* Przywrócone oryginalne wymiary */
+    width: 6px;
     height: 6px;
 }
 
 .baddonz-jsx-root ::-webkit-scrollbar-track {
-    background: #1414148f; /* Przywrócone oryginalne kolory */
-    border-radius: 3px; /* Przywrócone oryginalne zaokrąglenie */
+    background: #1414148f;
+    border-radius: 3px;
 }
 
 .baddonz-jsx-root ::-webkit-scrollbar-thumb {
-    background: #505050; /* Przywrócone oryginalne kolory */
-    border-radius: 3px; /* Przywrócone oryginalne zaokrąglenie */
+    background: #505050;
+    border-radius: 3px;
 }
 
 .baddonz-jsx-root ::-webkit-scrollbar-thumb:hover {
-    background: #808080; /* Przywrócone oryginalne kolory */
+    background: #808080;
 }
 
-/* Globalne ustawienie kursorów dla elementów interaktywnych */
-.baddonz-jsx-root a,
-.baddonz-jsx-root button,
-.baddonz-jsx-root label,
-.baddonz-jsx-root select,
-.baddonz-jsx-root input[type="checkbox"],
-.baddonz-jsx-root .baddonz-button,
-.baddonz-jsx-root .baddonz-tab-selector,
-.baddonz-jsx-root .baddonz-opacity-button,
-.baddonz-jsx-root .baddonz-close-button,
-.baddonz-jsx-root .baddonz-checkbox,
-.baddonz-jsx-root .baddonz-settings-button,
-.baddonz-jsx-root .baddonz-input.keybind,
-.baddonz-jsx-root .baddonz-input.color-selector,
-.baddonz-jsx-root .baddonz-item-display.clickable,
-.baddonz-jsx-root .baddonz-card,
-.baddonz-jsx-root .baddonz-dock-widget,
-.baddonz-jsx-root .baddonz-dock-handle {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-/* Specyficzne nadpisanie dla kursorów tekstowych tam, gdzie to konieczne */
-.baddonz-jsx-root input[type="text"],
-.baddonz-jsx-root input[type="password"],
-.baddonz-jsx-root input[type="email"],
-.baddonz-jsx-root input[type="number"],
+/* Kursor dla elementów tekstowych/inputów, gdzie pointer może być mylący - domyślny kursor tekstowy */
 .baddonz-jsx-root .baddonz-textarea,
 .baddonz-jsx-root .baddonz-input:not(.keybind):not(.color-selector) {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, text !important;
 }
 
-/* Kursory dla elementów przeciągalnych */
-.baddonz-window-header,
-.baddonz-dock-handle {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, grab !important;
-}
-
-.baddonz-window-header.dragging,
-.baddonz-dock-handle.dragging {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, grabbing !important;
-}
-
-/* Okna */
-.baddonz-window {
-    pointer-events: all;
-    text-shadow: 1px 1px 1px #000;
-    color: #fff; /* Przywrócony oryginalny kolor tekstu */
-    background: #0009; /* Przywrócone oryginalne tło */
-    border-radius: 7px; /* Przywrócone oryginalne zaokrąglenie */
-    flex-direction: column;
-    min-width: 191px;
-    min-height: 22px;
-    font-family: sans-serif;
-    display: flex;
-    position: absolute;
-    /* Przywrócony oryginalny cień */
-    box-shadow: 0 0 1px #010101, 0 0 0 1px #ccc, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66;
-    z-index: 1000;
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
-    overflow: hidden; /* Dodane dla prawidłowego zaokrąglenia */
-}
-
-.baddonz-window.anon {
-    min-width: unset;
-}
-
-.baddonz-window.anon .baddonz-window-controls {
-    width: 26px;
-}
-
-.baddonz-window.top {
-    z-index: 1;
-}
-
-.baddonz-window.blur {
-    backdrop-filter: blur(3px);
-}
-
-/* Klasy przezroczystości (oryginalne) */
-.baddonz-window.opacity-0 { background: rgba(0,0,0,0); }
-.baddonz-window.opacity-1 { background: rgba(0,0,0,0.3); }
-.baddonz-window.opacity-2 { background: rgba(0,0,0,0.6); }
-.baddonz-window.opacity-3 { background: rgba(0,0,0,0.8); }
-.baddonz-window.opacity-4 { background: rgba(0,0,0,1); }
-
-.baddonz-window.resizable {
-    resize: both;
-    overflow: hidden; /* Przywrócone, żeby resize działało poprawnie */
-}
-
-.baddonz-window.resizable.horizontal {
-    resize: horizontal;
-}
-
-.baddonz-window.resizable.vertical {
-    resize: vertical;
-}
-
-/* Nagłówek Okna */
-.baddonz-window-header {
-    height: 25px; /* Przywrócona oryginalna wysokość */
-    white-space: nowrap;
-    box-sizing: border-box;
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    /* Usunięto padding i background, by wrócić do oryginalnego wyglądu (często przezroczysty lub dziedziczony) */
-    border-top-left-radius: 7px; /* Przywrócone oryginalne zaokrąglenie */
-    border-top-right-radius: 7px; /* Przywrócone oryginalne zaokrąglenie */
-}
-
-/* Kontrolki Okna (przyciski) */
-.baddonz-window-controls {
-    display: flex;
-    flex-direction: row;
-    align-items: center; /* Zmieniono na center dla lepszego wyrównania */
-    column-gap: 3px; /* Przywrócony oryginalny odstęp */
-    width: auto; /* Zmieniono na auto, aby nie ograniczać ilości ikon */
-    padding: 6px; /* Przywrócony oryginalny padding */
-}
-
-.baddonz-window-controls.right {
-    justify-content: flex-end;
-    margin-left: auto; /* Upewnia się, że kontrolki są po prawej */
-}
-
-.baddonz-window-controls.left {
-    justify-content: flex-start;
-    margin-right: auto; /* Upewnia się, że kontrolki są po lewej */
-}
-
-/* Tytuł Okna */
-.baddonz-window-title {
-    text-align: center;
-    color: beige; /* Przywrócony oryginalny kolor */
-    flex: 1; /* Zmieniono na 1, aby elastycznie wypełniał przestrzeń */
-    font-size: 11px; /* Przywrócona oryginalna czcionka */
-    line-height: 25px; /* Przywrócone oryginalne line-height */
-    user-select: none;
-}
-
-/* Ciało Okna */
-.baddonz-window-body {
-    color: #fff; /* Przywrócony oryginalny kolor tekstu */
-    box-sizing: border-box;
-    flex-direction: column;
-    flex: 1;
-    height: calc(100% - 25px); /* Dostosowanie do oryginalnej wysokości nagłówka */
-    padding-bottom: 10px; /* Przywrócone oryginalne paddingi */
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 12px; /* Przywrócona oryginalna czcionka */
-    display: flex;
-    overflow: hidden;
-}
-
-/* Przyciski ikon w nagłówku */
-.baddonz-opacity-button {
-    background: url(https://gordion.margonem.pl/img/gui/buttony.png) -725px -131px; /* Przywrócone oryginalne tło */
-    width: 13px; /* Przywrócone oryginalne wymiary */
-    height: 13px; /* Przywrócone oryginalne wymiary */
-    opacity: 0.6; /* Przywrócone oryginalne opacity */
-    transition: filter 0.2s ease-in-out; /* Zmieniono na filter, bo to było w oryginalnym hoover */
-}
-
-.baddonz-opacity-button:hover {
-    filter: brightness(1.3); /* Przywrócone oryginalne hover */
-}
-
-.baddonz-close-button {
-    background: url(https://gordion.margonem.pl/img/gui/buttony.png) -624px -117px; /* Przywrócone oryginalne tło */
-    width: 12px; /* Przywrócone oryginalne wymiary */
-    height: 12px; /* Przywrócone oryginalne wymiary */
-    /* Brak opacity w oryginalnym - usunięto */
-    transition: background-position 0.2s ease-in-out; /* Przywrócony oryginalny transition */
-}
-
-.baddonz-close-button:hover {
-    background-position: -726px -117px; /* Przywrócone oryginalne hover */
-}
-
-/* Pola tekstowe i kontenery */
-.baddonz-textarea {
-    color: #fff; /* Przywrócony oryginalny kolor tekstu */
-    resize: vertical;
-    background: #0003; /* Przywrócone oryginalne tło */
-    border: 1px solid gray; /* Przywrócone oryginalne obramowanie */
-    border-radius: 5px; /* Przywrócone oryginalne zaokrąglenie */
-    outline: 0;
-    height: 100px;
-    padding: 2px 3px; /* Przywrócone oryginalne paddingi */
-    font-size: 12px; /* Przywrócona oryginalna czcionka */
-    line-height: 1.5em;
-    box-shadow: inset 0 0 6px 1px #000000bf; /* Przywrócony oryginalny cień */
-}
-
-.baddonz-box {
-    box-sizing: border-box;
-    background: #0003; /* Przywrócone oryginalne tło */
-    border: 1px solid gray; /* Przywrócone oryginalne obramowanie */
-    border-radius: 5px; /* Przywrócone oryginalne zaokrąglenie */
-    flex-grow: 1;
-    padding: 12px; /* Przywrócone oryginalne paddingi */
-    overflow: auto;
-    box-shadow: inset 0 0 6px 1px #000000bf; /* Przywrócony oryginalny cień */
-}
-
-/* Pola input */
-.baddonz-input {
-    color: #fff; /* Przywrócony oryginalny kolor tekstu */
-    box-sizing: border-box;
-    background: #0003; /* Przywrócone oryginalne tło */
-    border: 1px solid gray; /* Przywrócone oryginalne obramowanie */
-    border-radius: 5px; /* Przywrócone oryginalne zaokrąglenie */
-    outline: 0;
-    min-width: 0;
-    padding: 2px 3px; /* Przywrócone oryginalne paddingi */
-    line-height: 1.5em;
-    box-shadow: inset 0 0 6px 1px #000000bf; /* Przywrócony oryginalny cień */
-}
-
-.baddonz-input.color-text {
-    text-align: center;
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    width: 56px;
-    font-family: monospace;
-    font-size: 11px; /* Przywrócona oryginalna czcionka */
-}
-
-.baddonz-input.color {
-    width: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    visibility: hidden;
-}
-
-.baddonz-input.color-selector {
-    box-sizing: border-box;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    width: 50px;
-}
-
-.baddonz-input.keybind {
-    text-align: center;
-    caret-color: transparent;
-    transition: border 0.15s; /* Przywrócony oryginalny transition */
-    max-width: 140px;
-}
-
-.baddonz-input.keybind:hover {
-    border: 1px solid #6a806a; /* Przywrócone oryginalne hover */
-}
-
-.baddonz-input.keybind:focus {
-    border: 1px solid #96f096; /* Przywrócone oryginalne focus */
-}
-
-/* Wyświetlanie przedmiotów */
-.baddonz-item-display {
-    background: #73737312; /* Przywrócone oryginalne tło */
-    width: 32px;
-    height: 32px;
-    display: inline-block;
-    position: relative;
-    box-shadow: inset 0 0 2px 1px #6f6f6fbf; /* Przywrócony oryginalny cień */
-}
-
-.baddonz-item-display .highlight {
-    z-index: -1;
-}
-
-.baddonz-item-display img {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.baddonz-item-display.clickable,
-.baddonz-item-display.clickable * {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-/* Selecty (rozsuwane listy) */
-.baddonz-select {
-    /* Usunięto appearance i custom background-image, aby wrócić do domyślnego wyglądu przeglądarki lub JS go nadpisze */
-}
-
-.baddonz-select option {
-    background-color: #0009; /* Przywrócone oryginalne tło */
-    color: #fff; /* Przywrócony oryginalny kolor tekstu */
-    text-shadow: 1px 1px 1px #000;
-    font-family: sans-serif;
-    font-size: 12px; /* Przywrócona oryginalna czcionka */
-    padding: 2px 3px; /* Przywrócone oryginalne paddingi */
-}
-
-.baddonz-select option:checked,
-.baddonz-select option:hover {
-    background-color: #3c3c3c99; /* Przywrócone oryginalne tło hover */
-    color: #fff; /* Przywrócony oryginalny kolor tekstu */
-}
-
-/* Inputy typu number */
-.baddonz-input[type="number"] {
-    text-align: right;
-    -moz-appearance: textfield; /* Przywrócone oryginalne appearance */
-    -webkit-appearance: none;
-    width: 50px;
-    min-width: 30px;
-}
-
-.baddonz-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Klasy pomocnicze */
-.baddonz-top .small {
-    height: 14px;
-}
-
-.baddonz-top .adjacent-button {
-    height: 22px;
-    margin: 3px 0; /* Przywrócone oryginalne marginesy */
-}
-
-.baddonz-top .disabled {
-    color: #d3d3d3 !important; /* Przywrócone oryginalne kolory */
-    background: #3c3c3c66 !important; /* Przywrócone oryginalne tło */
-}
-
-/* Klasy dla obramowań */
-.bottom-attached {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-width: 0;
-}
-
-.left-attached {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-left-width: 0;
-}
-
-.right-attached {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right-width: 0;
-}
-
-.top-attached {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-top-width: 0;
-}
-
-.left-border {
-    border-left-width: 1px;
-}
-
-.right-border {
-    border-right-width: 1px;
-}
-
-.top-border {
-    border-top-width: 1px;
-}
-
-.bottom-border {
-    border-bottom-width: 1px;
-}
-
-/* Alert Box */
-.baddonz-alert-segment {
-    text-align: center;
-    max-width: 230px;
-    margin: 2px; /* Przywrócone oryginalne marginesy */
-}
-
-.baddonz-alert-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4px; /* Przywrócony oryginalny odstęp */
-}
-
-.baddonz-alert-buttons.connected {
-    gap: 0;
-}
-
-.baddonz-alert-buttons .baddonz-button {
-    text-wrap: nowrap;
-    flex: 1;
-    min-width: 80px; /* Dodano min-width dla lepszego wyglądu */
-    padding: 3px 16px; /* Przywrócone oryginalne paddingi */
-}
-
-/* Przyciski */
-.baddonz-button {
-    background: #3c3c3c99; /* Przywrócone oryginalne tło */
-    border: 1px solid gray; /* Przywrócone oryginalne obramowanie */
-    border-radius: 5px; /* Przywrócone oryginalne zaokrąglenie */
-    margin: 3px 0; /* Przywrócone oryginalne marginesy */
-    padding: 3px 16px; /* Przywrócone oryginalne paddingi */
-    font-size: 12px; /* Przywrócona oryginalna czcionka */
-    transition: background 0.15s ease-in-out, border-color 0.15s ease-in-out;
-    box-shadow: inset 0 0 6px 1px #000000bf; /* Przywrócony oryginalny cień */
-    color: #fff; /* Przywrócony oryginalny kolor tekstu */
-}
-
-.baddonz-button:hover {
-    background: #5a5a5a99; /* Przywrócone oryginalne tło hover */
-    border-color: gray; /* Przywrócone oryginalne obramowanie hover */
-}
-
-.baddonz-button.no-margin {
-    margin: 0;
-}
-
-.baddonz-button.icon {
-    width: 32px;
-    padding: 0;
-    font-family: monospace;
-}
-
-/* EQ Display */
-.baddonz-show-eq {
-    display: flex;
-    flex-direction: column;
-    gap: 3px; /* Przywrócony oryginalny odstęp */
-}
-
-.baddonz-show-eq .baddonz-flex {
-    gap: 3px; /* Przywrócony oryginalny odstęp */
-}
-
-/* Menedżer Zakładek - NOWY UKŁAD Z ZACHOWANIEM STYLI */
-
-/* Kontener dla selektorów zakładek (ten który w JS ma baddonz-flex row) */
-.baddonz-window-body > .baddonz-flex.row {
-    background: rgba(0, 0, 0, 0.3); /* Lekko przezroczyste tło paska zakładek */
-    border-bottom: 1px solid gray; /* Separator pod zakładkami */
-    padding: 0 10px; /* Padding dla paska, aby zakladki nie byly przy krawedziach */
-    width: 100%; /* Upewnij się, że zajmuje całą szerokość */
-    box-sizing: border-box;
-}
-
-/* Selektory Zakładek (poziomy pasek u góry) */
-.baddonz-tab-selector {
-    background: linear-gradient(90deg, #4646464d 40%, #46464600); /* Przywrócone oryginalne tło */
-    padding: 8px 15px; /* Zwiększony padding dla "szerszego" wyglądu */
-    font-size: 13px; /* Przywrócona oryginalna czcionka */
-    transition: background 0.1s ease-in-out, padding-left 0.1s ease-in-out; /* Przywrócony oryginalny transition */
-    color: #fff; /* Przywrócony oryginalny kolor tekstu */
-    white-space: nowrap;
-    text-align: center;
-    user-select: none;
-    flex: 1; /* Równomierne rozłożenie w poziomie */
-    border-bottom: 2px solid transparent; /* Podkreślenie aktywnej zakładki */
-    border-right: 1px solid rgba(255, 255, 255, 0.05); /* Delikatna pionowa linia */
-    box-sizing: border-box; /* Ważne dla prawidłowego paddingu i borderów */
-}
-
-.baddonz-tab-selector:last-child {
-    border-right: none; /* Brak linii po prawej stronie ostatniej zakładki */
-}
-
-.baddonz-tab-selector:hover {
-    background: linear-gradient(90deg, #46464659 50%, #46464600); /* Przywrócone oryginalne tło hover */
-    padding-left: 15px; /* Zachowuje oryginalny efekt powiększania w lewo na hover, ale na całej szerokości */
-}
-
-.baddonz-tab-selector.active {
-    background: linear-gradient(90deg, #46464666 50%, #46464600); /* Przywrócone oryginalne tło aktywnej zakładki */
-    font-weight: 700; /* Przywrócony oryginalny font-weight */
-    border-bottom: 2px solid #66bb6a; /* Aktywne podkreślenie na dole, kolor z moich wcześniejszych poprawek */
-    padding-left: 15px; /* Zachowanie spójności paddingu */
-}
-
-/* Tab Content Container */
-.baddonz-tab.active {
-    display: flex; /* Aktywna zakładka jest widoczna */
-}
-/* Upewnij się, że padding contentu tabów jest zachowany z oryginalnego baddonz-window-body */
-.baddonz-tab {
-    padding-top: 10px; /* Zachowanie oryginalnych paddingów z baddonz-window-body */
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    overflow-y: auto; /* Aby zawartość była przewijalna */
-    overflow-x: hidden; /* Zapobiegaj poziomemu scrollowaniu */
-}
-
-/* Labelki i ich opakowania */
-.baddonz-label-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px; /* Przywrócony oryginalny margines */
-    padding: 0 5px; /* Przywrócone oryginalne paddingi */
-}
-
-.baddonz-label-wrapper > .baddonz-text,
-.baddonz-label-wrapper > *:not(.baddonz-checkbox) {
-    padding: 3px; /* Przywrócone oryginalne paddingi */
-}
-
-.baddonz-label-wrapper.inline {
-    display: inline-flex;
-}
-
-.baddonz-label-wrapper.reverse {
-    flex-direction: row-reverse; /* Zmieniono na row-reverse by align był od prawej */
-    justify-content: flex-start; /* Przywrócone oryginalne ustawienie */
-}
-
-/* Checkbox */
-.baddonz-checkbox {
-    box-sizing: border-box;
-    background-color: #54545479; /* Przywrócone oryginalne tło */
-    border: 1px solid #545454; /* Przywrócone oryginalne obramowanie */
-    width: 16px; /* Przywrócone oryginalne wymiary */
-    min-width: 16px;
-    height: 16px;
-    min-height: 16px;
-    box-shadow: inset 0 2px 5px #00000080; /* Przywrócony oryginalny cień */
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    border-radius: 0; /* Usunięto zaokrąglenie */
-}
-
-.baddonz-checkbox::after {
-    content: '';
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%230dff00' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e"); /* Przywrócone oryginalne SVG dla znacznika */
-    width: 100%; /* Przywrócone oryginalne wymiary */
-    height: 100%; /* Przywrócone oryginalne wymiary */
-    transition: transform 0.2s ease-in-out; /* Przywrócony oryginalny transition */
-    display: inline-block;
-    transform: scale(0);
-}
-
-.baddonz-checkbox.active::after {
-    transform: scale(1);
-}
-
-/* Przycisk ustawień */
-.baddonz-settings-button {
-    background: url(https://gordion.margonem.pl/img/gui/buttony.png) -607px -117px; /* Przywrócone oryginalne tło */
-    width: 12px; /* Przywrócone oryginalne wymiary */
-    height: 12px; /* Przywrócone oryginalne wymiary */
-    opacity: 1; /* Brak opacity w oryginalnym - usunięto */
-    transition: background-position 0.2s ease-in-out; /* Przywrócony oryginalny transition */
-}
-
-.baddonz-settings-button:hover {
-    background-position: -659px -117px; /* Przywrócone oryginalne hover */
-}
-
-/* Tekst */
-.baddonz-text {
-    color: #fff; /* Przywrócony oryginalny kolor tekstu */
-    text-shadow: 1px 1px 1px #000;
-    font-family: sans-serif;
-    font-size: 12px; /* Przywrócona oryginalna czcionka */
-    padding: 3px; /* Przywrócone oryginalne paddingi */
-    user-select: none; /* Przywrócone user-select */
-}
-
-/* Input z przyciskiem */
-.baddonz-input-plus {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    width: 100%;
-    margin-bottom: 5px; /* Przywrócony oryginalny margines */
-}
-
-.baddonz-input-plus .baddonz-input {
-    flex-grow: 1;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    height: 24px; /* Przywrócona oryginalna wysokość */
-    padding: 2px 5px; /* Przywrócone oryginalne paddingi */
-    font-size: 13px; /* Przywrócona oryginalna czcionka */
-}
-
-.baddonz-input-plus .baddonz-button {
-    height: 24px; /* Przywrócona oryginalna wysokość */
-    width: 24px; /* Przywrócona oryginalna szerokość */
-    padding: 0;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 1;
-    margin: 0;
-}
-
-/* Karty dodatków */
-.baddonz-addon-wrapper {
-    flex-wrap: wrap;
-    justify-content: space-between; /* Zmieniono na space-between dla rozłożenia na 2 kolumny */
-    gap: 1%; /* Przywrócony oryginalny odstęp */
-    margin-top: 5px;
-    flex: 1;
-    overflow-y: auto;
-    padding-right: 5px; /* Przywrócony oryginalny padding dla scrollbara */
-    padding-bottom: 5px; /* Przywrócony oryginalny padding na dole */
-    display: flex;
-}
-
-.baddonz-card {
-    box-sizing: border-box;
-    background: #0003; /* Przywrócone oryginalne tło */
-    border: 1px solid gray; /* Przywrócone oryginalne obramowanie */
-    border-radius: 0; /* Usunięto zaokrąglenie */
-    width: 49%; /* Przywrócone do 49% dla układu dwukolumnowego */
-    height: 90px; /* Przywrócona oryginalna wysokość */
-    margin-bottom: 5px; /* Przywrócony oryginalny margines */
-    padding: 7px 12px; /* Przywrócone oryginalne paddingi */
-    transition: background 0.15s ease-in-out, border-color 0.15s ease-in-out;
-    box-shadow: inset 0 0 6px 1px #000000bf; /* Przywrócony oryginalny cień */
-    display: flex;
-    flex-direction: column;
-}
-
-.baddonz-card:hover {
-    background: #8c8c8c33; /* Przywrócone oryginalne tło hover */
-    border-color: gray; /* Przywrócone oryginalne obramowanie hover */
-}
-
-.baddonz-card-title {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 5px; /* Przywrócony oryginalny margines */
-    font-weight: 700; /* Przywrócony oryginalny font-weight */
-    color: #b1ffb1; /* Przywrócony oryginalny kolor */
-    font-size: 14px; /* Przywrócona oryginalna czcionka */
-    user-select: none;
-}
-
-.baddonz-card-title .baddonz-checkbox {
-    margin-right: 5px;
-}
-
-.baddonz-card-enable-wnd {
-    opacity: 0.6; /* Przywrócone oryginalne opacity */
-    background: url('https://gordion.margonem.pl/img/gui/buttony.png') -432px -396px; /* Przywrócone oryginalne tło */
-    width: 16px; /* Przywrócone oryginalne wymiary */
-    height: 16px; /* Przywrócone oryginalne wymiary */
-    margin-left: auto;
-    flex-shrink: 0;
-    transition: opacity 0.2s ease-in-out; /* Przywrócony oryginalny transition */
-}
-
-.baddonz-card-enable-wnd:hover {
-    opacity: 1;
-}
-
-.baddonz-card-desc {
-    font-size: 11px; /* Przywrócona oryginalna czcionka */
-    color: #ccc; /* Przywrócony oryginalny kolor */
-    flex-grow: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Przywrócone oryginalne ograniczenie linii */
-    -webkit-box-orient: vertical;
-    line-height: 1.4; /* Przywrócone oryginalne line-height */
-}
-
-/* Dock (jeśli będzie używany) */
-.baddonz-dock {
-    color: #fff; /* Przywrócony oryginalny kolor tekstu */
-    pointer-events: all;
-    z-index: 400;
-    background: #00000059; /* Przywrócone oryginalne tło */
-    border-radius: 15px; /* Przywrócone oryginalne zaokrąglenie */
-    display: flex;
-    position: absolute;
-    box-shadow: 0 0 1px #010101, 0 0 0 1px #6d6d6d, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66; /* Przywrócony oryginalny cień */
-    bottom: 10px;
-    right: 10px;
-}
-
-.baddonz-dock.vertical {
-    flex-direction: column;
-}
-
-.baddonz-dock-handle {
-    text-align: center;
-    background: #00000059; /* Przywrócone oryginalne tło */
-    border-top-left-radius: 5px; /* Przywrócone oryginalne zaokrąglenie */
-    border-top-right-radius: 5px; /* Przywrócone oryginalne zaokrąglenie */
-    width: 32px;
-    height: 10px;
-    margin-top: -10px;
-    line-height: 10px;
-    box-shadow: 0 0 1px #010101, 0 0 0 1px #6d6d6d, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66; /* Przywrócony oryginalny cień */
-    user-select: none;
-}
-
-.baddonz-dock-widgets {
-    padding: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.baddonz-dock-widget {
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-    line-height: 26px;
-    transition: filter 0.2s ease-in-out, background 0.2s ease-in-out;
-    display: inline-block;
-    border-radius: 50%;
-    background: #00000059; /* Przywrócone oryginalne tło */
-    box-shadow: inset 0 0 2px 1px #000000bf; /* Przywrócony oryginalny cień */
-}
-
-.baddonz-dock-widget:hover {
-    filter: brightness(1.2);
-    background: #50505059; /* Przywrócone oryginalne tło hover */
-}
-
-.baddonz-dock-widget img,
-.baddonz-dock-widget i.fa { /* Przywrócone oryginalne style dla ikon */
-    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
-}
-
-.baddonz-dock-widget img {
-    height: 28px;
-    width: 28px;
-}
-
-.baddonz-dock-widget i.fa {
-    font-size: 20px;
-    line-height: 30px;
-    color: #fff;
-}
-
-/* Changelog */
-.baddonz-changelog-entry {
-    background: #0003; /* Przywrócone oryginalne tło */
-    border: 1px solid gray; /* Przywrócone oryginalne obramowanie */
-    border-radius: 5px; /* Przywrócone oryginalne zaokrąglenie */
-    padding: 8px; /* Przywrócone oryginalne paddingi */
-    margin-bottom: 5px; /* Przywrócony oryginalny margines */
-    box-shadow: inset 0 0 6px 1px #000000bf; /* Przywrócony oryginalny cień */
-}
-
-.baddonz-changelog-version {
-    font-weight: 700; /* Przywrócony oryginalny font-weight */
-    color: #ffd122; /* Przywrócony oryginalny kolor */
-    margin-bottom: 3px; /* Przywrócony oryginalny margines */
-    font-size: 13px; /* Przywrócona oryginalna czcionka */
-}
-
-.baddonz-changelog-text {
-    font-size: 11px; /* Przywrócona oryginalna czcionka */
-    color: #eee; /* Przywrócony oryginalny kolor */
-    margin-left: 10px; /* Przywrócony oryginalny margines */
-    list-style: disc;
-}
-
-.baddonz-changelog-text ul {
-    margin: 0;
-    padding-left: 20px;
-}
-
-.baddonz-changelog-text li {
-    margin-bottom: 2px;
-}
-
-/* Flexboxy */
 .baddonz-flex {
     flex: 1;
     justify-content: center;
@@ -844,10 +52,6 @@
 
 .baddonz-flex.column {
     flex-direction: column;
-}
-
-.baddonz-flex.row {
-    flex-direction: row;
 }
 
 .baddonz-flex.inline {
@@ -864,20 +68,595 @@
 
 .baddonz-flex.centered {
     align-items: center;
-    justify-content: center;
-}
-
-.baddonz-flex.start {
-    justify-content: flex-start;
 }
 
 .baddonz-flex.end {
     justify-content: flex-end;
 }
 
-/* Scrollable */
-.baddonz-scrollable {
-    overflow-y: auto;
+.baddonz-window {
+    pointer-events: all;
+    text-shadow: 1px 1px 1px #000;
+    color: #fff;
+    background: #0009;
+    border-radius: 7px;
+    flex-direction: column;
+    min-width: 191px;
+    min-height: 22px;
+    font-family: sans-serif;
+    display: flex;
+    position: absolute;
+    box-shadow: 0 0 1px #010101, 0 0 0 1px #ccc, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66;
+    /* Domyślny kursor dla okna, jeśli nie jest nadpisywany przez inne elementy wewnątrz - usunięto !important */
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
+}
+
+.baddonz-window.anon {
+    min-width: unset;
+}
+
+.baddonz-window.anon .baddonz-window-controls {
+    width: 26px;
+}
+
+.baddonz-window.top {
+    z-index: 1;
+}
+
+.baddonz-window.blur {
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.baddonz-window.opacity-0 {
+    background: 0 0;
+}
+
+.baddonz-window.opacity-1 {
+    background: #0000004d;
+}
+
+.baddonz-window.opacity-2 {
+    background: #0009;
+}
+
+.baddonz-window.opacity-3 {
+    background: #000c;
+}
+
+.baddonz-window.opacity-4 {
+    background: #000;
+}
+
+.baddonz-window.resizable {
+    resize: both;
+    overflow: hidden;
+}
+
+.baddonz-window.resizable-x {
+    resize: horizontal;
+    overflow-x: hidden;
+}
+
+.baddonz-window.resizable-y {
+    resize: vertical;
+    overflow-y: hidden;
+}
+
+.baddonz-window-header {
+    white-space: nowrap;
+    box-sizing: border-box;
+    flex-direction: row;
+    height: 25px;
+    display: flex;
+}
+
+.baddonz-window-controls {
+    flex-direction: row;
+    align-items: start;
+    column-gap: 3px;
+    width: 20px;
+    padding: 6px;
+    display: flex;
+}
+.baddonz-window-controls.right {
+    justify-content: end;
+}
+
+.baddonz-window-controls.left {
+    justify-content: start;
+}
+
+.baddonz-window-title {
+    text-align: center;
+    color: beige;
+    /* Kursor dla tytułu okna, który jest przeciągalny - 5n */
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, move !important;
+    flex: 3;
+    font-size: 11px;
+    line-height: 25px;
+}
+
+.baddonz-window-body {
+    color: #fff;
+    box-sizing: border-box;
+    flex-direction: column;
+    flex: 1;
+    height: calc(100% - 25px);
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    display: flex;
+}
+
+.baddonz-opacity-button {
+    background: url(https://gordion.margonem.pl/img/gui/buttony.png) -725px -131px;
+    width: 13px;
+    height: 13px;
+}
+
+.baddonz-opacity-button:hover {
+    filter: brightness(1.3);
+}
+
+.baddonz-close-button {
+    background: url(https://gordion.margonem.pl/img/gui/buttony.png) -624px -117px;
+    width: 12px;
+    height: 12px;
+}
+
+.baddonz-close-button:hover {
+    background-position: -726px -117px;
+}
+
+.baddonz-textarea {
+    color: #fff;
+    resize: none;
+    background: #0003;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: 0;
+    height: 100px;
+    padding: 2px 3px;
+    font-size: 12px;
+    line-height: 1.5em;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+
+.baddonz-box {
+    box-sizing: border-box;
+    background: #0003;
+    border: 1px solid gray;
     flex-grow: 1;
-    padding-right: 5px;
+    padding: 12px;
+    overflow: auto;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+
+.baddonz-top .left-attached {
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.baddonz-top .right-attached {
+    border-right-width: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.baddonz-top .left-border {
+    border-left-width: 1px;
+}
+
+.baddonz-input.color-text {
+    text-align: center;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 56px;
+    font-family: monospace;
+    font-size: 11px;
+}
+
+.baddonz-input.color {
+    box-sizing: border-box;
+    visibility: hidden;
+    border-width: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.baddonz-input.color-selector {
+    box-sizing: border-box;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 50px;
+}
+
+.baddonz-input.keybind {
+    text-align: center;
+    caret-color: #0000;
+    transition: border .15s;
+    max-width: 140px;
+}
+
+.baddonz-input.keybind:hover {
+    border: 1px solid #6a806a;
+}
+
+.baddonz-input.keybind:focus {
+    border: 1px solid #96f096;
+}
+
+.baddonz-item-display {
+    background: #73737312;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    position: relative;
+    box-shadow: inset 0 0 2px 1px #6f6f6fbf;
+}
+
+.baddonz-item-display .highlight {
+    z-index: -1;
+}
+
+.baddonz-item-display img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.baddonz-input {
+    color: #fff;
+    box-sizing: border-box;
+    background: #0003;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: 0;
+    min-width: 0;
+    padding: 2px 3px;
+    line-height: 1.5em;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+
+/* POPRAWIONE STYLE DLA ROZWIJANYCH OPCJI (SELECT OPTION) */
+/* Standardowe style dla inputu (select też jest inputem w tym przypadku) */
+.baddonz-input.baddonz-select {
+    /* Upewnia się, że appearance jest domyślna dla selekta, jeśli ma być jak input */
+    /* Jeśli wciąż chcesz niestandardową strzałkę, dodaj tutaj appearance: none i tło SVG */
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: none; */
+    /* appearance: none; */
+    /* background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="white" points="8 12 2 4 14 4"/></svg>'); */
+    /* background-repeat: no-repeat; */
+    /* background-position: right 5px center; */
+    /* padding-right: 25px; */
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+
+/* Style dla samych rozwijanych opcji */
+.baddonz-input.baddonz-select option {
+    background-color: #0009; /* Ciemne tło dla opcji */
+    color: #fff; /* Biały tekst opcji */
+    text-shadow: 1px 1px 1px #000;
+    /* Upewnij się, że opcje dziedziczą font i padding z selecta, lub ustaw je tutaj */
+    font-family: sans-serif;
+    font-size: 12px;
+    padding: 2px 3px; /* Padding jak w inputach */
+}
+
+.baddonz-input.baddonz-select option:checked, /* Wybrana opcja (po rozwinięciu) */
+.baddonz-input.baddonz-select option:hover { /* Podświetlenie po najechaniu */
+    background-color: #3c3c3c99; /* Lekkie podświetlenie po najechaniu/wyborze */
+    color: #fff; /* Utrzymanie białego tekstu */
+}
+/* Koniec POPRAWIONYCH STYLÓW DLA ROZWIJANYCH OPCJI */
+
+
+.baddonz-input[type="number"] {
+    text-align: right;
+    appearance: textfield;
+    width: 50px;
+    min-width: 30px;
+}
+
+.baddonz-input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.baddonz-top .small {
+    height: 14px;
+}
+
+.baddonz-top .adjacent-button {
+    height: 22px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.baddonz-top .bottom-attached {
+    border-bottom-width: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.baddonz-top .left-attached,
+.baddonz-top .baddonz-alert-buttons.connected .baddonz-button:not(:first-child),
+.baddonz-alert-buttons.connected .baddonz-top .baddonz-button:not(:first-child) {
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.baddonz-top .right-attached,
+.baddonz-top .baddonz-alert-buttons.connected .baddonz-button:not(:last-child),
+.baddonz-alert-buttons.connected .baddonz-top .baddonz-button:not(:last-child) {
+    border-right-width: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.baddonz-top .top-attached {
+    border-top-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.baddonz-top .left-border,
+.baddonz-top .baddonz-alert-buttons.connected .baddonz-button:not(:first-child),
+.baddonz-alert-buttons.connected .baddonz-top .baddonz-button:not(:first-child) {
+    border-left-width: 1px;
+}
+
+.baddonz-top .right-border {
+    border-right-width: 1px;
+}
+
+.baddonz-top .top-border {
+    border-top-width: 1px;
+}
+
+.baddonz-top .bottom-border {
+    border-bottom-width: 1px;
+}
+
+.baddonz-top .disabled {
+    color: #d3d3d3;
+    background: #3c3c3c66;
+}
+
+.baddonz-alert-segment {
+    text-align: center;
+    max-width: 230px;
+    margin: 2px;
+}
+
+.baddonz-alert-segment:last-child {
+    margin-bottom: 0;
+}
+
+.baddonz-alert-segment:first-child {
+    margin-top: 0;
+}
+
+.baddonz-alert-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    display: flex;
+}
+
+.baddonz-alert-buttons.connected {
+    gap: 0;
+}
+
+.baddonz-alert-buttons .baddonz-button {
+    text-wrap: nowrap;
+    flex: 1;
+}
+
+.baddonz-button {
+    background: #3c3c3c99;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 3px 16px;
+    font-size: 12px;
+    transition: background .15s, border-color .15s;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+
+.baddonz-button:hover {
+    background: #5a5a5a99;
+}
+
+.baddonz-button.no-margin {
+    margin: 0;
+}
+
+.baddonz-button.icon {
+    width: 32px;
+    padding: 0;
+    font-family: monospace;
+}
+
+.baddonz-show-eq {
+    flex-direction: column;
+    gap: 3px;
+    display: flex;
+}
+
+.baddonz-show-eq .baddonz-flex {
+    gap: 3px;
+}
+
+.baddonz-tab-switcher {
+    box-sizing: border-box;
+    background: #0003;
+    border: 1px solid gray;
+    min-width: 128px;
+    margin-right: 6px;
+    overflow-y: auto;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+
+.baddonz-tab {
+    box-sizing: border-box;
+    max-width: calc(100% - 134px);
+    display: flex;
+}
+
+.baddonz-flex .baddonz-tab {
+    flex: 1;
+}
+
+.baddonz-tab-selector {
+    background: linear-gradient(90deg, #4646464d 40%, #46464600);
+    padding: 6px;
+    font-size: 13px;
+    transition: background .1s, padding-left .1s;
+}
+
+.baddonz-tab-selector:hover {
+    background: linear-gradient(90deg, #46464659 50%, #46464600);
+    padding-left: 10px;
+}
+
+.baddonz-tab-selector:not(:last-child) {
+    margin-bottom: 1px;
+}
+
+.baddonz-tab-selector.active {
+    background: linear-gradient(90deg, #46464666 50%, #46464600);
+    padding-left: 10px;
+    font-weight: 700;
+}
+
+.baddonz-label-wrapper {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.baddonz-label-wrapper .baddonz-label,
+.baddonz-label-wrapper .baddonz-labeled {
+    padding: 3px;
+}
+
+.baddonz-label-wrapper.inline {
+    display: inline-flex;
+}
+
+.baddonz-label-wrapper.reverse {
+    justify-content: unset;
+}
+
+.baddonz-checkbox {
+    box-sizing: border-box;
+    background-color: #54545479;
+    border: 1px solid #545454;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    min-height: 16px;
+    box-shadow: inset 0 2px 5px #00000080;
+}
+
+.baddonz-checkbox:after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%230dff00' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+    width: 100%;
+    height: 100%;
+    transition: all .2s;
+    display: inline-block;
+    transform: scale(0);
+}
+
+.baddonz-checkbox.active:after {
+    transform: scale(1);
+}
+
+.baddonz-settings-button {
+    background: url(https://gordion.margonem.pl/img/gui/buttony.png) -607px -117px;
+    width: 12px;
+    height: 12px;
+}
+
+.baddonz-settings-button:hover {
+    background-position: -659px -117px;
+}
+
+/* Nowa klasa dla tekstów w stylu baddonz-window */
+.baddonz-text {
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    font-family: sans-serif;
+    font-size: 12px;
+    padding: 3px;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
+    /* user-select: none; */ /* Opcjonalnie, jeśli tekst ma być niewybieralny */
+}
+.baddonz-input-plus {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+}
+
+.baddonz-input-plus .baddonz-input {
+    flex-grow: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 24px;
+    padding: 2px 5px;
+    font-size: 13px;
+    cursor: text !important;
+}
+
+.baddonz-input-plus .baddonz-button {
+    height: 24px;
+    width: 24px;
+    padding: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+.baddonz-jsx-root .baddonz-button,
+.baddonz-jsx-root .baddonz-tab-selector,
+.baddonz-jsx-root .baddonz-opacity-button,
+.baddonz-jsx-root .baddonz-close-button,
+.baddonz-jsx-root .baddonz-checkbox,
+.baddonz-jsx-root .baddonz-settings-button,
+.baddonz-jsx-root .baddonz-input.keybind,
+.baddonz-jsx-root .baddonz-input.color-selector,
+.baddonz-jsx-root .baddonz-item-display.clickable,
+.baddonz-jsx-root .baddonz-item-display.clickable *,
+/* Dodatkowe selektory dla elementów wewnątrz okna/kontroli */
+.baddonz-window .baddonz-button,
+.baddonz-window .baddonz-opacity-button,
+.baddonz-window .baddonz-close-button,
+.baddonz-window .baddonz-checkbox,
+.baddonz-window .baddonz-settings-button,
+.baddonz-window .baddonz-input.keybind,
+.baddonz-window .baddonz-input.color-selector,
+.baddonz-window .baddonz-item-display.clickable,
+.baddonz-window .baddonz-item-display.clickable *,
+.baddonz-window-controls .baddonz-opacity-button, /* Specyficzne dla przycisków w kontrolach okna */
+.baddonz-window-controls .baddonz-close-button
+{
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
