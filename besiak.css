@@ -13,7 +13,6 @@
 
 .baddonz-jsx-root {
     line-height: 1;
-    /* Domyślny kursor dla całego głównego kontenera baddonz - usunięto !important */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
 }
 
@@ -36,7 +35,6 @@
     background: #808080;
 }
 
-/* Kursor dla elementów tekstowych/inputów, gdzie pointer może być mylący - domyślny kursor tekstowy */
 .baddonz-jsx-root .baddonz-textarea,
 .baddonz-jsx-root .baddonz-input:not(.keybind):not(.color-selector) {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, text !important;
@@ -87,7 +85,6 @@
     display: flex;
     position: absolute;
     box-shadow: 0 0 1px #010101, 0 0 0 1px #ccc, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66;
-    /* Domyślny kursor dla okna, jeśli nie jest nadpisywany przez inne elementy wewnątrz - usunięto !important */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
 }
 
@@ -170,7 +167,6 @@
 .baddonz-window-title {
     text-align: center;
     color: beige;
-    /* Kursor dla tytułu okna, który jest przeciągalny - 5n */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, move !important;
     flex: 3;
     font-size: 11px;
@@ -182,7 +178,10 @@
     box-sizing: border-box;
     flex-direction: column;
     flex: 1;
-    height: calc(100% - 25px);
+    /* Ustawienie stałej wysokości i przewijania */
+    height: calc(100% - 25px); /* Odjęcie wysokości nagłówka */
+    max-height: 387px; /* Przykładowa stała wysokość, dostosuj wg potrzeb */
+    overflow-y: auto; /* Włącz przewijanie pionowe */
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -324,39 +323,24 @@
     box-shadow: inset 0 0 6px 1px #000000bf;
 }
 
-/* POPRAWIONE STYLE DLA ROZWIJANYCH OPCJI (SELECT OPTION) */
-/* Standardowe style dla inputu (select też jest inputem w tym przypadku) */
 .baddonz-input.baddonz-select {
-    /* Upewnia się, że appearance jest domyślna dla selekta, jeśli ma być jak input */
-    /* Jeśli wciąż chcesz niestandardową strzałkę, dodaj tutaj appearance: none i tło SVG */
-    /* -webkit-appearance: none; */
-    /* -moz-appearance: none; */
-    /* appearance: none; */
-    /* background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="white" points="8 12 2 4 14 4"/></svg>'); */
-    /* background-repeat: no-repeat; */
-    /* background-position: right 5px center; */
-    /* padding-right: 25px; */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 
-/* Style dla samych rozwijanych opcji */
 .baddonz-input.baddonz-select option {
-    background-color: #0009; /* Ciemne tło dla opcji */
-    color: #fff; /* Biały tekst opcji */
+    background-color: #0009;
+    color: #fff;
     text-shadow: 1px 1px 1px #000;
-    /* Upewnij się, że opcje dziedziczą font i padding z selecta, lub ustaw je tutaj */
     font-family: sans-serif;
     font-size: 12px;
-    padding: 2px 3px; /* Padding jak w inputach */
+    padding: 2px 3px;
 }
 
-.baddonz-input.baddonz-select option:checked, /* Wybrana opcja (po rozwinięciu) */
-.baddonz-input.baddonz-select option:hover { /* Podświetlenie po najechaniu */
-    background-color: #3c3c3c99; /* Lekkie podświetlenie po najechaniu/wyborze */
-    color: #fff; /* Utrzymanie białego tekstu */
+.baddonz-input.baddonz-select option:checked,
+.baddonz-input.baddonz-select option:hover {
+    background-color: #3c3c3c99;
+    color: #fff;
 }
-/* Koniec POPRAWIONYCH STYLÓW DLA ROZWIJANYCH OPCJI */
-
 
 .baddonz-input[type="number"] {
     text-align: right;
@@ -593,7 +577,6 @@
     background-position: -659px -117px;
 }
 
-/* Nowa klasa dla tekstów w stylu baddonz-window */
 .baddonz-text {
     color: #fff;
     text-shadow: 1px 1px 1px #000;
@@ -601,7 +584,6 @@
     font-size: 12px;
     padding: 3px;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
-    /* user-select: none; */ /* Opcjonalnie, jeśli tekst ma być niewybieralny */
 }
 .baddonz-input-plus {
     display: flex;
@@ -645,7 +627,6 @@
 .baddonz-jsx-root .baddonz-input.color-selector,
 .baddonz-jsx-root .baddonz-item-display.clickable,
 .baddonz-jsx-root .baddonz-item-display.clickable *,
-/* Dodatkowe selektory dla elementów wewnątrz okna/kontroli */
 .baddonz-window .baddonz-button,
 .baddonz-window .baddonz-opacity-button,
 .baddonz-window .baddonz-close-button,
@@ -655,46 +636,45 @@
 .baddonz-window .baddonz-input.color-selector,
 .baddonz-window .baddonz-item-display.clickable,
 .baddonz-window .baddonz-item-display.clickable *,
-.baddonz-window-controls .baddonz-opacity-button, /* Specyficzne dla przycisków w kontrolach okna */
+.baddonz-window-controls .baddonz-opacity-button,
 .baddonz-window-controls .baddonz-close-button
 {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 
-/* Nowe style dla poziomych zakładek i kart dodatków (z Gargonem, zaadaptowane) */
 .baddonz-tabs-header {
     display: flex;
-    flex-wrap: nowrap; /* Upewnij się, że zakładki są w jednym rzędzie */
+    flex-wrap: nowrap;
     justify-content: flex-start;
     margin-bottom: 5px;
-    overflow-x: auto; /* Pozwoli na przewijanie, jeśli będzie za dużo zakładek */
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    border-bottom: 1px solid gray; /* Dodaj linię pod zakładkami */
+    border-bottom: 1px solid gray;
 }
 
 .baddonz-tab-button {
     cursor: pointer;
-    background: linear-gradient(0deg, rgba(70,70,70,0.3) 40%, rgba(70,70,70,0.0) ); /* Inspiracja z Gargonem, ale pozioma */
+    background: linear-gradient(0deg, rgba(70,70,70,0.3) 40%, rgba(70,70,70,0.0) );
     padding: 6px 12px;
     font-size: 13px;
     transition: background 0.1s, padding 0.1s;
     border: 1px solid transparent;
-    border-bottom: none; /* Usuń dolną ramkę, aby wyglądało jak zakładka */
-    margin-right: 1px; /* Mały odstęp między zakładkami */
-    flex-shrink: 0; /* Zapobiega zmniejszaniu się zakładek */
-    color: #fff; /* Domyślny kolor tekstu */
+    border-bottom: none;
+    margin-right: 1px;
+    flex-shrink: 0;
+    color: #fff;
     text-shadow: 1px 1px 1px #000;
 }
 
 .baddonz-tab-button:hover {
     background: linear-gradient(0deg, rgba(70,70,70,0.4) 50%, rgba(70,70,70,0.0));
     border-color: #464646;
-    padding: 6px 14px; /* Lekkie powiększenie po najechaniu */
+    padding: 6px 14px;
 }
 
 .baddonz-tab-button.active {
     background: linear-gradient(0deg, rgba(70,70,70,0.5) 50%, rgba(70,70,70,0.0));
-    border-color: gray; /* Podkreślenie aktywnej zakładki */
+    border-color: gray;
     font-weight: 700;
     padding: 6px 14px;
 }
@@ -703,62 +683,91 @@
     flex-grow: 1;
     padding: 10px;
     overflow-y: auto;
-    background: rgba(0,0,0,0.2); /* Lekkie tło dla treści zakładek */
-    border-radius: 0 0 7px 7px; /* Zaokrąglone rogi tylko na dole */
+    background: rgba(0,0,0,0.2);
+    border-radius: 0 0 7px 7px;
 }
 
 .baddonz-tab-pane {
-    display: none; /* Domyślnie ukryte */
+    display: none;
 }
 
 .baddonz-tab-pane.active {
-    display: block; /* Aktywna zakładka widoczna */
+    display: block;
 }
 
-/* Style dla kart dodatków (inspiracja z Gargonem) */
+/* Zaktualizowane style dla kart dodatków */
 .baddonz-card {
     cursor: pointer;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.2); /* Lekko przezroczyste tło */
+    background: rgba(0, 0, 0, 0.2);
     border: 1px solid gray;
     width: calc(50% - 5px); /* Dwie karty w rzędzie z odstępem */
-    height: 90px;
-    margin-bottom: 5px; /* Odstęp między wierszami kart */
+    /* Zwiększona wysokość, aby pomieścić więcej treści */
+    height: 120px;
+    margin-bottom: 5px;
     padding: 7px 12px;
     transition: background 0.15s;
     box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.75);
-    display: flex; /* Użyj flexboxa dla lepszego układu wewnętrznego */
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Zamiast space-between, aby opis był niżej */
+    overflow: hidden; /* Ukryj przepełnienie, jeśli opis jest zbyt długi */
 }
 
 .baddonz-card:hover {
-    background: rgba(140, 140, 140, 0.2); /* Podświetlenie po najechaniu */
+    background: rgba(140, 140, 140, 0.2);
+}
+
+.baddonz-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.baddonz-card-checkbox {
+    /* Style dla checkboxa w karcie, dziedziczy z .baddonz-checkbox */
+    margin-right: 8px; /* Odstęp między checkboxem a nazwą */
+    flex-shrink: 0; /* Nie zmniejsza się */
 }
 
 .baddonz-card-title {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 5px;
     font-weight: 700;
     color: beige;
+    flex-grow: 1; /* Pozwala nazwie zająć dostępną przestrzeń */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.baddonz-card-icon {
+    /* Styl dla ikonki okna, jeśli dodatek ją posiada */
+    width: 16px; /* Przykładowy rozmiar ikonki */
+    height: 16px;
+    margin-left: 8px; /* Odstęp między nazwą a ikonką */
+    background-image: url('https://gordion.margonem.pl/img/gui/mapka.png'); /* Przykładowa ikonka, zmień na odpowiednią */
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
 }
 
 .baddonz-card-description {
     font-size: 11px;
     color: #ccc;
-    flex-grow: 1; /* Rozciągnij, aby wypełnić dostępną przestrzeń */
+    line-height: 1.4;
+    max-height: 50px; /* Ograniczenie wysokości opisu, dostosuj */
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; /* Zapobiega zawijaniu się tekstu */
+    /* white-space: nowrap; - usunięte, aby tekst mógł się łamać */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Ograniczenie do 3 linii, dostosuj */
+    -webkit-box-orient: vertical;
 }
 
 .baddonz-card-actions {
     display: flex;
     justify-content: flex-end;
     gap: 5px;
-    margin-top: auto; /* Wyrówna akcje do dołu karty */
+    margin-top: auto;
 }
 
 .baddonz-card-button {
@@ -775,4 +784,46 @@
 
 .baddonz-card-button:hover {
     background: #5a5a5a99;
+}
+
+/* Nowe style dla Logów zmian - Propozycja */
+.baddonz-changelog {
+    background: #0000004d;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: monospace;
+    font-size: 11px;
+    color: #eee;
+    max-height: 250px; /* Maksymalna wysokość dla logów */
+    overflow-y: auto; /* Przewijanie */
+    box-shadow: inset 0 0 6px 1px #000000bf;
+}
+
+.baddonz-changelog-entry {
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #333;
+}
+
+.baddonz-changelog-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.baddonz-changelog-date {
+    font-weight: 700;
+    color: #87ff87; /* Kolor dla daty/wersji */
+    margin-right: 5px;
+}
+
+.baddonz-changelog-description {
+    color: #fff;
+}
+
+.baddonz-changelog-item {
+    margin-left: 15px; /* Wcięcie dla pojedynczych zmian */
+    list-style-type: disc;
+    color: #ccc;
 }
