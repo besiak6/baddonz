@@ -660,3 +660,119 @@
 {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
+
+/* Nowe style dla poziomych zakładek i kart dodatków (z Gargonem, zaadaptowane) */
+.baddonz-tabs-header {
+    display: flex;
+    flex-wrap: nowrap; /* Upewnij się, że zakładki są w jednym rzędzie */
+    justify-content: flex-start;
+    margin-bottom: 5px;
+    overflow-x: auto; /* Pozwoli na przewijanie, jeśli będzie za dużo zakładek */
+    -webkit-overflow-scrolling: touch;
+    border-bottom: 1px solid gray; /* Dodaj linię pod zakładkami */
+}
+
+.baddonz-tab-button {
+    cursor: pointer;
+    background: linear-gradient(0deg, rgba(70,70,70,0.3) 40%, rgba(70,70,70,0.0) ); /* Inspiracja z Gargonem, ale pozioma */
+    padding: 6px 12px;
+    font-size: 13px;
+    transition: background 0.1s, padding 0.1s;
+    border: 1px solid transparent;
+    border-bottom: none; /* Usuń dolną ramkę, aby wyglądało jak zakładka */
+    margin-right: 1px; /* Mały odstęp między zakładkami */
+    flex-shrink: 0; /* Zapobiega zmniejszaniu się zakładek */
+    color: #fff; /* Domyślny kolor tekstu */
+    text-shadow: 1px 1px 1px #000;
+}
+
+.baddonz-tab-button:hover {
+    background: linear-gradient(0deg, rgba(70,70,70,0.4) 50%, rgba(70,70,70,0.0));
+    border-color: #464646;
+    padding: 6px 14px; /* Lekkie powiększenie po najechaniu */
+}
+
+.baddonz-tab-button.active {
+    background: linear-gradient(0deg, rgba(70,70,70,0.5) 50%, rgba(70,70,70,0.0));
+    border-color: gray; /* Podkreślenie aktywnej zakładki */
+    font-weight: 700;
+    padding: 6px 14px;
+}
+
+.baddonz-tabs-content {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.2); /* Lekkie tło dla treści zakładek */
+    border-radius: 0 0 7px 7px; /* Zaokrąglone rogi tylko na dole */
+}
+
+.baddonz-tab-pane {
+    display: none; /* Domyślnie ukryte */
+}
+
+.baddonz-tab-pane.active {
+    display: block; /* Aktywna zakładka widoczna */
+}
+
+/* Style dla kart dodatków (inspiracja z Gargonem) */
+.baddonz-card {
+    cursor: pointer;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.2); /* Lekko przezroczyste tło */
+    border: 1px solid gray;
+    width: calc(50% - 5px); /* Dwie karty w rzędzie z odstępem */
+    height: 90px;
+    margin-bottom: 5px; /* Odstęp między wierszami kart */
+    padding: 7px 12px;
+    transition: background 0.15s;
+    box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.75);
+    display: flex; /* Użyj flexboxa dla lepszego układu wewnętrznego */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.baddonz-card:hover {
+    background: rgba(140, 140, 140, 0.2); /* Podświetlenie po najechaniu */
+}
+
+.baddonz-card-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: beige;
+}
+
+.baddonz-card-description {
+    font-size: 11px;
+    color: #ccc;
+    flex-grow: 1; /* Rozciągnij, aby wypełnić dostępną przestrzeń */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Zapobiega zawijaniu się tekstu */
+}
+
+.baddonz-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: auto; /* Wyrówna akcje do dołu karty */
+}
+
+.baddonz-card-button {
+    background: #3c3c3c99;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background 0.15s;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.baddonz-card-button:hover {
+    background: #5a5a5a99;
+}
