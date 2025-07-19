@@ -4,19 +4,18 @@
     height: 412px;
 }
 
-/* Układ dla głównego menedżera */
-.baddonz-manager .baddonz-tab-switcher {
-    width: 128px;
-}
-
+/* Układ dla głównego menedżera (nie używamy już baddonz-tab-switcher) */
+/* .baddonz-manager .baddonz-tab-switcher { } */
 .baddonz-manager .baddonz-tab {
-    width: 512px;
+    /* To będzie kontener na zawartość zakładek, pod paskiem selektorów */
+    flex: 1; /* Zajmuje całą dostępną przestrzeń pionową */
+    width: 100%; /* Zajmuje całą szerokość */
+    box-sizing: border-box;
 }
 
 /* Globalny kontener root dla menedżera, ustawienia domyślne kursorów i scrollbarów */
 .baddonz-jsx-root {
-    line-height: 1.2; /* Zwiększono dla lepszej czytelności */
-    /* Domyślny kursor dla całego głównego kontenera baddonz */
+    line-height: 1.3; /* Zwiększono dla lepszej czytelności */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
     font-family: 'Arial', sans-serif; /* Ustawienie domyślnej czcionki */
     color: #f0f0f0; /* Domyślny kolor tekstu (jaśniejszy) */
@@ -26,18 +25,18 @@
 
 /* Scrollbary - spójne z Margonem */
 .baddonz-jsx-root ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px; /* Lekko szersze scrollbary */
+    height: 8px;
 }
 
 .baddonz-jsx-root ::-webkit-scrollbar-track {
     background: #1a1a1a8f; /* Ciemniejsze tło tracka */
-    border-radius: 3px;
+    border-radius: 4px; /* Większy border-radius */
 }
 
 .baddonz-jsx-root ::-webkit-scrollbar-thumb {
     background: #606060; /* Jaśniejszy thumb */
-    border-radius: 3px;
+    border-radius: 4px; /* Większy border-radius */
 }
 
 .baddonz-jsx-root ::-webkit-scrollbar-thumb:hover {
@@ -92,17 +91,17 @@
     text-shadow: 1px 1px 1px #000;
     color: #f0f0f0;
     background: radial-gradient(circle at top left, #282828 0%, #1a1a1a 100%);
-    border-radius: 8px; /* Lekko większy border-radius */
+    border-radius: 8px;
     flex-direction: column;
     min-width: 191px;
     min-height: 22px;
     font-family: sans-serif;
     display: flex;
     position: absolute;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Poprawiony cień */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
-    overflow: hidden; /* Dodano, aby zawartość nie wychodziła poza zaokrąglone rogi */
+    overflow: hidden;
 }
 
 .baddonz-window.anon {
@@ -156,15 +155,15 @@
 
 /* Nagłówek Okna */
 .baddonz-window-header {
-    height: 28px; /* Lekko większa wysokość nagłówka */
+    height: 32px; /* Zwiększona wysokość nagłówka */
     white-space: nowrap;
     box-sizing: border-box;
     flex-direction: row;
     display: flex;
-    align-items: center; /* Wyśrodkowanie pionowe */
-    padding: 0 10px; /* Dodano padding */
-    background: linear-gradient(to right, #333, #1a1a1a); /* Subtelniejszy gradient */
-    border-bottom: 1px solid #444; /* Ciemniejsza linia */
+    align-items: center;
+    padding: 0 12px; /* Zwiększony padding */
+    background: linear-gradient(to right, #3a3a3a, #1a1a1a); /* Ciemniejszy, wyraźniejszy gradient */
+    border-bottom: 1px solid #555; /* Wyraźniejsza linia */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -173,31 +172,31 @@
 .baddonz-window-controls {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Ustawienie na start było trochę dziwne */
-    column-gap: 5px; /* Lekko większa przerwa */
-    width: auto; /* Zmieniono na auto, aby dopasować do zawartości */
+    align-items: center;
+    column-gap: 8px; /* Większa przerwa między ikonami */
+    width: auto;
     padding: 0;
 }
 
 .baddonz-window-controls.right {
     justify-content: flex-end;
-    margin-left: auto; /* Wyrównanie do prawej */
+    margin-left: auto;
 }
 
 .baddonz-window-controls.left {
     justify-content: flex-start;
-    margin-right: auto; /* Wyrównanie do lewej */
+    margin-right: auto;
 }
 
 /* Tytuł Okna */
 .baddonz-window-title {
     text-align: center;
-    color: #e0e0e0; /* Bardziej neutralny kolor tytułu */
-    flex: 1; /* Pozwala na zajmowanie dostępnej przestrzeni */
-    font-size: 14px; /* Większa czcionka */
+    color: #e0e0e0;
+    flex: 1;
+    font-size: 15px; /* Większa czcionka */
     font-weight: bold;
-    line-height: 28px; /* Dopasowanie do wysokości nagłówka */
-    user-select: none; /* Zapobiega zaznaczaniu tekstu podczas przeciągania */
+    line-height: 32px; /* Dopasowanie do wysokości nagłówka */
+    user-select: none;
 }
 
 /* Ciało Okna */
@@ -206,18 +205,18 @@
     box-sizing: border-box;
     flex-direction: column;
     flex: 1;
-    height: calc(100% - 28px); /* Dostosowanie do nowej wysokości nagłówka */
-    padding: 10px; /* Ujednolicony padding */
-    font-size: 13px; /* Ujednolicony rozmiar czcionki */
+    height: calc(100% - 32px); /* Dostosowanie do nowej wysokości nagłówka */
+    padding: 0; /* Ustawienie paddingu na 0, bo zakładki będą miały własny padding */
+    font-size: 13px;
     display: flex;
-    overflow: hidden; /* Aby zawartość nie wychodziła poza body */
+    overflow: hidden;
 }
 
 /* Przyciski ikon w nagłówku */
 .baddonz-opacity-button {
     background: url("https://gordion.margonem.pl/img/gui/panel_opacity.png") no-repeat center center;
-    width: 16px; /* Zwiększony rozmiar ikony */
-    height: 16px; /* Zwiększony rozmiar ikony */
+    width: 20px; /* Większy rozmiar ikony */
+    height: 20px; /* Większy rozmiar ikony */
     opacity: 0.7;
     transition: opacity 0.2s ease-in-out;
 }
@@ -228,8 +227,8 @@
 
 .baddonz-close-button {
     background: url("https://gordion.margonem.pl/img/gui/panel_close.png") no-repeat center center;
-    width: 16px; /* Zwiększony rozmiar ikony */
-    height: 16px; /* Zwiększony rozmiar ikony */
+    width: 20px; /* Większy rozmiar ikony */
+    height: 20px; /* Większy rozmiar ikony */
     opacity: 0.7;
     transition: opacity 0.2s ease-in-out;
 }
@@ -242,12 +241,12 @@
 .baddonz-textarea {
     color: #f0f0f0;
     resize: vertical;
-    background: rgba(0, 0, 0, 0.4); /* Ciemniejsze tło */
-    border: 1px solid #444; /* Ciemniejsza ramka */
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #444;
     border-radius: 5px;
     outline: 0;
     height: 100px;
-    padding: 5px 8px; /* Większy padding */
+    padding: 8px 10px; /* Większy padding */
     font-size: 13px;
     line-height: 1.5em;
     box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.7);
@@ -273,7 +272,7 @@
     border-radius: 5px;
     outline: 0;
     min-width: 0;
-    padding: 5px 8px; /* Większy padding */
+    padding: 8px 10px; /* Większy padding */
     line-height: 1.5em;
     box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.7);
 }
@@ -305,7 +304,7 @@
 
 .baddonz-input.keybind {
     text-align: center;
-    caret-color: transparent; /* Ukryj kursor tekstowy */
+    caret-color: transparent;
     transition: border-color 0.2s ease-in-out;
     max-width: 140px;
 }
@@ -354,21 +353,21 @@
     background-image: url('data:image/svg+xml;utf8,<svg fill="%23f0f0f0" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
     background-repeat: no-repeat;
     background-position: right 8px center;
-    padding-right: 30px; /* Make space for the custom arrow */
+    padding-right: 30px;
 }
 
 .baddonz-select option {
-    background-color: #282828; /* Ciemniejsze tło opcji */
+    background-color: #282828;
     color: #f0f0f0;
     text-shadow: 1px 1px 1px #000;
     font-family: sans-serif;
     font-size: 13px;
-    padding: 5px 8px; /* Większy padding */
+    padding: 5px 8px;
 }
 
 .baddonz-select option:checked,
 .baddonz-select option:hover {
-    background-color: #444; /* Jasniejsze tło na hover/zaznaczenie */
+    background-color: #444;
     color: #fff;
 }
 
@@ -376,7 +375,7 @@
 .baddonz-input[type="number"] {
     text-align: right;
     -moz-appearance: textfield;
-    -webkit-appearance: none; /* Ukrywa strzałki */
+    -webkit-appearance: none;
     width: 50px;
     min-width: 30px;
 }
@@ -392,8 +391,8 @@
 }
 
 .baddonz-top .disabled {
-    color: #b0b0b0 !important; /* Jaśniejszy szary */
-    background: rgba(60, 60, 60, 0.4) !important; /* Ciemniejszy, półprzezroczysty szary */
+    color: #b0b0b0 !important;
+    background: rgba(60, 60, 60, 0.4) !important;
     cursor: not-allowed !important;
 }
 
@@ -449,7 +448,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px; /* Większa przerwa między przyciskami */
+    gap: 8px;
 }
 
 .baddonz-alert-buttons.connected {
@@ -459,25 +458,25 @@
 .baddonz-alert-buttons .baddonz-button {
     text-wrap: nowrap;
     flex: 1;
-    min-width: 80px; /* Minimalna szerokość dla przycisku */
-    padding: 5px 10px; /* Większy padding */
+    min-width: 80px;
+    padding: 5px 10px;
 }
 
 /* Przyciski */
 .baddonz-button {
-    background: rgba(60, 60, 60, 0.6); /* Ciemniejsze, półprzezroczyste tło */
-    border: 1px solid #555; /* Ciemniejsza ramka */
+    background: rgba(60, 60, 60, 0.6);
+    border: 1px solid #555;
     border-radius: 5px;
     margin: 3px 0;
-    padding: 5px 20px; /* Większy padding */
-    font-size: 13px;
+    padding: 8px 20px; /* Większy padding */
+    font-size: 14px; /* Większa czcionka */
     transition: background 0.15s ease-in-out, border-color 0.15s ease-in-out;
     box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.7);
     color: #f0f0f0;
 }
 
 .baddonz-button:hover {
-    background: rgba(80, 80, 80, 0.8); /* Jaśniejsze tło na hover */
+    background: rgba(80, 80, 80, 0.8);
     border-color: #777;
 }
 
@@ -502,52 +501,52 @@
     gap: 5px;
 }
 
-/* Menedżer Zakładek */
-.baddonz-tab-switcher {
-    box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid #444;
-    min-width: 128px;
-    margin-right: 6px;
-    overflow-y: auto;
-    box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.7);
-}
+/* Menedżer Zakładek - to jest nowy układ */
+/* Usunięto baddonz-tab-switcher style */
 
+/* Tab Content Container */
 .baddonz-tab {
     box-sizing: border-box;
-    max-width: calc(100% - 134px); /* Dostosowano, jeśli to nadal ma być obok switchera */
-    display: none;
+    display: none; /* Domyślnie ukryte, JavaScript pokazuje aktywną */
     flex-direction: column;
-    flex: 1;
+    flex: 1; /* Zajmuje całą dostępną przestrzeń */
+    padding: 10px; /* Padding dla zawartości każdej zakładki */
+    overflow-y: auto; /* Aby zawartość była przewijalna */
+    overflow-x: hidden; /* Zapobiegaj poziomemu scrollowaniu */
 }
 
 .baddonz-tab.active {
-    display: flex;
+    display: flex; /* Aktywna zakładka jest widoczna */
 }
 
-.baddonz-tab-selector {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)); /* Subtelniejszy gradient */
-    padding: 8px 10px; /* Większy padding */
+/* Selektory Zakładek (poziomy pasek u góry) */
+.baddonz-flex.row > .baddonz-tab-selector { /* Celuje w selektory w poziomie */
+    background: rgba(0, 0, 0, 0.2); /* Lekkie tło dla nieaktywnych zakładek */
+    padding: 10px 15px; /* Większy padding dla szerszego wyglądu */
     font-size: 14px;
-    transition: background 0.2s ease-in-out, padding-left 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
     color: #f0f0f0;
-    white-space: nowrap; /* Zapobiega łamaniu tekstu */
+    white-space: nowrap;
+    text-align: center;
+    border-bottom: 2px solid transparent; /* Przezroczyste podkreślenie na dole */
+    flex: 1; /* Równomierne rozłożenie */
+    user-select: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.05); /* Delikatna pionowa linia */
 }
 
-.baddonz-tab-selector:hover {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)); /* Ciemniejszy gradient na hover */
-    padding-left: 15px; /* Delikatny efekt wysunięcia */
+.baddonz-flex.row > .baddonz-tab-selector:last-child {
+    border-right: none; /* Brak linii po prawej stronie ostatniej zakładki */
 }
 
-.baddonz-tab-selector:not(:last-child) {
-    border-bottom: 1px solid #333; /* Ciemniejsza linia podziału */
+.baddonz-flex.row > .baddonz-tab-selector:hover {
+    background: rgba(0, 0, 0, 0.4); /* Ciemniejsze tło na hover */
 }
 
-.baddonz-tab-selector.active {
-    background: radial-gradient(circle at top left, #444 0%, #2a2a2a 100%); /* Wyraźniejsze tło aktywnej zakładki */
-    font-weight: bold; /* Zmieniono z 700 na bold */
-    padding-left: 15px; /* Delikatny efekt wysunięcia */
-    border-left: 3px solid #66bb6a; /* Akcent kolorystyczny */
+.baddonz-flex.row > .baddonz-tab-selector.active {
+    background: radial-gradient(circle at top left, #3a3a3a 0%, #1a1a1a 100%); /* Wyraźniejsze tło aktywnej zakładki */
+    font-weight: bold;
+    border-bottom: 2px solid #66bb6a; /* Zielone podkreślenie aktywnej zakładki */
+    color: #fff;
 }
 
 /* Labelki i ich opakowania */
@@ -555,13 +554,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px; /* Większy margines */
-    padding: 0 5px; /* Dodano padding w poziomie */
+    margin-bottom: 8px;
+    padding: 0 5px;
 }
 
 .baddonz-label-wrapper > .baddonz-text,
 .baddonz-label-wrapper > *:not(.baddonz-checkbox) {
-    padding: 0; /* Zresetowano paddingi, aby kontrolować z wrapperem */
+    padding: 0;
 }
 
 .baddonz-label-wrapper.inline {
@@ -570,33 +569,33 @@
 
 .baddonz-label-wrapper.reverse {
     flex-direction: row-reverse;
-    justify-content: flex-start; /* Zmieniono na start dla reverse */
+    justify-content: flex-start;
 }
 
 /* Checkbox */
 .baddonz-checkbox {
     box-sizing: border-box;
-    background-color: rgba(84, 84, 84, 0.4); /* Ciemniejsze, półprzezroczyste tło */
+    background-color: rgba(84, 84, 84, 0.4);
     border: 1px solid #545454;
-    width: 18px; /* Lekko większy checkbox */
-    min-width: 18px;
-    height: 18px;
-    min-height: 18px;
-    box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.5); /* Mniejszy cień */
+    width: 20px; /* Lekko większy checkbox */
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.5);
     display: inline-block;
     vertical-align: middle;
     position: relative;
-    border-radius: 3px; /* Zaokrąglone rogi */
+    border-radius: 4px; /* Większe zaokrąglenie */
 }
 
 .baddonz-checkbox::after {
     content: '';
     position: absolute;
-    top: 2px;
-    left: 4px;
-    width: 5px;
-    height: 9px;
-    border: solid #66bb6a; /* Kolor zielony dla zaznaczenia */
+    top: 3px; /* Dopasowanie pozycji znacznika */
+    left: 6px; /* Dopasowanie pozycji znacznika */
+    width: 6px; /* Większy znacznik */
+    height: 10px; /* Większy znacznik */
+    border: solid #66bb6a;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg) scale(0);
     transition: transform 0.15s ease-in-out;
@@ -609,8 +608,8 @@
 /* Przycisk ustawień */
 .baddonz-settings-button {
     background: url("https://gordion.margonem.pl/img/gui/panel_options.png") no-repeat center center;
-    width: 16px; /* Zwiększony rozmiar */
-    height: 16px; /* Zwiększony rozmiar */
+    width: 20px; /* Większy rozmiar */
+    height: 20px; /* Większy rozmiar */
     opacity: 0.7;
     transition: opacity 0.2s ease-in-out;
 }
@@ -626,7 +625,7 @@
     font-family: sans-serif;
     font-size: 13px;
     padding: 3px;
-    user-select: none; /* Zapobiega zaznaczaniu */
+    user-select: none;
 }
 
 /* Input z przyciskiem */
@@ -635,7 +634,7 @@
     align-items: center;
     gap: 0;
     width: 100%;
-    margin-bottom: 8px; /* Większy margines */
+    margin-bottom: 8px;
 }
 
 .baddonz-input-plus .baddonz-input {
@@ -643,14 +642,14 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: none;
-    height: 28px; /* Wyższa wysokość inputu */
-    padding: 5px 8px;
+    height: 30px; /* Wyższa wysokość inputu */
+    padding: 8px 10px;
     font-size: 14px;
 }
 
 .baddonz-input-plus .baddonz-button {
-    height: 28px; /* Wyższa wysokość przycisku */
-    width: 28px; /* Zwiększona szerokość */
+    height: 30px; /* Wyższa wysokość przycisku */
+    width: 30px; /* Zwiększona szerokość */
     padding: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -659,21 +658,21 @@
     align-items: center;
     color: #fff;
     font-weight: normal;
-    font-size: 18px; /* Większa czcionka ikony */
+    font-size: 18px;
     line-height: 1;
-    margin: 0; /* Usuń marginesy od .baddonz-button */
+    margin: 0;
 }
 
 /* Karty dodatków */
 .baddonz-addon-wrapper {
     flex-wrap: wrap;
-    place-content: flex-start; /* Zmieniono na start */
-    gap: 10px; /* Ujednolicony gap */
+    place-content: flex-start;
+    gap: 10px;
     margin-top: 5px;
-    overflow-y: auto;
-    display: flex;
-    flex-grow: 1;
-    padding-right: 5px;
+    flex: 1; /* Aby wypełnić dostępną przestrzeń */
+    overflow-y: auto; /* Przewijanie tylko wewnątrz wrapper'a */
+    padding-right: 8px; /* Padding dla scrollbara */
+    padding-bottom: 5px; /* Dodatkowy padding na dole */
 }
 
 .baddonz-card {
@@ -682,11 +681,9 @@
     border: 1px solid #444;
     border-radius: 5px;
     width: 100%; /* Zmieniono na 100% dla układu pionowego */
-    /* min-width: 150px; usunięto, bo 100% jest wystarczające */
-    height: auto; /* Zmieniono na auto, aby wysokość dopasowywała się do treści */
-    min-height: 80px; /* Minimalna wysokość karty */
-    margin-bottom: 0; /* Usunięto margin-bottom, bo gap załatwia odstępy */
-    padding: 10px 15px; /* Większy padding */
+    height: auto;
+    min-height: 80px;
+    padding: 10px 15px;
     transition: background 0.15s ease-in-out, border-color 0.15s ease-in-out;
     box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.7);
     display: flex;
@@ -694,7 +691,7 @@
 }
 
 .baddonz-card:hover {
-    background: rgba(0, 0, 0, 0.6); /* Ciemniejsze tło na hover */
+    background: rgba(0, 0, 0, 0.6);
     border-color: #666;
 }
 
@@ -702,22 +699,22 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 8px; /* Większy margines */
-    font-weight: bold; /* Zmieniono z 700 na bold */
-    color: #b1ffb1; /* Jasnozielony dla tytułów */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #b1ffb1;
     font-size: 14px;
     user-select: none;
 }
 
 .baddonz-card-title .baddonz-checkbox {
-    margin-right: 8px; /* Większy margines */
+    margin-right: 8px;
 }
 
 .baddonz-card-enable-wnd {
     opacity: 0.7;
-    background: url("https://gordion.margonem.pl/img/gui/panel_options.png") no-repeat center center; /* Możesz użyć innej ikony, jeśli chcesz inną niż zębate koło */
-    width: 16px;
-    height: 16px;
+    background: url("https://gordion.margonem.pl/img/gui/panel_options.png") no-repeat center center;
+    width: 20px; /* Większy rozmiar */
+    height: 20px; /* Większy rozmiar */
     margin-left: auto;
     flex-shrink: 0;
     transition: opacity 0.2s ease-in-out;
@@ -734,9 +731,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Ograniczenie do 3 linii */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    line-height: 1.4; /* Poprawiono line-height dla opisu */
+    line-height: 1.4;
 }
 
 /* Dock (jeśli będzie używany) */
@@ -805,22 +802,22 @@
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid #444;
     border-radius: 5px;
-    padding: 10px 15px; /* Większy padding */
-    margin-bottom: 10px; /* Większy margines */
+    padding: 12px 18px; /* Większy padding */
+    margin-bottom: 12px; /* Większy margines */
     box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.7);
 }
 
 .baddonz-changelog-version {
     font-weight: bold;
-    color: #ffd122; /* Żółty kolor dla wersji */
-    margin-bottom: 5px; /* Większy margines */
+    color: #ffd122;
+    margin-bottom: 6px; /* Większy margines */
     font-size: 14px;
 }
 
 .baddonz-changelog-text {
     font-size: 12px;
     color: #eee;
-    margin-left: 15px; /* Większy margines */
+    margin-left: 18px; /* Większy margines */
     list-style: disc;
 }
 
@@ -830,8 +827,8 @@
 }
 
 .baddonz-changelog-text li {
-    margin-bottom: 3px;
-    line-height: 1.4;
+    margin-bottom: 4px;
+    line-height: 1.5;
 }
 
 /* Flexboxy */
@@ -880,5 +877,5 @@
 .baddonz-scrollable {
     overflow-y: auto;
     flex-grow: 1;
-    padding-right: 8px; /* Zwiększony padding dla scrollbara */
+    padding-right: 8px;
 }
