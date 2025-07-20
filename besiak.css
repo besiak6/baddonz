@@ -13,6 +13,7 @@
 
 .baddonz-jsx-root {
     line-height: 1;
+    /* Domyślny kursor dla całego głównego kontenera baddonz - usunięto !important */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
 }
 
@@ -35,6 +36,7 @@
     background: #808080;
 }
 
+/* Kursor dla elementów tekstowych/inputów, gdzie pointer może być mylący - domyślny kursor tekstowy */
 .baddonz-jsx-root .baddonz-textarea,
 .baddonz-jsx-root .baddonz-input:not(.keybind):not(.color-selector) {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, text !important;
@@ -85,6 +87,7 @@
     display: flex;
     position: absolute;
     box-shadow: 0 0 1px #010101, 0 0 0 1px #ccc, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66;
+    /* Domyślny kursor dla okna, jeśli nie jest nadpisywany przez inne elementy wewnątrz - usunięto !important */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
 }
 
@@ -167,6 +170,7 @@
 .baddonz-window-title {
     text-align: center;
     color: beige;
+    /* Kursor dla tytułu okna, który jest przeciągalny - 5n */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, move !important;
     flex: 3;
     font-size: 11px;
@@ -320,24 +324,39 @@
     box-shadow: inset 0 0 6px 1px #000000bf;
 }
 
+/* POPRAWIONE STYLE DLA ROZWIJANYCH OPCJI (SELECT OPTION) */
+/* Standardowe style dla inputu (select też jest inputem w tym przypadku) */
 .baddonz-input.baddonz-select {
+    /* Upewnia się, że appearance jest domyślna dla selekta, jeśli ma być jak input */
+    /* Jeśli wciąż chcesz niestandardową strzałkę, dodaj tutaj appearance: none i tło SVG */
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: none; */
+    /* appearance: none; */
+    /* background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="white" points="8 12 2 4 14 4"/></svg>'); */
+    /* background-repeat: no-repeat; */
+    /* background-position: right 5px center; */
+    /* padding-right: 25px; */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 
+/* Style dla samych rozwijanych opcji */
 .baddonz-input.baddonz-select option {
-    background-color: #0009;
-    color: #fff;
+    background-color: #0009; /* Ciemne tło dla opcji */
+    color: #fff; /* Biały tekst opcji */
     text-shadow: 1px 1px 1px #000;
+    /* Upewnij się, że opcje dziedziczą font i padding z selecta, lub ustaw je tutaj */
     font-family: sans-serif;
     font-size: 12px;
-    padding: 2px 3px;
+    padding: 2px 3px; /* Padding jak w inputach */
 }
 
-.baddonz-input.baddonz-select option:checked,
-.baddonz-input.baddonz-select option:hover {
-    background-color: #3c3c3c99;
-    color: #fff;
+.baddonz-input.baddonz-select option:checked, /* Wybrana opcja (po rozwinięciu) */
+.baddonz-input.baddonz-select option:hover { /* Podświetlenie po najechaniu */
+    background-color: #3c3c3c99; /* Lekkie podświetlenie po najechaniu/wyborze */
+    color: #fff; /* Utrzymanie białego tekstu */
 }
+/* Koniec POPRAWIONYCH STYLÓW DLA ROZWIJANYCH OPCJI */
+
 
 .baddonz-input[type="number"] {
     text-align: right;
@@ -574,6 +593,7 @@
     background-position: -659px -117px;
 }
 
+/* Nowa klasa dla tekstów w stylu baddonz-window */
 .baddonz-text {
     color: #fff;
     text-shadow: 1px 1px 1px #000;
@@ -581,6 +601,7 @@
     font-size: 12px;
     padding: 3px;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
+    /* user-select: none; */ /* Opcjonalnie, jeśli tekst ma być niewybieralny */
 }
 .baddonz-input-plus {
     display: flex;
@@ -624,6 +645,7 @@
 .baddonz-jsx-root .baddonz-input.color-selector,
 .baddonz-jsx-root .baddonz-item-display.clickable,
 .baddonz-jsx-root .baddonz-item-display.clickable *,
+/* Dodatkowe selektory dla elementów wewnątrz okna/kontroli */
 .baddonz-window .baddonz-button,
 .baddonz-window .baddonz-opacity-button,
 .baddonz-window .baddonz-close-button,
@@ -633,61 +655,8 @@
 .baddonz-window .baddonz-input.color-selector,
 .baddonz-window .baddonz-item-display.clickable,
 .baddonz-window .baddonz-item-display.clickable *,
-.baddonz-window-controls .baddonz-opacity-button,
+.baddonz-window-controls .baddonz-opacity-button, /* Specyficzne dla przycisków w kontrolach okna */
 .baddonz-window-controls .baddonz-close-button
 {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
-.baddonz-tabs-header {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    margin-bottom: 5px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border-bottom: 1px solid gray;
-}
-
-.baddonz-tab-button {
-    cursor: pointer;
-    background: linear-gradient(0deg, rgba(70,70,70,0.3) 40%, rgba(70,70,70,0.0) );
-    padding: 6px 12px;
-    font-size: 13px;
-    transition: background 0.1s, padding 0.1s;
-    border: 1px solid transparent;
-    border-bottom: none;
-    margin-right: 1px;
-    flex-shrink: 0;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-}
-
-.baddonz-tab-button:hover {
-    background: linear-gradient(0deg, rgba(70,70,70,0.4) 50%, rgba(70,70,70,0.0));
-    border-color: #464646;
-    padding: 6px 14px;
-}
-
-.baddonz-tab-button.active {
-    background: linear-gradient(0deg, rgba(70,70,70,0.5) 50%, rgba(70,70,70,0.0));
-    border-color: gray;
-    font-weight: 700;
-    padding: 6px 14px;
-}
-
-.baddonz-tabs-content {
-    flex-grow: 1;
-    padding: 10px;
-    overflow-y: auto;
-    background: rgba(0,0,0,0.2);
-    border-radius: 0 0 7px 7px;
-}
-
-.baddonz-tab-pane {
-    display: none;
-}
-
-.baddonz-tab-pane.active {
-    display: block;
 }
