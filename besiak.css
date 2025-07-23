@@ -691,15 +691,14 @@
 .baddonz-collapsed:hover {
     filter: brightness(1.2);
 }
-
 .baddonz-enable-wnd {
-    background: url("https://gordion.margonem.pl/img/gui/buttony.png") -432px -396px;
+    background: url("https://gordion.margonem.pl/img/gui/buttony.png") -465px -399px;
     width: 16px;
     height: 16px;
 }
 
 .baddonz-enable-wnd:hover {
-    filter: brightness(1.2);
+    background: url("https://gordion.margonem.pl/img/gui/buttony.png") -432px -396px;
 }
 
 .baddonz-tab {
