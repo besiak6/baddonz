@@ -142,11 +142,11 @@
 }
 
 .baddonz-window.collapsed {
-    width: 120px !important;
+    width: 110px !important;
     height: 25px !important;
     resize: none !important;
     overflow: hidden !important;
-    min-width: 120px !important;
+    min-width: 110px !important;
     min-height: 25px !important;
 }
 .baddonz-window.collapsed .baddonz-window-body {
@@ -167,7 +167,6 @@
 .baddonz-window.collapsed .baddonz-window-header {
     width: 100% !important; /* Force header to fill parent's 100px width */
     padding: 0 !important; /* Remove padding when collapsed */
-    margin: 0 !important; /* Remove margin when collapsed */
     justify-content: space-between; /* Maintain space-between for collapsed items */
 }
 
