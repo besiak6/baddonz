@@ -163,7 +163,7 @@
 }
 
 .baddonz-window.collapsed .baddonz-window-header {
-    width: 100% !important; /* Force header to fill parent's 100px width */
+    width: 80% !important;
     padding: 0 !important; /* Remove padding when collapsed */
     justify-content: space-between; /* Maintain space-between for collapsed items */
 }
