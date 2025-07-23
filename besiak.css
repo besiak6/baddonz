@@ -164,8 +164,6 @@
 
 .baddonz-window.collapsed .baddonz-window-header {
     width: 100% !important;
-    padding: 0 !important; /* Remove padding when collapsed */
-    justify-content: space-between; /* Maintain space-between for collapsed items */
 }
 
 .baddonz-window-controls {
@@ -173,7 +171,7 @@
     align-items: center; /* Center items vertically */
     column-gap: 3px;
     width: 20px;
-    padding: 4px;
+    padding: 5px;
     display: flex;
 }
 .baddonz-window-controls.right {
@@ -206,7 +204,6 @@
     overflow: hidden !important; /* Hide overflowing text */
     white-space: nowrap !important; /* Keep text on single line */
     min-width: 0 !important; /* Allow it to shrink as needed */
-    flex-grow: 1; /* Allow it to grow to fill space */
 }
 
 .baddonz-window-body {
