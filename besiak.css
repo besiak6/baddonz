@@ -635,6 +635,62 @@
     line-height: 1;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
+        .baddonz-collapsed {
+            position: absolute;
+            width: 16px;
+            height: 14px;
+            background: url("../img/gui/buttony.png") -556px -399px;
+        }
+        .baddonz-collapsed:hover {
+            filter: brightness(1.2);
+        }
+.baddonz-enable-wnd {
+ background: url("../img/gui/buttony.png") -432px -396px;
+ width:16px;
+ height:16px
+}
+.baddonz-enable-wnd:hover {
+            filter: brightness(1.2);
+        }
+.baddonz-tab {
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    background: #3c3c3c99;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 13px;
+    text-align: center;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+    transition: background .15s, border-color .15s, transform .1s;
+    box-shadow: inset 0 0 6px 1px #000000bf;
+    flex-grow: 1;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.baddonz-tab:hover {
+    background: #5a5a5a99;
+    border-color: #808080;
+    transform: translateY(-1px);
+}
+
+.baddonz-tab.active {
+    background: #4a4a4a99;
+    border-color: #96f096;
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
+    transform: translateY(0);
+    pointer-events: none;
+}
+
+.baddonz-tabs-container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
 .baddonz-jsx-root .baddonz-button,
 .baddonz-jsx-root .baddonz-tab-selector,
 .baddonz-jsx-root .baddonz-opacity-button,
