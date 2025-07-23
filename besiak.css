@@ -691,6 +691,34 @@
     margin-bottom: 10px;
     flex-wrap: wrap;
 }
+.baddonz-card{
+    cursor:pointer;
+    box-sizing:border-box;
+    background:#0003;
+    border:1px solid gray;
+    width:90%;
+    height:90px;
+    margin-bottom:1px;
+    padding:7px 12px;
+    transition:background .15s;
+    box-shadow:inset 0 0 6px 1px #000000bf
+}
+.baddonz-card *{
+    cursor:pointer
+}
+.baddonz-card:hover{
+    background:#8c8c8c33
+}
+.baddonz-card-title{
+    justify-content:start;
+    align-items:center;
+    margin-bottom:5px;
+    font-weight:700;
+    display:flex
+}
+.baddonz-card-title .baddonz-checkbox{
+    margin-right:5px
+}
 .baddonz-jsx-root .baddonz-button,
 .baddonz-jsx-root .baddonz-tab-selector,
 .baddonz-jsx-root .baddonz-opacity-button,
@@ -701,7 +729,6 @@
 .baddonz-jsx-root .baddonz-input.color-selector,
 .baddonz-jsx-root .baddonz-item-display.clickable,
 .baddonz-jsx-root .baddonz-item-display.clickable *,
-/* Dodatkowe selektory dla elementów wewnątrz okna/kontroli */
 .baddonz-window .baddonz-button,
 .baddonz-window .baddonz-opacity-button,
 .baddonz-window .baddonz-close-button,
