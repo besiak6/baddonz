@@ -688,7 +688,7 @@
 .baddonz-collapsed {
     width: 16px;
     height: 14px;
-    background: url("https://raw.githubusercontent.com/besiak6/baddonz/refs/heads/main/img/gui/buttony.png") -556px -399px;
+    background: url("https://gordion.margonem.pl/img/gui/buttony.png") -556px -399px;
 }
 
 .baddonz-collapsed:hover {
@@ -696,7 +696,7 @@
 }
 
 .baddonz-enable-wnd {
-    background: url("https://raw.githubusercontent.com/besiak6/baddonz/refs/heads/main/img/gui/buttony.png") -432px -396px;
+    background: url("https://gordion.margonem.pl/img/gui/buttony.png") -432px -396px;
     width: 16px;
     height: 16px;
 }
