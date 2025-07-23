@@ -141,16 +141,14 @@
     overflow-y: hidden;
 }
 
-/* Collapsed Window State - NEW/ADJUSTED */
 .baddonz-window.collapsed {
-    width: 100px !important; /* Force width */
-    height: 25px !important; /* Force height */
-    resize: none !important; /* Prevent resizing when collapsed */
-    overflow: hidden !important; /* Hide scrollbars/content when collapsed */
-    min-width: 100px !important; /* Ensure it stays at least 100px */
-    min-height: 25px !important; /* Ensure it stays at least 25px */
+    width: 120px !important;
+    height: 25px !important;
+    resize: none !important;
+    overflow: hidden !important;
+    min-width: 120px !important;
+    min-height: 25px !important;
 }
-
 .baddonz-window.collapsed .baddonz-window-body {
     display: none !important; /* Hide body when collapsed */
 }
