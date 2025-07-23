@@ -185,8 +185,8 @@
 }
 
 .baddonz-window.collapsed .baddonz-window-controls {
-    width: 10px !important; /* Fixed width for controls when collapsed */
-    min-width: 10px !important; /* Prevent shrinking below this */
+    width: 20px !important; /* Fixed width for controls when collapsed */
+    min-width: 20px !important; /* Prevent shrinking below this */
     justify-content: center !important; /* Center icons within their 25px width */
 }
 
@@ -204,7 +204,6 @@
 .baddonz-window.collapsed .baddonz-window-title {
     max-width: 50px !important; /* Max width for title in collapsed state */
     overflow: hidden !important; /* Hide overflowing text */
-    text-overflow: ellipsis !important; /* Add ellipsis for overflow */
     white-space: nowrap !important; /* Keep text on single line */
     min-width: 0 !important; /* Allow it to shrink as needed */
     flex-grow: 1; /* Allow it to grow to fill space */
