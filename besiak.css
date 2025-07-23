@@ -181,7 +181,11 @@
 .baddonz-window-controls.left {
     justify-content: flex-start; /* Align left controls to the start */
 }
-
+.baddonz-card-title span,
+.baddonz-card p
+{
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
+}
 .baddonz-window.collapsed .baddonz-window-controls {
     width: 20px !important; /* Fixed width for controls when collapsed */
     min-width: 16px !important; /* Prevent shrinking below this */
