@@ -184,7 +184,7 @@
 
 .baddonz-window.collapsed .baddonz-window-controls {
     width: 20px !important; /* Fixed width for controls when collapsed */
-    min-width: 20px !important; /* Prevent shrinking below this */
+    min-width: 16px !important; /* Prevent shrinking below this */
     justify-content: center !important; /* Center icons within their 25px width */
 }
 
