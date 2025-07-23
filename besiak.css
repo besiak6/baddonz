@@ -209,11 +209,6 @@
 }
 
 .baddonz-window.collapsed .baddonz-window-title {
-    max-width: calc(100% - 2 * 16px - 2 * 4px - 10px);
-    overflow: hidden !important;
-    white-space: nowrap !important;
-    min-width: 0 !important;
-    text-overflow: ellipsis;
     font-size: 9px;
 }
 
