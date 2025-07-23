@@ -209,7 +209,7 @@
 }
 
 .baddonz-window.collapsed .baddonz-window-title {
-    max-width: 40px !important; /* Max width for title in collapsed state */
+    max-width: 60px !important; /* Max width for title in collapsed state */
     overflow: hidden !important; /* Hide overflowing text */
     text-overflow: ellipsis !important; /* Add ellipsis for overflow */
     white-space: nowrap !important; /* Keep text on single line */
