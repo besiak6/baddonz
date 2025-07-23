@@ -738,7 +738,7 @@
 .baddonz-window .baddonz-input.color-selector,
 .baddonz-window .baddonz-item-display.clickable,
 .baddonz-window .baddonz-item-display.clickable *,
-.baddonz-window-controls .baddonz-opacity-button, /* Specyficzne dla przycisków w kontrolach okna */
+.baddonz-window-controls .baddonz-opacity-button,
 .baddonz-window-controls .baddonz-close-button
 {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
