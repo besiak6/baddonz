@@ -156,12 +156,10 @@
 .baddonz-window-header {
     white-space: nowrap;
     box-sizing: border-box;
-    flex-direction: row;
     height: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center; /* Vertically align items */
-    padding: 0 2px;
 }
 
 .baddonz-window.collapsed .baddonz-window-header {
