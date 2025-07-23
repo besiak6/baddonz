@@ -1,6 +1,6 @@
 .baddonz-manager {
-    width: 380px; /* Adjusted to match JS WINDOW_WIDTH_EXPANDED */
-    height: 450px; /* Adjusted to match JS WINDOW_HEIGHT_EXPANDED */
+    width: 380px;
+    height: 450px;
 }
 
 .baddonz-manager .baddonz-tab-switcher {
@@ -79,14 +79,14 @@
     background: #0009;
     border-radius: 7px;
     flex-direction: column;
-    min-width: 191px; /* Default min-width for expanded state */
-    min-height: 22px; /* Default min-height for expanded state */
+    min-width: 191px;
+    min-height: 22px;
     font-family: sans-serif;
     display: flex;
     position: absolute;
     box-shadow: 0 0 1px #010101, 0 0 0 1px #ccc, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
-    z-index: 1000; /* Moved from JS */
+    z-index: 1000;
 }
 
 .baddonz-window.anon {
@@ -142,11 +142,11 @@
 }
 
 .baddonz-window.collapsed {
-    width: 110px !important;
+    width: 100px !important;
     height: 25px !important;
     resize: none !important;
     overflow: hidden !important;
-    min-width: 110px !important;
+    min-width: 100px !important;
     min-height: 25px !important;
 }
 .baddonz-window.collapsed .baddonz-window-body {
@@ -159,7 +159,7 @@
     height: 25px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertically align items */
+    align-items: center;
 }
 
 .baddonz-window.collapsed .baddonz-window-header {
@@ -168,29 +168,29 @@
 
 .baddonz-window-controls {
     flex-direction: row;
-    align-items: center; /* Center items vertically */
+    align-items: center;
     column-gap: 3px;
     width: 20px;
     padding: 5px;
     display: flex;
 }
 .baddonz-window-controls.right {
-    justify-content: flex-end; /* Align right controls to the end */
+    justify-content: flex-end;
 }
 
 .baddonz-window-controls.left {
-    justify-content: flex-start; /* Align left controls to the start */
+    justify-content: flex-start;
 }
 .baddonz-card-title span,
 .baddonz-card p
-.baddonz-card
 {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
 }
 .baddonz-window.collapsed .baddonz-window-controls {
-    width: 20px !important; /* Fixed width for controls when collapsed */
-    min-width: 16px !important; /* Prevent shrinking below this */
-    justify-content: center !important; /* Center icons within their 25px width */
+    width: 26px !important;
+    min-width: 26px !important;
+    justify-content: center !important;
+    gap: 0;
 }
 
 .baddonz-window-title {
@@ -200,15 +200,14 @@
     flex: 3;
     font-size: 11px;
     line-height: 25px;
-    flex-grow: 1; /* Allow it to grow */
-    padding-left: 5px; /* Small padding */
+    flex-grow: 1;
+    padding-left: 5px;
 }
 
 .baddonz-window.collapsed .baddonz-window-title {
-    max-width: 50px !important; /* Max width for title in collapsed state */
-    overflow: hidden !important; /* Hide overflowing text */
-    white-space: nowrap !important; /* Keep text on single line */
-    min-width: 0 !important; /* Allow it to shrink as needed */
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    min-width: 0 !important;
 }
 
 .baddonz-window-body {
@@ -219,7 +218,6 @@
     height: calc(100% - 25px);
     font-size: 12px;
     display: flex;
-    /* Common padding for the body content area, adjust as needed if .baddonz-tab-content-container takes over */
     padding: 0 10px 10px 10px;
 }
 
@@ -227,6 +225,9 @@
     background: url(https://gordion.margonem.pl/img/gui/buttony.png) -725px -131px;
     width: 13px;
     height: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .baddonz-opacity-button:hover {
@@ -237,6 +238,9 @@
     background: url(https://gordion.margonem.pl/img/gui/buttony.png) -624px -117px;
     width: 12px;
     height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .baddonz-close-button:hover {
@@ -257,34 +261,29 @@
     box-shadow: inset 0 0 6px 1px #000000bf;
 }
 
-/* Adjusted .baddonz-box to remove default padding, it will be added to .baddonz-tab-content-container */
 .baddonz-box {
     box-sizing: border-box;
     background: #0003;
     border: 1px solid gray;
     flex-grow: 1;
-    padding: 0; /* REMOVED default 12px padding */
-    overflow: unset; /* Let the parent `tabContentArea` handle scrolling by default */
+    padding: 0;
+    overflow: unset;
     box-shadow: inset 0 0 6px 1px #000000bf;
-    /* Ensure flex properties are set by the containing element if this is inside a flex container */
     display: flex;
     flex-direction: column;
 }
 
-/* New class for the scrollable content container within each tab */
 .baddonz-tab-content-container {
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Common gap for list items */
-    background: none; /* Transparent background */
-    flex: 1; /* Take up available space */
-    overflow-y: auto; /* Enable scrolling for content */
+    gap: 5px;
+    background: none;
+    flex: 1;
+    overflow-y: auto;
     box-sizing: border-box;
-    /* Default padding for addons and changelogs tabs */
     padding: 10px 10px 20px 10px;
 }
 
-/* Specific padding for settings tab, if it needs less bottom padding */
 .baddonz-tab-content-container.settings-list {
     padding: 10px 10px 0 10px;
 }
@@ -380,7 +379,6 @@
     box-shadow: inset 0 0 6px 1px #000000bf;
 }
 
-/* POPRAWIONE STYLE DLA ROZWIJANYCH OPCJI (SELECT OPTION) */
 .baddonz-input.baddonz-select {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
@@ -399,7 +397,6 @@
     background-color: #3c3c3c99;
     color: #fff;
 }
-/* Koniec POPRAWIONYCH STYLI DLA ROZWIJANYCH OPCJI */
 
 .baddonz-input[type="number"] {
     text-align: right;
@@ -451,6 +448,10 @@
     border-top-right-radius: 0;
 }
 
+.baddonz-top .bottom-border {
+    border-bottom-width: 1px;
+}
+
 .baddonz-top .left-border,
 .baddonz-top .baddonz-alert-buttons.connected .baddonz-button:not(:first-child),
 .baddonz-alert-buttons.connected .baddonz-top .baddonz-button:not(:first-child) {
@@ -463,10 +464,6 @@
 
 .baddonz-top .top-border {
     border-top-width: 1px;
-}
-
-.baddonz-top .bottom-border {
-    border-bottom-width: 1px;
 }
 
 .baddonz-top .disabled {
@@ -682,6 +679,9 @@
     width: 16px;
     height: 14px;
     background: url("https://gordion.margonem.pl/img/gui/buttony.png") -556px -399px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .baddonz-collapsed:hover {
@@ -691,6 +691,9 @@
     background: url("https://gordion.margonem.pl/img/gui/buttony.png") -465px -399px;
     width: 16px;
     height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .baddonz-enable-wnd:hover {
@@ -743,14 +746,14 @@ filter: brightness(1.2);
     box-sizing: border-box;
     background: #0003;
     border: 1px solid gray;
-    width: 100%; /* Changed from 90% */
-    height: auto; /* Changed from 90px */
-    margin-bottom: 5px; /* Changed from 1px */
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
     padding: 7px 12px;
     transition: background .15s;
     box-shadow: inset 0 0 6px 1px #000000bf;
-    display: flex; /* Added display flex for column layout */
-    flex-direction: column; /* Added flex-direction column */
+    display: flex;
+    flex-direction: column;
 }
 
 .baddonz-card * {
@@ -762,16 +765,16 @@ filter: brightness(1.2);
 }
 
 .baddonz-card-title {
-    justify-content: flex-start; /* Changed from start to flex-start for consistency */
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 5px;
     font-weight: 700;
     display: flex;
-    width: 100%; /* Moved from JS */
+    width: 100%;
 }
 
-.baddonz-card-title span { /* Specific for addon name */
-    margin-left: 10px; /* Moved from JS */
+.baddonz-card-title span {
+    margin-left: 10px;
 }
 
 .baddonz-card-title .baddonz-checkbox {
@@ -779,17 +782,16 @@ filter: brightness(1.2);
 }
 
 .baddonz-enable-wnd {
-    margin-left: auto; /* Moved from JS */
+    margin-left: auto;
 }
 
 .baddonz-card p {
-    margin-top: 5px; /* Moved from JS */
-    margin-bottom: 0; /* Moved from JS */
-    font-size: 11px; /* Moved from JS */
-    color: #ccc; /* Moved from JS */
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 11px;
+    color: #ccc;
 }
 
-/* Settings tab row - NEW */
 .baddonz-setting-row {
     display: flex;
     flex-direction: row;
@@ -809,14 +811,12 @@ filter: brightness(1.2);
     padding: 0;
     line-height: normal;
 }
-/* Style dla inputu w Baddonz Managerze */
+
 #baddonz-toggle-hotkey-input {
     border-radius: 3px;
     transition: border .15s, box-shadow .15s;
-    /* Upewnij się, że inne bazowe style (background, color, box-shadow) są zdefiniowane wcześniej */
 }
 
-/* Styl dla aktywnego trybu nasłuchiwania klawiszy (zielona ramka) */
 #baddonz-toggle-hotkey-input.active-keybind-mode {
     border-color: #96f096 !important;
     box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.75), 0 0 8px 1px rgba(150, 240, 150, 0.5) !important;
@@ -824,7 +824,6 @@ filter: brightness(1.2);
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 
-/* Układ dla wiersza ustawień skrótu klawiszowego */
 .baddonz-setting-row.hotkey-row {
     display: flex;
     flex-direction: row;
@@ -845,7 +844,6 @@ filter: brightness(1.2);
     min-width: 0;
 }
 
-/* Nadpisanie zaokrąglonych rogów, jeśli baddonz-input-plus je obcinał */
 .baddonz-input-plus .baddonz-input {
     border-top-right-radius: 3px !important;
     border-bottom-right-radius: 3px !important;
