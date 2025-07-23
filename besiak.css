@@ -696,7 +696,7 @@
 }
 
 .baddonz-enable-wnd:hover {
-    background: url("https://gordion.margonem.pl/img/gui/buttony.png") -432px -396px;
+filter: brightness(1.2);
 }
 
 .baddonz-tab {
