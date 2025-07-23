@@ -804,8 +804,47 @@ filter: brightness(1.2);
     padding: 0;
     line-height: normal;
 }
+/* Style dla inputu w Baddonz Managerze */
+#baddonz-toggle-hotkey-input {
+    border-radius: 3px;
+    transition: border .15s, box-shadow .15s;
+    /* Upewnij się, że inne bazowe style (background, color, box-shadow) są zdefiniowane wcześniej */
+}
 
+/* Styl dla aktywnego trybu nasłuchiwania klawiszy (zielona ramka) */
+#baddonz-toggle-hotkey-input.active-keybind-mode {
+    border-color: #96f096 !important;
+    box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.75), 0 0 8px 1px rgba(150, 240, 150, 0.5) !important;
+    caret-color: transparent !important;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
 
+/* Układ dla wiersza ustawień skrótu klawiszowego */
+.baddonz-setting-row.hotkey-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.baddonz-setting-row.hotkey-row .baddonz-label {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.baddonz-setting-row.hotkey-row #baddonz-toggle-hotkey-input {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+/* Nadpisanie zaokrąglonych rogów, jeśli baddonz-input-plus je obcinał */
+.baddonz-input-plus .baddonz-input {
+    border-top-right-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
+}
 .baddonz-jsx-root .baddonz-button,
 .baddonz-jsx-root .baddonz-tab-selector,
 .baddonz-jsx-root .baddonz-opacity-button,
