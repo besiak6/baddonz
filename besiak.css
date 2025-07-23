@@ -214,6 +214,7 @@
     white-space: nowrap !important;
     min-width: 0 !important;
     text-overflow: ellipsis;
+    font-size: 9px;
 }
 
 .baddonz-window-body {
