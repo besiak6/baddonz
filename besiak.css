@@ -173,7 +173,6 @@
     align-items: center; /* Center items vertically */
     column-gap: 3px;
     width: 20px; /* Default width */
-    padding: 6px; /* Default padding */
     display: flex;
 }
 .baddonz-window-controls.right {
