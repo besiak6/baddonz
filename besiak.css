@@ -150,7 +150,7 @@
     min-height: 25px !important;
 }
 .baddonz-window.collapsed .baddonz-window-body {
-    display: none !important; /* Hide body when collapsed */
+    display: none !important;
 }
 
 .baddonz-window-header {
@@ -159,9 +159,9 @@
     flex-direction: row;
     height: 25px;
     display: flex;
-    justify-content: space-between; /* Ensure content is spread out */
+    justify-content: space-between;
     align-items: center; /* Vertically align items */
-    padding: 0 5px; /* Add some padding to the header itself */
+    padding: 0 2px;
 }
 
 .baddonz-window.collapsed .baddonz-window-header {
