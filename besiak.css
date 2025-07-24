@@ -79,7 +79,7 @@
     background: #0009;
     border-radius: 7px;
     flex-direction: column;
-    min-width: 191px;
+    min-width: 191px; /* Changed from 380px for general .baddonz-window from Szybka Grupa, to keep this general */
     min-height: 22px;
     font-family: sans-serif;
     display: flex;
@@ -340,48 +340,31 @@
     border: 1px solid #6a806a;
 }
 
-.baddonz-input.keybind:focus {
-    border: 1px solid #96f096;
-}
-
-.baddonz-item-display {
-    background: #73737312;
-    width: 32px;
-    height: 32px;
-    display: inline-block;
-    position: relative;
-    box-shadow: inset 0 0 2px 1px #6f6f6fbf;
-}
-
-.baddonz-item-display .highlight {
-    z-index: -1;
-}
-
-.baddonz-item-display img {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.baddonz-input {
-    color: #fff;
-    box-sizing: border-box;
-    background: #0003;
-    border: 1px solid gray;
-    border-radius: 5px;
-    outline: 0;
-    min-width: 0;
-    padding: 2px 3px;
-    line-height: 1.5em;
-    box-shadow: inset 0 0 6px 1px #000000bf;
-}
-
 /* Updated input focus style to match baddonz-tab.active */
 .baddonz-input:focus,
+.baddonz-input.keybind:focus, /* Added for keybind inputs explicitly */
 .baddonz-input.active-keybind-mode {
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
 }
+
+.baddonz-input { /* Default input styles from Szybka Grupa, merged with general .baddonz-input */
+    box-sizing: border-box;
+    border: 1px solid #3b3b3b;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 2px 4px;
+    outline: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    border-radius: 3px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: inset 0 0 6px 1px #000000bf; /* Existing shadow from original baddonz-input */
+}
+.baddonz-input:hover {
+    border-color: #555;
+}
+
 
 .baddonz-input.baddonz-select {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
@@ -450,20 +433,6 @@
     border-top-width: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-}
-
-.baddonz-top .left-border,
-.baddonz-top .baddonz-alert-buttons.connected .baddonz-button:not(:first-child),
-.baddonz-alert-buttons.connected .baddonz-top .baddonz-button:not(:first-child) {
-    border-left-width: 1px;
-}
-
-.baddonz-top .right-border {
-    border-right-width: 1px;
-}
-
-.baddonz-top .top-border {
-    border-top-width: 1px;
 }
 
 .baddonz-top .bottom-border {
@@ -655,8 +624,8 @@
 
 .baddonz-input-plus .baddonz-input {
     flex-grow: 1;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-right-radius: 3px !important; /* Specificity for this rule */
+    border-bottom-right-radius: 3px !important; /* Specificity for this rule */
     height: 24px;
     padding: 2px 5px;
     font-size: 13px;
@@ -843,33 +812,116 @@
     min-width: 0;
 }
 
-.baddonz-input-plus .baddonz-input {
-    border-top-right-radius: 3px !important;
-    border-bottom-right-radius: 3px !important;
+/* Specific styles for Szybka Grupa */
+.baddon_set_button.ZAP {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+#zap-wnd {
+    min-width: 380px;
+}
+/* This specific rule is removed as it's now covered by general .baddonz-input:focus */
+/* #zap-keybind-input.active-keybind-mode {
+    caret-color: transparent !important;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.2.png") 4 0, pointer !important;
+    border-color: #6ed13f !important;
+    box-shadow: 0 0 5px rgba(110, 209, 63, 0.5);
+} */
+#zap-wnd .baddonz-window-body {
+    gap: 5px;
 }
 
-.baddonz-jsx-root .baddonz-button,
-.baddonz-jsx-root .baddonz-tab-selector,
-.baddonz-jsx-root .baddonz-opacity-button,
-.baddonz-jsx-root .baddonz-close-button,
-.baddonz-jsx-root .baddonz-checkbox,
-.baddonz-jsx-root .baddonz-settings-button,
-.baddonz-jsx-root .baddonz-input.keybind,
-.baddonz-jsx-root .baddonz-input.color-selector,
-.baddonz-jsx-root .baddonz-item-display.clickable,
-.baddonz-jsx-root .baddonz-item-display.clickable *,
-.baddonz-window .baddonz-button,
-.baddonz-window .baddonz-opacity-button,
-.baddonz-window .baddonz-close-button,
-.baddonz-window .baddonz-checkbox,
-.baddonz-window .baddonz-settings-button,
-.baddonz-window .baddonz-input.keybind,
-.baddonz-window .baddonz-input.color-selector,
-.baddonz-window .baddonz-item-display.clickable,
-.baddonz-window .baddonz-item-display.clickable *,
-.baddonz-window-controls .baddonz-opacity-button,
-.baddonz-window-controls .baddonz-close-button {
+#zap-main-header-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+#zap-keybind-input.compact {
+    width: 100px;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 1px 0px;
+    font-size: 11px;
+    height: 20px;
+    line-height: 18px;
+    margin-left: 5px;
+}
+
+#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar-track {
+    background: #1414148f;
+    border-radius: 3px;
+}
+#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar-thumb {
+    background: #505050;
+    border-radius: 3px;
+}
+#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar-thumb:hover {
+    background: #808080;
+}
+#zap-wnd .zap-remove-nick-x {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+#zap-wnd input.zap-nick-display {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+#zap-specific-nicks-list {
+    max-height: 86px; /* Calculated from 3 * 28 + 2 */
+    overflow-y: auto;
+    padding-right: 2px;
+    width: 100%;
+}
+
+#zap-specific-nicks-list-section {
+    margin-top: 2px !important;
+    width: 100%;
+}
+
+#zap-level-range-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-top: -3px;
+    margin-left: 0;
+    width: 100%;
+}
+#zap-level-range-section .baddonz-input.level-input {
+    flex-grow: 1;
+    height: 20px;
+    text-align: center;
+    padding: 1px 0px;
+    font-size: 11px;
+    line-height: 18px;
+}
+#zap-level-range-section .separator {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    margin: 0 2px;
+}
+
+/* Removed padding-left from #zap-accept-options-section */
+#zap-accept-options-section {
+    gap: 3px;
+}
+
+/* New CSS for two-column layout */
+.zap-accept-checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.zap-accept-checkbox-grid .baddonz-label-wrapper {
+    width: auto;
+    justify-content: flex-start;
 }
 
 /* Styles for Auto Przywo addon */
@@ -930,12 +982,6 @@
     padding: 2px 5px;
     font-size: 13px;
 }
-
-/* Styles for Rozwiązywanie grupy addon */
-.baddon_set_button.RG {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-
 #rg-keybind-input {
     border: 1px solid #777;
     border-radius: 3px;
@@ -961,143 +1007,4 @@
 
 #rg-wnd hr {
     display: none;
-}
-.baddon_set_button.ZAP {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-.baddonz-window {
-    min-width: 380px;
-}
-.baddonz-input {
-    box-sizing: border-box;
-    border: 1px solid #3b3b3b;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
-    padding: 2px 4px;
-    outline: none;
-    font-family: 'Arial', sans-serif;
-    font-size: 13px;
-    border-radius: 3px;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-.baddonz-input:hover {
-    border-color: #555;
-}
-.baddonz-input:focus {
-    border-color: #6ed13f; /* Styl podświetlenia inputa */
-    box-shadow: 0 0 5px rgba(110, 209, 63, 0.5); /* Styl podświetlenia inputa */
-}
-#zap-keybind-input.active-keybind-mode {
-    caret-color: transparent !important;
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.2.png") 4 0, pointer !important;
-    border-color: #6ed13f !important; /* Podświetlenie takie jak dla baddonz-tab */
-    box-shadow: 0 0 5px rgba(110, 209, 63, 0.5); /* Podświetlenie takie jak dla baddonz-tab */
-}
-#zap-wnd .baddonz-window-body {
-    gap: 5px;
-}
-
-#zap-main-header-controls {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    width: 100%;
-    justify-content: flex-start;
-}
-
-#zap-keybind-input.compact {
-    width: 100px;
-    flex-shrink: 0;
-    text-align: center;
-    padding: 1px 0px;
-    font-size: 11px;
-    height: 20px;
-    line-height: 18px;
-    margin-left: 5px;
-}
-
-#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar-track {
-    background: #1414148f;
-    border-radius: 3px;
-}
-#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar-thumb {
-    background: #505050;
-    border-radius: 3px;
-}
-#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar-thumb:hover {
-    background: #808080;
-}
-#zap-wnd .zap-remove-nick-x {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-#zap-wnd input.zap-nick-display {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-}
-#zap-specific-nicks-list {
-    max-height: ${3 * 28 + 2}px;
-    overflow-y: auto;
-    padding-right: 2px;
-    width: 100%;
-}
-
-#zap-specific-nicks-list-section {
-    margin-top: 2px !important;
-    width: 100%;
-}
-
-#zap-level-range-section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
-    margin-top: -3px;
-    margin-left: 0;
-    width: 100%;
-}
-#zap-level-range-section .baddonz-input.level-input {
-    flex-grow: 1;
-    height: 20px;
-    text-align: center;
-    padding: 1px 0px;
-    font-size: 11px;
-    line-height: 18px;
-}
-#zap-level-range-section .separator {
-    color: #fff;
-    font-size: 16px;
-    line-height: 1;
-    margin: 0 2px;
-}
-
-.baddonz-input-plus {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    width: 100%;
-}
-
-#zap-specific-nick-input {
-    flex-grow: 1;
-    flex-shrink: 0;
-}
-/* Removed padding-left from #zap-accept-options-section */
-#zap-accept-options-section {
-    gap: 3px;
-}
-
-/* New CSS for two-column layout */
-.zap-accept-checkbox-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
-.zap-accept-checkbox-grid .baddonz-label-wrapper {
-    width: auto;
-    justify-content: flex-start;
 }
