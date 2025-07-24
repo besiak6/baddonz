@@ -274,8 +274,7 @@
 .baddonz-tab-content-container {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    /* Zwiększono odstępy między elementami */
+    gap: 8px; /* Zwiększono odstępy między elementami */
     background: none;
     flex: 1;
     overflow-y: auto;
@@ -549,13 +548,9 @@
 
 .baddonz-tab-selector.active {
     background: linear-gradient(90deg, #46464666 50%, #46464600);
-    /* Adjusted to match original gradient idea */
-    border-color: #96f096;
-    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
-    transform: translateY(0);
-    pointer-events: none;
+    padding-left: 10px;
+    font-weight: 700;
 }
-
 
 .baddonz-label-wrapper {
     justify-content: space-between;
@@ -663,14 +658,13 @@
     filter: brightness(1.2);
 }
 
-/* Updated rule for dynamic enable window buttons */
-[class^="baddonz_enable_wnd_"] {
-    background: url("https://gordion.margonem.pl/img/gui/buttony.png") -465px -399px; 
-    width: 16px; 
-    height: 16px; 
+.baddonz-enable-wnd {
+    background: url("https://gordion.margonem.pl/img/gui/buttony.png") -465px -399px;
+    width: 16px;
+    height: 16px;
 }
 
-[class^="baddonz_enable_wnd_"]:hover {
+.baddonz-enable-wnd:hover {
     filter: brightness(1.2);
 }
 
@@ -701,8 +695,7 @@
 }
 
 .baddonz-tab.active {
-    background: linear-gradient(90deg, #46464666 50%, #46464600);
-    /* Adjusted to match original gradient idea */
+    background: linear-gradient(90deg, #46464666 50%, #46464600); /* Adjusted to match original gradient idea */
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
     transform: translateY(0);
@@ -750,12 +743,9 @@
 }
 
 .baddonz-card.active-addon {
-    background: #4a4a4a99;
-    /* Dopasowanie tła do aktywnej zakładki */
-    border-color: #96f096;
-    /* Kolor ramki jak w aktywnej zakładce */
-    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
-    /* Cień jak w aktywnej zakładce */
+    background: #4a4a4a99; /* Dopasowanie tła do aktywnej zakładki */
+    border-color: #96f096; /* Kolor ramki jak w aktywnej zakładce */
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680; /* Cień jak w aktywnej zakładce */
 }
 
 .baddonz-card-title span {
@@ -1012,8 +1002,7 @@
     caret-color: transparent !important;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
     border-color: #96f096; /* Matching baddonz-tab.active border */
-    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
-    /* Matching baddonz-tab.active box-shadow */
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680; /* Matching baddonz-tab.active box-shadow */
 }
 
 #rg-wnd .baddonz-window-body {
