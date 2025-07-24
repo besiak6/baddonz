@@ -743,9 +743,9 @@
 }
 
 .baddonz-card.active-addon {
-    background: #4a4a4a99;
-    border-color: #96f096;
-    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
+    background: #4a4a4a99; /* Dopasowanie tła do aktywnej zakładki */
+    border-color: #96f096; /* Kolor ramki jak w aktywnej zakładce */
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680; /* Cień jak w aktywnej zakładce */
 }
 
 .baddonz-card-title span {
