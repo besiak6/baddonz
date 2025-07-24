@@ -79,7 +79,7 @@
     background: #0009;
     border-radius: 7px;
     flex-direction: column;
-    min-width: 191px; /* Changed from 380px for general .baddonz-window from Szybka Grupa, to keep this general */
+    min-width: 380px; /* Zaktualizowano: ustawiono min-width na 380px dla wszystkich okien baddonz-window, zgodnie z oryginalnym stylem Szybkiej Grupy */
     min-height: 22px;
     font-family: sans-serif;
     display: flex;
@@ -342,13 +342,13 @@
 
 /* Updated input focus style to match baddonz-tab.active */
 .baddonz-input:focus,
-.baddonz-input.keybind:focus, /* Added for keybind inputs explicitly */
+.baddonz-input.keybind:focus,
 .baddonz-input.active-keybind-mode {
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
 }
 
-.baddonz-input { /* Default input styles from Szybka Grupa, merged with general .baddonz-input */
+.baddonz-input { /* Default input styles merged with general .baddonz-input from Szybka Grupa */
     box-sizing: border-box;
     border: 1px solid #3b3b3b;
     background-color: rgba(0, 0, 0, 0.4);
@@ -359,7 +359,7 @@
     font-size: 13px;
     border-radius: 3px;
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    box-shadow: inset 0 0 6px 1px #000000bf; /* Existing shadow from original baddonz-input */
+    box-shadow: inset 0 0 6px 1px #000000bf;
 }
 .baddonz-input:hover {
     border-color: #555;
@@ -624,8 +624,8 @@
 
 .baddonz-input-plus .baddonz-input {
     flex-grow: 1;
-    border-top-right-radius: 3px !important; /* Specificity for this rule */
-    border-bottom-right-radius: 3px !important; /* Specificity for this rule */
+    border-top-right-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
     height: 24px;
     padding: 2px 5px;
     font-size: 13px;
@@ -819,13 +819,6 @@
 #zap-wnd {
     min-width: 380px;
 }
-/* This specific rule is removed as it's now covered by general .baddonz-input:focus */
-/* #zap-keybind-input.active-keybind-mode {
-    caret-color: transparent !important;
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.2.png") 4 0, pointer !important;
-    border-color: #6ed13f !important;
-    box-shadow: 0 0 5px rgba(110, 209, 63, 0.5);
-} */
 #zap-wnd .baddonz-window-body {
     gap: 5px;
 }
@@ -871,7 +864,7 @@
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 #zap-specific-nicks-list {
-    max-height: 86px; /* Calculated from 3 * 28 + 2 */
+    max-height: 86px;
     overflow-y: auto;
     padding-right: 2px;
     width: 100%;
@@ -906,12 +899,10 @@
     margin: 0 2px;
 }
 
-/* Removed padding-left from #zap-accept-options-section */
 #zap-accept-options-section {
     gap: 3px;
 }
 
-/* New CSS for two-column layout */
 .zap-accept-checkbox-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -982,6 +973,12 @@
     padding: 2px 5px;
     font-size: 13px;
 }
+
+/* Styles for Rozwiązywanie grupy addon */
+.baddon_set_button.RG {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+
 #rg-keybind-input {
     border: 1px solid #777;
     border-radius: 3px;
