@@ -376,6 +376,12 @@
     box-shadow: inset 0 0 6px 1px #000000bf;
 }
 
+/* Updated input focus style to match baddonz-tab.active */
+.baddonz-input:focus {
+    border-color: #96f096;
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
+}
+
 .baddonz-input.baddonz-select {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
@@ -863,4 +869,61 @@
 .baddonz-window-controls .baddonz-opacity-button,
 .baddonz-window-controls .baddonz-close-button {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+
+#ap-wnd #ap-blocked-nicks-list::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+#ap-wnd #ap-blocked-nicks-list::-webkit-scrollbar-track {
+    background: #1414148f;
+    border-radius: 3px;
+}
+
+#ap-wnd #ap-blocked-nicks-list::-webkit-scrollbar-thumb {
+    background: #505050;
+    border-radius: 3px;
+}
+
+#ap-wnd #ap-blocked-nicks-list::-webkit-scrollbar-thumb:hover {
+    background: #808080;
+}
+
+#ap-wnd {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
+}
+
+#ap-wnd .baddonz-window-controls > .baddonz-icon,
+#ap-wnd .baddonz-checkbox,
+#ap-wnd .ap-remove-nick-x,
+#ap-wnd input.ap-nick-display {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+.ap-scroll-container {
+    max-height: 155px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.ap-remove-nick-x {
+    position: absolute;
+    right: 8px;
+    cursor: pointer;
+    color: #888;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    text-align: center;
+}
+
+.ap-nick-display {
+    flex-grow: 1;
+    padding-right: 20px;
+    height: 24px;
+    padding: 2px 5px;
+    font-size: 13px;
 }
