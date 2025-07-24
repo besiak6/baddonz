@@ -962,3 +962,142 @@
 #rg-wnd hr {
     display: none;
 }
+.baddon_set_button.ZAP {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+.baddonz-window {
+    min-width: 380px;
+}
+.baddonz-input {
+    box-sizing: border-box;
+    border: 1px solid #3b3b3b;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 2px 4px;
+    outline: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    border-radius: 3px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.baddonz-input:hover {
+    border-color: #555;
+}
+.baddonz-input:focus {
+    border-color: #6ed13f; /* Styl podświetlenia inputa */
+    box-shadow: 0 0 5px rgba(110, 209, 63, 0.5); /* Styl podświetlenia inputa */
+}
+#zap-keybind-input.active-keybind-mode {
+    caret-color: transparent !important;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.2.png") 4 0, pointer !important;
+    border-color: #6ed13f !important; /* Podświetlenie takie jak dla baddonz-tab */
+    box-shadow: 0 0 5px rgba(110, 209, 63, 0.5); /* Podświetlenie takie jak dla baddonz-tab */
+}
+#zap-wnd .baddonz-window-body {
+    gap: 5px;
+}
+
+#zap-main-header-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+#zap-keybind-input.compact {
+    width: 100px;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 1px 0px;
+    font-size: 11px;
+    height: 20px;
+    line-height: 18px;
+    margin-left: 5px;
+}
+
+#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar-track {
+    background: #1414148f;
+    border-radius: 3px;
+}
+#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar-thumb {
+    background: #505050;
+    border-radius: 3px;
+}
+#zap-wnd #zap-specific-nicks-list::-webkit-scrollbar-thumb:hover {
+    background: #808080;
+}
+#zap-wnd .zap-remove-nick-x {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+#zap-wnd input.zap-nick-display {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+#zap-specific-nicks-list {
+    max-height: ${3 * 28 + 2}px;
+    overflow-y: auto;
+    padding-right: 2px;
+    width: 100%;
+}
+
+#zap-specific-nicks-list-section {
+    margin-top: 2px !important;
+    width: 100%;
+}
+
+#zap-level-range-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-top: -3px;
+    margin-left: 0;
+    width: 100%;
+}
+#zap-level-range-section .baddonz-input.level-input {
+    flex-grow: 1;
+    height: 20px;
+    text-align: center;
+    padding: 1px 0px;
+    font-size: 11px;
+    line-height: 18px;
+}
+#zap-level-range-section .separator {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    margin: 0 2px;
+}
+
+.baddonz-input-plus {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+#zap-specific-nick-input {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+/* Removed padding-left from #zap-accept-options-section */
+#zap-accept-options-section {
+    gap: 3px;
+}
+
+/* New CSS for two-column layout */
+.zap-accept-checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.zap-accept-checkbox-grid .baddonz-label-wrapper {
+    width: auto;
+    justify-content: flex-start;
+}
