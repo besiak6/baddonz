@@ -742,10 +742,10 @@
     width: 100%;
 }
 
-/* Styl dla nazwy dodatku, gdy checkbox jest aktywny */
-.baddonz-checkbox.active + span {
-    color: #96f096; /* Kolor z aktywnego baddonz-tab */
-    font-weight: bold;
+.baddonz-card.active-addon {
+    background: #4a4a4a99;
+    border-color: #96f096;
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
 }
 
 .baddonz-card-title span {
