@@ -274,7 +274,7 @@
 .baddonz-tab-content-container {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px; /* Zwiększono odstępy między elementami */
     background: none;
     flex: 1;
     overflow-y: auto;
@@ -695,12 +695,13 @@
 }
 
 .baddonz-tab.active {
-    background: #4a4a4a99;
+    background: linear-gradient(90deg, #46464666 50%, #46464600); /* Adjusted to match original gradient idea */
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
     transform: translateY(0);
     pointer-events: none;
 }
+
 
 .baddonz-tabs-container {
     display: flex;
@@ -741,6 +742,12 @@
     width: 100%;
 }
 
+/* Styl dla nazwy dodatku, gdy checkbox jest aktywny */
+.baddonz-checkbox.active + span {
+    color: #96f096; /* Kolor z aktywnego baddonz-tab */
+    font-weight: bold;
+}
+
 .baddonz-card-title span {
     margin-left: 10px;
 }
@@ -770,7 +777,7 @@
     background: none;
     margin: 0;
     padding: 0;
-    margin-bottom: 2px;
+    margin-bottom: 5px; /* Zwiększono odstęp między wierszami ustawień */
     line-height: normal;
 }
 
@@ -817,7 +824,7 @@
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 #zap-wnd {
-    min-width: 191px; /* Zaktualizowano: Ustawiono min-width na 191px dla okna Szybkiej Grupy */
+    min-width: 191px; /* Ustawiono min-width na 191px dla okna Szybkiej Grupy */
 }
 #zap-wnd .baddonz-window-body {
     gap: 5px;
