@@ -105,7 +105,7 @@
                     </div>
                 </div>
             </div>
-            <div class="baddon_set_button AP" style="display: none;"></div>
+            <div class=".baddonz-enable-wnd.baddonz_enable_wnd_AP" style="display: none;"></div>
         `;
         document.body.insertAdjacentHTML('beforeend', windowHtml);
 
@@ -114,7 +114,7 @@
         const apOpacityButton = document.getElementById("ap-opacity-btn");
         const apTitleBar = apWindow.querySelector(".baddonz-window-title");
         const apCheckbox = document.getElementById("ap-checkbox");
-        const apToggleButton = document.querySelector(".baddon_set_button.AP");
+        const apToggleButton = document.querySelector(".baddonz-enable-wnd.baddonz_enable_wnd_AP");
         const apBlockedNickInput = document.getElementById("ap-blocked-nick-input");
         const apAddNickBtn = document.getElementById("ap-add-nick-btn");
         const apBlockedNicksList = document.getElementById("ap-blocked-nicks-list");
