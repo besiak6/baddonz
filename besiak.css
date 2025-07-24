@@ -13,7 +13,7 @@
 
 .baddonz-jsx-root {
     line-height: 1;
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer; /* Zmieniono kursor */
 }
 
 .baddonz-jsx-root ::-webkit-scrollbar {
@@ -85,7 +85,7 @@
     display: flex;
     position: absolute;
     box-shadow: 0 0 1px #010101, 0 0 0 1px #ccc, 0 0 0 2px #0c0d0d, 1px 1px 2px 2px #0c0d0d66;
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer; /* Zmieniono kursor */
     z-index: 99;
 }
 
@@ -186,7 +186,7 @@
 
 .baddonz-card-title span,
 .baddonz-card p {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important; /* Pozostawiono auto dla tekstu */
 }
 
 .baddonz-window.collapsed .baddonz-window-controls {
@@ -612,7 +612,7 @@
     font-family: sans-serif;
     font-size: 12px;
     padding: 3px;
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important; /* Pozostawiono auto dla tekstu */
 }
 
 .baddonz-input-plus {
@@ -711,11 +711,12 @@
 }
 
 .baddonz-card {
-    cursor: pointer;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important; /* Zmieniono kursor */
     box-sizing: border-box;
     background: #0003;
     border: 1px solid gray;
-    width: 100%;
+    width: auto; /* Zmieniono z 100% na auto */
+    max-width: 350px; /* Dodano maksymalną szerokość */
     height: auto;
     margin-bottom: 5px;
     padding: 7px 12px;
@@ -726,8 +727,13 @@
 }
 
 .baddonz-card * {
-    cursor: pointer;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important; /* Zmieniono kursor */
 }
+/* Aby elementy tekstowe wewnątrz kart miały kursor auto */
+.baddonz-card p, .baddonz-card-title span {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
+}
+
 
 .baddonz-card:hover {
     background: #8c8c8c33;
@@ -943,7 +949,7 @@
 }
 
 #ap-wnd {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto !important;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important; /* Zmieniono kursor */
 }
 
 #ap-wnd .baddonz-window-controls > .baddonz-icon,
