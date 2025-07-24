@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name        Auto Przywo
-// @version     1.1
-// @author      besiak
-// @match       https://*.margonem.pl/*
-// @grant       none
+// @name          Auto Przywo
+// @version       1.1
+// @author        besiak
+// @match         https://*.margonem.pl/*
+// @grant         none
 // ==/UserScript==
 
 (function() {
@@ -20,6 +20,7 @@
     };
 
     let currentSettings = {};
+    let apWindow = null; // Zmienna do przechowywania referencji do okna dodatku
 
     function loadSettings() {
         try {
@@ -76,6 +77,9 @@
     }
 
     function createUI() {
+        // Jeśli okno już istnieje, nie twórz go ponownie
+        if (apWindow) return;
+
         const windowHtml = `
             <div class="baddonz-window" id="ap-wnd" style="position: absolute; z-index: 500;">
                 <div class="baddonz-window-header">
@@ -105,16 +109,14 @@
                     </div>
                 </div>
             </div>
-            <div class=".baddonz-enable-wnd.baddonz_enable_wnd_AP" style="display: none;"></div>
         `;
         document.body.insertAdjacentHTML('beforeend', windowHtml);
 
-        const apWindow = document.getElementById("ap-wnd");
+        apWindow = document.getElementById("ap-wnd");
         const apCloseButton = document.getElementById("ap-close-button");
         const apOpacityButton = document.getElementById("ap-opacity-btn");
         const apTitleBar = apWindow.querySelector(".baddonz-window-title");
         const apCheckbox = document.getElementById("ap-checkbox");
-        const apToggleButton = document.querySelector(".baddonz-enable-wnd.baddonz_enable_wnd_AP");
         const apBlockedNickInput = document.getElementById("ap-blocked-nick-input");
         const apAddNickBtn = document.getElementById("ap-add-nick-btn");
         const apBlockedNicksList = document.getElementById("ap-blocked-nicks-list");
@@ -125,6 +127,7 @@
         const opacityClasses = ['opacity-0', 'opacity-1', 'opacity-2', 'opacity-3', 'opacity-4'];
         apWindow.classList.add(opacityClasses[currentSettings.windowOpacity]);
 
+        // Początkowa widoczność ustawiana na podstawie zapisanych ustawień
         apWindow.style.display = currentSettings.windowVisible ? 'flex' : 'none';
 
         if (currentSettings.enabled) {
@@ -270,16 +273,6 @@
             updateVisibilityOfBlockedNicksSection();
         });
 
-        apToggleButton.addEventListener('click', () => {
-            if (apWindow.style.display === 'none') {
-                apWindow.style.display = 'flex';
-            } else {
-                apWindow.style.display = 'none';
-            }
-            currentSettings.windowVisible = apWindow.style.display !== 'none';
-            saveSettings();
-        });
-
         apAddNickBtn.addEventListener('click', addBlockedNick);
         apBlockedNickInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
@@ -313,14 +306,54 @@
         updateVisibilityOfBlockedNicksSection();
     }
 
+    // Funkcja inicjalizująca dodatku Auto Przywo, która czeka na BaddonzManager
+    const initAutoPrzywo = () => {
+        // Czekaj, aż BaddonzManager będzie dostępny
+        if (!window.BaddonzManager || typeof window.BaddonzManager.getToggleElement !== 'function') {
+            setTimeout(initAutoPrzywo, 500);
+            return;
+        }
+
+        currentSettings = loadSettings();
+        setupAutoPrzywoLogic();
+
+        // Pobierz przycisk do przełączania okna stworzony przez Baddonz Manager
+        const apToggleButton = window.BaddonzManager.getToggleElement('AP'); // 'AP' to ID dodatku
+
+        if (apToggleButton) {
+            apToggleButton.addEventListener('click', () => {
+                // Utwórz UI okna tylko wtedy, gdy jeszcze nie istnieje
+                if (!apWindow) {
+                    createUI();
+                }
+                // Przełącz widoczność okna
+                if (apWindow.style.display === 'none') {
+                    apWindow.style.display = 'flex';
+                } else {
+                    apWindow.style.display = 'none';
+                }
+                currentSettings.windowVisible = apWindow.style.display !== 'none';
+                saveSettings();
+            });
+
+            // Jeśli okno powinno być widoczne po załadowaniu (wg ustawień) i nie zostało jeszcze stworzone,
+            // utwórz je od razu.
+            if (currentSettings.windowVisible && !apWindow) {
+                createUI();
+            }
+        } else {
+            console.warn("Auto Przywo: Przycisk do przełączania 'AP' nie został znaleziony w Baddonz Managerze.");
+        }
+    };
+
+    // Główna funkcja inicjalizująca skrypt, która czeka na Engine Margonem
     const init = () => {
         if (!window.Engine || !window.Engine.allInit || (typeof window.__build !== "object" && typeof window.__bootNI === "undefined")) {
             setTimeout(init, 500);
             return;
         }
-        currentSettings = loadSettings();
-        setupAutoPrzywoLogic();
-        createUI();
+        initAutoPrzywo(); // Rozpocznij proces oczekiwania na BaddonzManager
     };
+
     init();
 })();
