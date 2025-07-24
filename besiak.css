@@ -377,7 +377,8 @@
 }
 
 /* Updated input focus style to match baddonz-tab.active */
-.baddonz-input:focus {
+.baddonz-input:focus,
+.baddonz-input.active-keybind-mode {
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
 }
@@ -871,6 +872,7 @@
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 
+/* Styles for Auto Przywo addon */
 #ap-wnd #ap-blocked-nicks-list::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -900,6 +902,7 @@
 #ap-wnd input.ap-nick-display {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
+
 .ap-scroll-container {
     max-height: 155px;
     overflow-y: auto;
@@ -926,4 +929,36 @@
     height: 24px;
     padding: 2px 5px;
     font-size: 13px;
+}
+
+/* Styles for Rozwiązywanie grupy addon */
+.baddon_set_button.RG {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+}
+
+#rg-keybind-input {
+    border: 1px solid #777;
+    border-radius: 3px;
+    padding: 4px 6px;
+    box-shadow: none;
+    text-align: center;
+    font-size: 13px;
+    height: auto;
+    line-height: normal;
+    box-sizing: border-box;
+}
+
+#rg-keybind-input.active-keybind-mode {
+    caret-color: transparent !important;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+    border-color: #96f096; /* Matching baddonz-tab.active border */
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680; /* Matching baddonz-tab.active box-shadow */
+}
+
+#rg-wnd .baddonz-window-body {
+    gap: 5px;
+}
+
+#rg-wnd hr {
+    display: none;
 }
