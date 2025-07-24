@@ -79,7 +79,7 @@
     background: #0009;
     border-radius: 7px;
     flex-direction: column;
-    min-width: 191px; /* Zaktualizowano: Przywrócono min-width na 191px dla wszystkich okien baddonz-window */
+    min-width: 191px;
     min-height: 22px;
     font-family: sans-serif;
     display: flex;
@@ -816,7 +816,9 @@
 .baddon_set_button.ZAP {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
-/* Usunięto min-width: 380px dla #zap-wnd, aby dziedziczyło z .baddonz-window (191px) lub innych domyślnych stylów */
+#zap-wnd {
+    min-width: 191px; /* Zaktualizowano: Ustawiono min-width na 191px dla okna Szybkiej Grupy */
+}
 #zap-wnd .baddonz-window-body {
     gap: 5px;
 }
