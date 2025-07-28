@@ -161,6 +161,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, grab;
+}
+
+.baddonz-window-header.grabbing {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, grabbing !important;
 }
 
 .baddonz-window.collapsed .baddonz-window-header {
@@ -1012,4 +1017,59 @@
 
 #rg-wnd hr {
     display: none;
+}
+/* Styles moved from zmieniasz zestawów.txt */ 
+.baddonz-custom-dialog {
+    max-width: 400px;
+    z-index: 10000;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #0009;
+    display: flex;
+    flex-direction: column;
+}
+.baddonz-custom-dialog .baddonz-window-body {
+    padding: 10px;
+    flex-grow: 1;
+}
+.baddonz-custom-dialog .baddonz-alert-segment {
+    text-align: center;
+    max-width: unset;
+    margin: 2px 0;
+}
+.baddonz-custom-dialog .baddonz-alert-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    display: flex;
+    margin-top: 10px;
+}
+.baddonz-custom-dialog .baddonz-alert-buttons .baddonz-button {
+    flex: 1;
+    min-width: 100px;
+    text-wrap: nowrap;
+    color: white;
+}
+.baddonz-custom-dialog .baddonz-window-controls.left {
+    width: 12px;
+    height: 12px;
+    padding: 0 5px;
+    box-sizing: content-box;
+}
+.baddonz-custom-dialog .baddonz-window-controls.right {
+    width: auto;
+    padding: 0 5px;
+}
+.baddonz-icon.baddonz-opacity-button:hover,
+.baddonz-icon.baddonz-settings-button:hover,
+.baddonz-icon.baddonz-close-button:hover,
+.baddonz-checkbox:hover,
+.baddonz-input:hover,
+.baddonz-select:hover,
+.baddonz-button:hover,
+.menu-item:hover,
+.dialog-close-button:hover {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
 }
