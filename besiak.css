@@ -1,3 +1,201 @@
+body {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, auto;
+}
+.baddonz-build-wrapper {
+    display: grid;
+    gap: 5px;
+    padding: 3px;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.baddonz-build-wrapper .baddonz-build-btn {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2px;
+    font-size: 90%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #717171;
+    background: #5a5a5a;
+    border-radius: 3px;
+    flex-shrink: 0;
+    min-width: 20px;
+    min-height: 20px;
+    transition: background-color 0.1s, border-color 0.1s, box-shadow 0.1s;
+}
+.baddonz-build-wrapper .baddonz-build-btn .button-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    max-width: 100%;
+}
+.baddonz-build-wrapper .baddonz-build-btn:hover {
+    background: #6a6a6a;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
+}
+.baddonz-build-wrapper .baddonz-build-btn.active-set {
+    background: #69696099;
+    border-color: #cccc83 !important;
+    box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.75), 0 0 8px 1px rgba(204, 204, 131, 0.5) !important;
+}
+.baddonz-build-wrapper .baddonz-build-btn.active-set:hover {
+    background: #7a7a7099 !important;
+}
+.baddonz-build-wrapper .baddonz-build-btn.disabled:hover,
+.baddonz-build-wrapper .baddonz-build-btn.disabled.selected {
+    background: #3c3c3c99;
+}
+.baddonz-build-wrapper .baddonz-build-btn.disabled {
+    cursor: unset;
+    opacity: .65;
+}
+.baddonz-build-change-name-title {
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.baddonz-window.baddonz-build-switcher .baddonz-window-header,
+.baddonz-window#zz-wnd-settings .baddonz-window-header,
+.baddonz-custom-dialog .baddonz-window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.baddonz-window.baddonz-build-switcher .baddonz-window-header .baddonz-window-title,
+.baddonz-window#zz-wnd-settings .baddonz-window-header .baddonz-window-title,
+.baddonz-custom-dialog .baddonz-window-header .baddonz-window-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+.baddonz-window.baddonz-build-switcher .baddonz-window-header .baddonz-window-controls,
+.baddonz-window#zz-wnd-settings .baddonz-window-header .baddonz-window-controls,
+.baddonz-custom-dialog .baddonz-window-header .baddonz-window-controls {
+    flex-shrink: 0;
+}
+
+.baddonz-window.baddonz-build-switcher {
+    min-height: 40px;
+}
+.baddonz-window.baddonz-build-switcher .baddonz-window-body {
+    padding: 0;
+    overflow: hidden;
+    flex-grow: 1;
+    display: flex;
+}
+.baddonz-build-switcher-purchase-btn {
+    color: gray;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
+    font-weight: 700;
+    font-size: 1.2em;
+    line-height: 1;
+    padding: 0 4px;
+}
+.baddonz-build-switcher-purchase-btn:hover {
+    color: #fff;
+}
+.baddonz-build-switcher-preview {
+    flex-direction: column;
+    gap: 3px;
+    display: flex;
+}
+.baddonz-window-resizer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, se-resize;
+    background: rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 5px;
+}
+.baddonz-window#zz-wnd-settings .baddonz-window-body .baddonz-button {
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    color: white;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.baddonz-window#zz-wnd-settings .baddonz-label-wrapper .baddonz-text {
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    flex: 1 !important;
+    min-width: 100px;
+}
+
+.baddonz-custom-dialog {
+    max-width: 400px;
+    z-index: 10000;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #0009;
+    display: flex;
+    flex-direction: column;
+}
+.baddonz-custom-dialog .baddonz-window-body {
+    padding: 10px;
+    flex-grow: 1;
+}
+.baddonz-custom-dialog .baddonz-alert-segment {
+    text-align: center;
+    max-width: unset;
+    margin: 2px 0;
+}
+.baddonz-custom-dialog .baddonz-alert-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    display: flex;
+    margin-top: 10px;
+}
+.baddonz-custom-dialog .baddonz-alert-buttons .baddonz-button {
+    flex: 1;
+    min-width: 100px;
+    text-wrap: nowrap;
+    color: white;
+}
+.baddonz-custom-dialog .baddonz-window-controls.left {
+    width: 12px;
+    height: 12px;
+    padding: 0 5px;
+    box-sizing: content-box;
+}
+.baddonz-custom-dialog .baddonz-window-controls.right {
+     width: auto;
+    padding: 0 5px;
+}
+.baddonz-icon.baddonz-opacity-button:hover,
+.baddonz-icon.baddonz-settings-button:hover,
+.baddonz-icon.baddonz-close-button:hover,
+.baddonz-checkbox:hover,
+.baddonz-input:hover,
+.baddonz-select:hover,
+.baddonz-button:hover,
+.menu-item:hover,
+.dialog-close-button:hover {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
+}
+.baddonz-window-header {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, grab;
+}
+.baddonz-window-header.grabbing {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, grabbing !important;
+}
+
 .baddonz-manager {
     width: 380px;
     height: 450px;
