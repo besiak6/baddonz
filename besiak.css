@@ -342,7 +342,8 @@
 
 .baddonz-input:focus,
 .baddonz-input.keybind:focus,
-.baddonz-input.active-keybind-mode {
+.baddonz-input.active-keybind-mode,
+.baddonz-input.active {
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
 }
@@ -482,10 +483,17 @@
     font-size: 12px;
     transition: background .15s, border-color .15s;
     box-shadow: inset 0 0 6px 1px #000000bf;
+    color: #fff; /* Dodano biały kolor tekstu dla przycisków */
 }
 
 .baddonz-button:hover {
     background: #5a5a5a99;
+}
+
+.baddonz-button.active {
+    background: #46464666;
+    border-color: #96f096;
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
 }
 
 .baddonz-button.no-margin {
