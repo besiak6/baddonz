@@ -357,6 +357,7 @@
     transition: none;
     box-shadow: inset 0 0 6px 1px #000000bf;
 }
+
 .baddonz-input.baddonz-select {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
@@ -370,8 +371,7 @@
     padding: 2px 3px;
 }
 
-.baddonz-input.baddonz-select option:checked,
-.baddonz-input.baddonz-select option:hover {
+.baddonz-input.baddonz-select option:checked {
     background-color: #3c3c3c99;
     color: #fff;
 }
