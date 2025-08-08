@@ -1022,3 +1022,6 @@
 .baddonz-info-icon:hover {
 filter: brightness(1.3);
 }
+.relogger-window {
+min-width: 220px;
+}
