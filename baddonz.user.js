@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Baddonz
-// @version       0.7
+// @version       0.8
 // @description   Menadżer dodatków by besiak
 // @author        besiak
 // @match         https://*.margonem.pl/*
@@ -11,7 +11,6 @@
 // ==/UserScript==
 (function() {
     window.CSS_URL = "https://raw.githubusercontent.com/besiak6/baddonz/refs/heads/main/besiak.css";
-    window.ADDON_VERSION = "0.7";
     const version = Date.now();
     const build = "https://addons2.margonem.pl/get/153/153736dev.js";
     const script = document.createElement("script");
