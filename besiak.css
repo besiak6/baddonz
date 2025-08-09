@@ -1153,11 +1153,3 @@ min-width: 220px;
     background: #5a5a5a99;
     border-color: #808080;
 }
-.baddonz-dock-wrapper,
-.baddonz-dock,
-.baddonz-dock-addon,
-.baddonz-dock-switch {
-    z-index: 100000;
-    position: relative;
-}
-
