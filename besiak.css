@@ -1074,7 +1074,6 @@ min-width: 220px;
     color: white;
     font-size: 14px;
     text-align: center;
-    z-index: 9999;
 }
 .baddonz-dock-switch .fa {
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1108,7 +1107,6 @@ min-width: 220px;
     max-height: 500px;
     max-width: 26px;
     transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 9999;
 }
 .baddonz-dock.collapsed.vertical {
     max-height: 0;
@@ -1146,7 +1144,6 @@ min-width: 220px;
     height: 26px;
     color: white;
     display: none;
-    z-index: 9999;
 }
 .baddonz-dock-addon.active {
     border-color: #96f096;
@@ -1156,3 +1153,11 @@ min-width: 220px;
     background: #5a5a5a99;
     border-color: #808080;
 }
+.baddonz-dock-wrapper,
+.baddonz-dock,
+.baddonz-dock-addon,
+.baddonz-dock-switch {
+    z-index: 100000;
+    position: relative;
+}
+
