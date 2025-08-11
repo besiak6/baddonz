@@ -1153,3 +1153,54 @@ min-width: 220px;
     background: #5a5a5a99;
     border-color: #808080;
 }
+    .baddonz-slider-wrapper {
+        position: relative;
+        width: 100%;
+        height: 4px;
+        background: #404040;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    .baddonz-slider-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background: linear-gradient(to right, #7CFC00, #32CD32);
+        border-radius: 2px;
+    }
+    
+    /* Gałka suwaka */
+    .baddonz-slider-thumb {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #7e7474;
+        border: 1px solid #303030;
+        box-shadow: 0 0 3px #000;
+        transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    
+    .baddonz-slider-thumb:hover {
+        background: #7CFC00;
+        border-color: #32CD32;
+        box-shadow: 0 0 5px #32CD32;
+    }
+    
+    /* Wyświetlanie wartości procentowej */
+    .baddonz-slider-value-display {
+        position: absolute;
+        top: -20px;
+        transform: translateX(-50%);
+        pointer-events: none;
+        font-size: 10px;
+        color: #FFFFFF;
+        text-shadow: 0 0 2px #000;
+        min-width: 30px;
+        text-align: center;
+        white-space: nowrap;
+    }
