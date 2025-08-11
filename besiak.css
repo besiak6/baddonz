@@ -1153,7 +1153,7 @@ min-width: 220px;
     background: #5a5a5a99;
     border-color: #808080;
 }
-    .baddonz-slider-wrapper {
+ .baddonz-slider-wrapper {
         position: relative;
         width: 100%;
         height: 4px;
@@ -1189,7 +1189,7 @@ min-width: 220px;
     }
     .baddonz-slider-value-display {
         position: absolute;
-        top: -20px;
+        top: -25px; /* ZMIENIONO: Wartość zwiększona, aby obniżyć tekst */
         transform: translateX(-50%);
         pointer-events: none;
         font-size: 10px;
