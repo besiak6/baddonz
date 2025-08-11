@@ -1170,8 +1170,6 @@ min-width: 220px;
         background: linear-gradient(to right, #7CFC00, #32CD32);
         border-radius: 2px;
     }
-    
-    /* Gałka suwaka */
     .baddonz-slider-thumb {
         position: absolute;
         top: 50%;
@@ -1184,14 +1182,11 @@ min-width: 220px;
         box-shadow: 0 0 3px #000;
         transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
     }
-    
     .baddonz-slider-thumb:hover {
         background: #7CFC00;
         border-color: #32CD32;
         box-shadow: 0 0 5px #32CD32;
     }
-    
-    /* Wyświetlanie wartości procentowej */
     .baddonz-slider-value-display {
         position: absolute;
         top: -20px;
