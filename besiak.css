@@ -1159,7 +1159,6 @@ min-width: 220px;
         height: 4px;
         background: #404040;
         border-radius: 2px;
-        cursor: pointer;
     }
     .baddonz-slider-fill {
         position: absolute;
@@ -1189,7 +1188,7 @@ min-width: 220px;
     }
     .baddonz-slider-value-display {
         position: absolute;
-        top: -25px; /* ZMIENIONO: Wartość zwiększona, aby obniżyć tekst */
+        top: -15px;
         transform: translateX(-50%);
         pointer-events: none;
         font-size: 10px;
