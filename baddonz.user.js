@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Baddonz
-// @version       0.8
+// @version       0.9
 // @description   Menadżer dodatków by besiak
 // @author        besiak
 // @match         https://*.margonem.pl/*
