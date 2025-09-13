@@ -1234,3 +1234,7 @@ min-width: 220px;
     align-items: center;
     gap: 4px;
 }
+    .baddonz-settings-button {
+        position: relative;
+        top: -1px;
+    }
