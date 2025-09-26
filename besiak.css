@@ -596,8 +596,8 @@
 
 .baddonz-settings-button {
     background: url(https://gordion.margonem.pl/img/gui/buttony.png) -607px -117px;
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
 }
 
 .baddonz-settings-button:hover {
@@ -1234,7 +1234,3 @@ min-width: 220px;
     align-items: center;
     gap: 4px;
 }
-    .baddonz-settings-button {
-        position: relative;
-        top: -1px;
-    }
