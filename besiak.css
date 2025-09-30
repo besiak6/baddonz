@@ -1241,23 +1241,25 @@ min-width: 220px;
     border-radius: 50%;
     box-shadow: 0 0 3px 1px rgba(255, 0, 0, 0.75);
     display: inline-block;
-    cursor: pointer;
     transition:
         box-shadow 180ms ease-in-out,
         background 180ms ease-in-out,
         transform 120ms ease-in-out;
     padding: 1px;
     vertical-align: -2px;
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
 }
 
 .baddonz-state-button:hover {
     box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.25);
     transform: scale(1.05);
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
 }
 
 .baddonz-state-button--active {
     background: radial-gradient(ellipse at center, rgb(0, 255, 0), #101010);
     box-shadow: 0 0 3px 1px rgba(0, 255, 0, 0.75);
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
 }
 .baddonz-type-icon {
   width: 18px;
@@ -1266,6 +1268,7 @@ min-width: 220px;
   margin-left: auto;
   margin-right: auto;
   background: url("https://gordion.margonem.pl/img/gui/notyfikacje-sprite.png");
+  cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
 }
 
 .baddonz-type-icon.cl-1 {
