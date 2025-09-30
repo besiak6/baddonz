@@ -1235,21 +1235,28 @@ min-width: 220px;
     gap: 4px;
 }
 .baddonz-state-button {
-    width: 13px;
-    height: 13px;
-    background: radial-gradient(ellipse at center, rgb(255, 0, 0), #101010);
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(ellipse at center, rgb(255, 0, 0), #1a1a1a); /* Czerwony do ciemnego tła */
     border-radius: 50%;
-    box-shadow: 0 0 5px 2px rgb(255, 0, 0);
+    box-shadow: 0 0 3px 1px rgba(255, 0, 0, 0.7); /* Delikatniejszy cień */
     display: inline-block;
     cursor: pointer;
-    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
-    padding: 2px;
-    vertical-align: -3px;
+    transition: 
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        transform 0.2s ease;
+    padding: 1px;
+    vertical-align: middle;
 }
+
 .baddonz-state-button:hover {
-    box-shadow: 0 0 5px 2px rgba(128, 128, 128, 0.85);
+    box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.3); /* Lekki biały blask przy hoverze */
+    transform: scale(1.1); /* Subtelne powiększenie */
 }
+
+/* Aktywny stan – zielony */
 .baddonz-state-button--active {
-    background: radial-gradient(ellipse at center, rgb(0, 255, 0), #101010);
-    box-shadow: 0 0 5px 2px rgb(0, 255, 0); /* Zielona poświata */
+    background: radial-gradient(ellipse at center, rgb(0, 255, 0), #1a1a1a); /* Zielony do ciemnego */
+    box-shadow: 0 0 3px 1px rgba(0, 255, 0, 0.7); /* Zielony cień */
 }
