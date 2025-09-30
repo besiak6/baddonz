@@ -1259,3 +1259,72 @@ min-width: 220px;
     background: radial-gradient(ellipse at center, rgb(0, 255, 0), #101010);
     box-shadow: 0 0 3px 1px rgba(0, 255, 0, 0.75);
 }
+.baddonz-icon {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 8px;
+  background: url("https://gordion.margonem.pl/img/gui/notyfikacje-sprite.png");
+}
+
+.baddonz-icon.cl-1 {
+  background-position: -1px -100px;
+}
+
+.baddonz-icon.cl-2 {
+  background-position: -41px -100px;
+}
+
+.baddonz-icon.cl-3 {
+  background-position: -21px -100px;
+}
+
+.baddonz-icon.cl-4 {
+  background-position: -61px -100px;
+}
+
+.baddonz-icon.cl-5 {
+  background-position: -81px -100px;
+}
+
+.baddonz-icon.cl-6 {
+  background-position: -101px -100px;
+}
+
+.baddonz-icon.cl-7 {
+  background-position: -121px -100px;
+}
+
+.baddonz-icon.cl-8 {
+  background-position: -141px -100px;
+}
+
+.baddonz-icon.cl-9 {
+  background-position: -161px -100px;
+}
+
+.baddonz-icon.cl-10 {
+  background-position: -181px -100px;
+}
+
+.baddonz-icon.cl-11 {
+  background-position: -201px -100px;
+}
+
+.baddonz-icon.cl-12 {
+  background-position: -221px -100px;
+}
+
+.baddonz-icon.cl-13 {
+  background-position: -241px -100px;
+}
+
+.baddonz-icon.cl-14 {
+  background-position: -261px -100px;
+}
+
+.baddonz-icon.cl-29 {
+  background-position: -401px -100px;
+}
