@@ -259,10 +259,10 @@
     box-shadow: inset 0 0 6px 1px #000000bf;
 }
 
-/* Usunięte zielone podświetlenie dla textarea */
+/* ZMIANA: Usunięcie zielonego podświetlenia dla textarea */
 .baddonz-textarea:focus {
-    border-color: gray;
-    box-shadow: inset 0 0 6px 1px #000000bf;
+    border-color: gray; /* Powrót do szarej */
+    box-shadow: inset 0 0 6px 1px #000000bf; /* Powrót do domyślnego cienia */
 }
 
 .baddonz-box {
@@ -342,14 +342,20 @@
     max-width: 140px;
 }
 
-/* PRZYWRÓCENIE ZIELONEGO DLA INPUT:FOCUS oraz keybindów */
+/* ZMIANA: Usunięcie zielonego podświetlenia dla inputów ogólnych */
 .baddonz-input:focus,
 .baddonz-input.keybind:focus,
-.baddonz-input.active-keybind-mode,
 .baddonz-input.active {
-    border-color: #96f096 !important;
-    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680 !important;
+    border-color: #3b3b3b;
+    box-shadow: inset 0 0 6px 1px #000000bf;
 }
+
+/* POZOSTAWIENIE/PRZYWRÓCENIE zielonego podświetlenia TYLKO dla inputów hotkey */
+.baddonz-input.active-keybind-mode {
+    border-color: #96f096 !important; /* Zielona ramka */
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680 !important; /* Zielony cień */
+}
+
 
 .baddonz-input {
     box-sizing: border-box;
@@ -489,7 +495,7 @@
     background: #5a5a5a99;
 }
 
-/* Usunięte zielone podświetlenie dla aktywnych przycisków */
+/* ZMIANA: Usunięcie zielonego podświetlenia dla aktywnych przycisków */
 .baddonz-button.active {
     background: #46464666;
     border-color: gray;
@@ -552,10 +558,12 @@
     margin-bottom: 1px;
 }
 
+/* PRZYWRÓCENIE zielonego podświetlenia dla aktywnego selektora zakładek */
 .baddonz-tab-selector.active {
     background: linear-gradient(90deg, #46464666 50%, #46464600);
     padding-left: 10px;
     font-weight: 700;
+    /* Zazwyczaj kolor tekstu/tła się zmieniał, ale nie box-shadow/ramka. Zostawiam domyślne. */
 }
 
 .baddonz-label-wrapper {
@@ -700,11 +708,11 @@
     transform: translateY(-1px);
 }
 
-/* PRZYWRÓCENIE ZIELONEGO DLA AKTYWNEJ ZAKŁADKI (taba) */
+/* PRZYWRÓCENIE zielonego podświetlenia dla aktywnej zakładki */
 .baddonz-tab.active {
-    background: #4a4a4a99;
-    border-color: #96f096;
-    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
+    background: #46464666;
+    border-color: #96f096; /* Zielona ramka */
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680; /* Zielony cień */
     transform: translateY(0);
     pointer-events: none;
 }
@@ -752,11 +760,11 @@
     width: 100%;
 }
 
-/* Usunięte zielone podświetlenie dla aktywnego addonu */
+/* PRZYWRÓCENIE zielonego podświetlenia dla aktywnego addonu */
 .baddonz-card.active-addon {
     background: #4a4a4a99;
-    border-color: gray;
-    box-shadow: inset 0 0 6px 1px #000000bf;
+    border-color: #96f096; /* Zielona ramka */
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680; /* Zielony cień */
 }
 
 .baddonz-card-title span {
@@ -803,10 +811,10 @@
     transition: none;
 }
 
-/* PRZYWRÓCENIE ZIELONEGO DLA aktywnego hotkey inputu (baddonz-toggle-hotkey-input) */
+/* PRZYWRÓCENIE zielonego podświetlenia dla aktywnego hotkey inputu */
 #baddonz-toggle-hotkey-input.active-keybind-mode {
-    border-color: #96f096 !important;
-    box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.75) !important, 0 0 8px 1px #96f09680 !important;
+    border-color: #96f096 !important; /* Zielona ramka */
+    box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.75), 0 0 8px 1px #96f09680 !important; /* Zielony cień */
     caret-color: transparent !important;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
@@ -1011,12 +1019,12 @@
     transition: none;
 }
 
-/* PRZYWRÓCENIE ZIELONEGO DLA aktywnego hotkey inputu (rg-keybind-input) */
+/* PRZYWRÓCENIE zielonego podświetlenia dla aktywnego inputu hotkey */
 #rg-keybind-input.active-keybind-mode {
     caret-color: transparent !important;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-    border-color: #96f096 !important;
-    box-shadow: 0 0 8px 1px #96f09680 !important;
+    border-color: #96f096 !important; /* Zielona ramka */
+    box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.75), 0 0 8px 1px #96f09680 !important; /* Zielony cień */
 }
 
 #rg-wnd .baddonz-window-body {
@@ -1107,11 +1115,13 @@ min-width: 220px;
     background: #5a5a5a99;
     border-color: #808080;
 }
-/* PRZYWRÓCENIE ZIELONEGO DLA AKTYWNEGO PRZEŁĄCZNIKA DOCKA */
+
+/* PRZYWRÓCENIE zielonej ramki dla aktywnego przełącznika doku */
 .baddonz-dock-switch.active {
-    border-color: #96f096;
-    box-shadow: 0 0 8px 1px #96f09680;
+    border-color: #96f096; /* Zielona ramka */
+    box-shadow: 0 0 8px 1px #96f09680; /* Dodanie zielonego cienia (zakładam, że tam był) */
 }
+
 .baddonz-dock {
     display: flex;
     background: transparent;
@@ -1159,12 +1169,13 @@ min-width: 220px;
     color: white;
     display: none;
 }
-/* PRZYWRÓCENIE ZIELONEGO DLA AKTYWNEGO ADDONA W DOCKU */
+/* PRZYWRÓCENIE zielonej ramki i koloru dla aktywnego addonu w doku */
 .baddonz-dock-addon.active {
-    border-color: #96f096;
-    box-shadow: 0 0 8px 1px #96f09680;
-    color: #96f096;
+    border-color: #96f096; /* Zielona ramka */
+    box-shadow: 0 0 8px 1px #96f09680; /* Dodanie zielonego cienia (zakładam, że tam był) */
+    color: #96f096; /* Kolor ikony/tekstu na zielony, jeśli był */
 }
+
 .baddonz-dock-addon:hover {
     background: #5a5a5a99;
     border-color: #808080;
@@ -1272,7 +1283,7 @@ min-width: 220px;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
 }
 
-/* Usunięte zielone podświetlenie dla aktywnego stanu - powrót do czerwonego/domyślnego wyglądu */
+/* ZMIANA: Usunięcie zielonej diody dla aktywnego stanu - przywrócenie domyślnego/nieaktywnego wyglądu */
 .baddonz-state-button--active {
     background: radial-gradient(ellipse at center, rgb(255, 0, 0), #101010);
     box-shadow: 0 0 3px 1px rgba(255, 0, 0, 0.75);
