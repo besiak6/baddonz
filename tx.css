@@ -340,7 +340,7 @@
 .baddonz-input {
     box-sizing: border-box;
     border: 1px solid #3b3b3b;
-    background-color: rgba(0, 0, 0, 0.05); /* Zmieniono z 0.4 na 0.05 */
+    background-color: rgba(0, 0, 0, 0.05); /* Prawie przezroczyste tło */
     color: #fff;
     padding: 2px 4px;
     outline: none;
@@ -369,8 +369,9 @@
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 
+/* ZMIANA 3: POPRAWKA DLA OPCJI W ROZWIJANYM INPUT (SELECT) */
 .baddonz-input.baddonz-select option {
-    background-color: #0009;
+    background-color: #000 !important; /* Pełna czerń dla opcji */
     color: #fff;
     text-shadow: 1px 1px 1px #000;
     font-family: sans-serif;
@@ -378,8 +379,9 @@
     padding: 2px 3px;
 }
 
+/* ZMIANA 3: POPRAWKA DLA AKTYWNEJ OPCJI W ROZWIJANYM INPUT (SELECT) */
 .baddonz-input.baddonz-select option:checked {
-    background-color: #3c3c3c99;
+    background-color: #3c3c3c99 !important; /* Ciemniejszy odcień dla aktywnej opcji */
     color: #fff;
 }
 
