@@ -371,27 +371,19 @@
 }
 
 /* ---------------------------------------------------- */
-/* --- SEKCJA SELECT - USUNIĘCIE STYLIZACJI OPCJI --- */
+/* --- SEKCJA SELECT - USUNIĘTO WSZYSTKIE STYLE --- */
 /* ---------------------------------------------------- */
 
 .baddonz-input.baddonz-select {
-    /* Ustaw ciemne tło i kolor tekstu dla WŁAŚCIWEGO pola */
-    background-color: rgba(0, 0, 0, 0.2);
-    
-    /* Ustaw kursor 5n dla klikalnego pola */
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
-    
-    /* Upewnij się, że nie ma trików CSS, które zaburzą wygląd systemowy */
-    -webkit-appearance: menulist; /* Ustawienie domyślne dla Chrome/Edge */
-    -moz-appearance: menulist; /* Ustawienie domyślne dla Firefox */
-    appearance: menulist; /* Ustawienie domyślne */
-    
-    background-image: none; /* Usuń ewentualną strzałkę SVG */
-    padding-right: 4px; /* Domyślny padding */
+    /* Usuwam kursor 5n dla select, aby nie nadpisywać systemowego renderowania */
+    /* Usuwam customowe tło, aby nie nadpisywać systemowego renderowania */
+    /* Usunięto wszelkie appearance: none, aby przywrócić domyślne systemowe renderowanie z ciemnym motywem */
 }
 
-/* **CAŁKOWITE USUNIĘCIE STYLI DLA <option> I <option>:checked**
-   Pozwalamy systemowi operacyjnemu/przeglądarce na wyświetlenie domyślnego motywu (czarnego). */
+/* Usunięto wszelkie style dla option, które zakłócały domyślny systemowy motyw */
+.baddonz-input.baddonz-select option {
+    
+}
 
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
