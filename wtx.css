@@ -336,7 +336,7 @@
     max-width: 140px;
 }
 
-/* ZMIANA 2: Ustawienie tła inputów na prawie przezroczyste */
+/* INPUT ogólny (poprawka transparentności) */
 .baddonz-input {
     box-sizing: border-box;
     border: 1px solid #3b3b3b;
@@ -351,25 +351,26 @@
     box-shadow: inset 0 0 6px 1px #000000bf;
 }
 
-/* ZMIANA 1: Usuwamy zieloną ramkę dla większości inputów (.baddonz-input:focus, .baddonz-input.active) */
+/* Focus/Aktywny dla zwykłych inputów */
 .baddonz-input:focus,
 .baddonz-input.active {
-    border-color: #3b3b3b; /* Utrzymujemy domyślny kolor ramki */
-    box-shadow: inset 0 0 6px 1px #000000bf; /* Usuwamy zieloną poświatę */
+    border-color: #3b3b3b;
+    box-shadow: inset 0 0 6px 1px #000000bf;
 }
 
-/* ZMIANA 1: POZOSTAWIENIE/DODANIE zielonej ramki dla WSZYSTKICH keybindów i aktywnego trybu ustawiania skrótu */
+/* Focus/Aktywny dla keybindów (z zieloną ramką) */
 .baddonz-input.keybind:focus,
 .baddonz-input.active-keybind-mode {
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
 }
 
+/* ZMIANA KURSA dla elementu SELECT (powinno działać) */
 .baddonz-input.baddonz-select {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 
-/* ZMIANA 3: POPRAWKA DLA OPCJI W ROZWIJANYM INPUT (SELECT) */
+/* ZMIANA TŁA DLA OPCJI WYBORU (Wymuszenie czerni) */
 .baddonz-input.baddonz-select option {
     background-color: #000 !important; /* Pełna czerń dla opcji */
     color: #fff;
@@ -379,7 +380,7 @@
     padding: 2px 3px;
 }
 
-/* ZMIANA 3: POPRAWKA DLA AKTYWNEJ OPCJI W ROZWIJANYM INPUT (SELECT) */
+/* ZMIANA TŁA DLA AKTYWNEJ OPCJI WYBORU (Wymuszenie ciemnej szarości) */
 .baddonz-input.baddonz-select option:checked {
     background-color: #3c3c3c99 !important; /* Ciemniejszy odcień dla aktywnej opcji */
     color: #fff;
