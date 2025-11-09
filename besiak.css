@@ -371,14 +371,13 @@
 }
 
 /* ---------------------------------------------------- */
-/* --- SEKCJA SELECT - POPRAWKA NA CIEMNY MOTYW --- */
+/* --- SEKCJA SELECT - NAPRAWIONA Z WŁASNYMI STYLAMI --- */
 /* ---------------------------------------------------- */
 
-.baddonz-input.baddonz-select {
-    /* Używam Twoich styli dla samego pola SELECT: */
+.baddonz-select {
     color: #fff;
     box-sizing: border-box;
-    background: #0003; /* Półprzezroczyste czarne tło */
+    background: #0003; /* Półprzezroczyste czarne tło (pole widoczne) */
     border: 1px solid gray; /* Szara ramka */
     border-radius: 5px; /* Zaokrąglone rogi */
     outline: 0;
@@ -386,18 +385,20 @@
     padding: 2px 3px;
     line-height: 1.5em;
     box-shadow: inset 0 0 6px 1px #000000bf; /* Wewnętrzny cień */
-    /* WAŻNE: Dodaję auto, aby przywrócić natywny kursor i domyślne renderowanie. */
-    cursor: auto; 
-    
-    /* Dodatkowe resetowanie wyglądu, aby wymusić natywny styl listy opcji (w starszych przeglądarkach) */
-    -webkit-appearance: menulist; 
+
+    /* KLUCZOWA ZMIANA: Wymuszenie ciemnego schematu renderowania dla rozwijanej listy opcji */
+    color-scheme: dark;
+    -webkit-appearance: menulist; /* Zachowujemy natywny wygląd strzałki */
     -moz-appearance: menulist;
     appearance: menulist;
 }
 
-/* WAŻNE: USUWAŁEM CAŁKOWICIE STYL DLA OPCJI. TO ONO PSUŁO CIEMNY MOTYW! */
-.baddonz-input.baddonz-select option {
-    /* Puste. Przeglądarka musi użyć natywnego (systemowego) renderowania, aby motyw był ciemny. */
+.baddonz-select option {
+    /* Twoje style dla opcji. color-scheme: dark; powinno zadbać o tło,
+       ale ustawienie tła i koloru tekstu w ten sposób jest próbą ostateczną. */
+    background: #090909; /* Ciemne tło dla opcji (dla przeglądarek, które pozwalają) */
+    color: #fff; /* Biały tekst dla lepszej czytelności na ciemnym tle */
+    border-color: #000;
 }
 
 /* ---------------------------------------------------- */
