@@ -336,18 +336,11 @@
     max-width: 140px;
 }
 
-.baddonz-input:focus,
-.baddonz-input.keybind:focus,
-.baddonz-input.active-keybind-mode,
-.baddonz-input.active {
-    border-color: #96f096;
-    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
-}
-
+/* ZMIANA 2: Ustawienie tła inputów na prawie przezroczyste */
 .baddonz-input {
     box-sizing: border-box;
     border: 1px solid #3b3b3b;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.05); /* Prawie przezroczyste tło */
     color: #fff;
     padding: 2px 4px;
     outline: none;
@@ -358,12 +351,27 @@
     box-shadow: inset 0 0 6px 1px #000000bf;
 }
 
+/* ZMIANA 1: Usuwamy zieloną ramkę dla większości inputów (.baddonz-input:focus, .baddonz-input.active) */
+.baddonz-input:focus,
+.baddonz-input.active {
+    border-color: #3b3b3b; /* Utrzymujemy domyślny kolor ramki */
+    box-shadow: inset 0 0 6px 1px #000000bf; /* Usuwamy zieloną poświatę */
+}
+
+/* ZMIANA 1: POZOSTAWIENIE/DODANIE zielonej ramki dla WSZYSTKICH keybindów i aktywnego trybu ustawiania skrótu */
+.baddonz-input.keybind:focus,
+.baddonz-input.active-keybind-mode {
+    border-color: #96f096;
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
+}
+
 .baddonz-input.baddonz-select {
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 
+/* ZMIANA 3: POPRAWKA DLA OPCJI W ROZWIJANYM INPUT (SELECT) */
 .baddonz-input.baddonz-select option {
-    background-color: #0009;
+    background-color: #000 !important; /* Pełna czerń dla opcji */
     color: #fff;
     text-shadow: 1px 1px 1px #000;
     font-family: sans-serif;
@@ -371,8 +379,9 @@
     padding: 2px 3px;
 }
 
+/* ZMIANA 3: POPRAWKA DLA AKTYWNEJ OPCJI W ROZWIJANYM INPUT (SELECT) */
 .baddonz-input.baddonz-select option:checked {
-    background-color: #3c3c3c99;
+    background-color: #3c3c3c99 !important; /* Ciemniejszy odcień dla aktywnej opcji */
     color: #fff;
 }
 
@@ -693,6 +702,7 @@
 }
 
 .baddonz-tab.active {
+    /* ZIELONA RAMKA dla aktywnej zakładki */
     background: linear-gradient(90deg, #46464666 50%, #46464600);
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
@@ -744,6 +754,7 @@
 }
 
 .baddonz-card.active-addon {
+    /* ZIELONA RAMKA dla aktywnej karty dodatku */
     background: #4a4a4a99;
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
@@ -794,6 +805,7 @@
 }
 
 #baddonz-toggle-hotkey-input.active-keybind-mode {
+    /* ZIELONA RAMKA - Input "Otwieraj Managera" */
     border-color: #96f096 !important;
     box-shadow: inset 0 0 6px 1px rgba(0, 0, 0, 0.75), 0 0 8px 1px rgba(150, 240, 150, 0.5) !important;
     caret-color: transparent !important;
@@ -1001,6 +1013,7 @@
 }
 
 #rg-keybind-input.active-keybind-mode {
+    /* ZIELONA RAMKA - Input "Skrót Resetu" (w dodatku RG) */
     caret-color: transparent !important;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
     border-color: #96f096;
