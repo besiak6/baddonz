@@ -336,24 +336,11 @@
     max-width: 140px;
 }
 
-/* ZMIANA: Usuwamy zieloną ramkę dla większości inputów (baddonz-input:focus, .baddonz-input.active) */
-.baddonz-input:focus,
-.baddonz-input.active {
-    border-color: #3b3b3b; /* Utrzymujemy domyślny kolor ramki lub po prostu zmieniamy na ciemniejszy */
-    box-shadow: inset 0 0 6px 1px #000000bf; /* Usuwamy zieloną poświatę */
-}
-
-/* POZOSTAWIENIE/DODANIE zielonej ramki dla WSZYSTKICH keybindów i aktywnego trybu ustawiania skrótu */
-.baddonz-input.keybind:focus,
-.baddonz-input.active-keybind-mode {
-    border-color: #96f096;
-    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
-}
-
+/* ZMIANA 2: Ustawienie tła inputów na prawie przezroczyste */
 .baddonz-input {
     box-sizing: border-box;
     border: 1px solid #3b3b3b;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.05); /* Zmieniono z 0.4 na 0.05 */
     color: #fff;
     padding: 2px 4px;
     outline: none;
@@ -362,6 +349,20 @@
     border-radius: 3px;
     transition: none;
     box-shadow: inset 0 0 6px 1px #000000bf;
+}
+
+/* ZMIANA 1: Usuwamy zieloną ramkę dla większości inputów (.baddonz-input:focus, .baddonz-input.active) */
+.baddonz-input:focus,
+.baddonz-input.active {
+    border-color: #3b3b3b; /* Utrzymujemy domyślny kolor ramki */
+    box-shadow: inset 0 0 6px 1px #000000bf; /* Usuwamy zieloną poświatę */
+}
+
+/* ZMIANA 1: POZOSTAWIENIE/DODANIE zielonej ramki dla WSZYSTKICH keybindów i aktywnego trybu ustawiania skrótu */
+.baddonz-input.keybind:focus,
+.baddonz-input.active-keybind-mode {
+    border-color: #96f096;
+    box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
 }
 
 .baddonz-input.baddonz-select {
@@ -699,7 +700,7 @@
 }
 
 .baddonz-tab.active {
-    /* ZOSTAWIONE ZIELONE PODŚWIETLENIE dla aktywnej zakładki */
+    /* ZIELONA RAMKA dla aktywnej zakładki */
     background: linear-gradient(90deg, #46464666 50%, #46464600);
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
@@ -751,7 +752,7 @@
 }
 
 .baddonz-card.active-addon {
-    /* ZOSTAWIONE ZIELONE PODŚWIETLENIE dla aktywnej karty dodatku */
+    /* ZIELONA RAMKA dla aktywnej karty dodatku */
     background: #4a4a4a99;
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
