@@ -371,48 +371,46 @@
 }
 
 /* ---------------------------------------------------- */
-/* --- SEKCJA SELECT - NAJWAŻNIEJSZA DLA TWOJEGO PYTANIA --- */
+/* --- SEKCJA SELECT (Przywracanie natywnego wyglądu + KURSOR) --- */
 /* ---------------------------------------------------- */
 
 .baddonz-input.baddonz-select {
-    /* Wymuś rezygnację z systemowego wyglądu */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    
-    /* Ustaw ciemne tło i kolor tekstu dla WŁAŚCIWEGO pola (nie opcji!) */
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #fff;
-    
-    /* Dodaj customową strzałkę SVG (biała, skierowana w dół) */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 8px center;
-    background-size: 10px;
-    padding-right: 25px; /* Dodaj miejsce na strzałkę */
-    
     /* Ustaw kursor 5n dla klikalnego pola */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+    
+    /* Zresetuj agresywne usunięcie natywnego wyglądu, aby system mógł działać */
+    -webkit-appearance: initial;
+    -moz-appearance: initial;
+    appearance: initial;
+    
+    /* Usuń background-image (customową strzałkę), by nie kolidowała z natywną */
+    background-image: none; 
+    padding-right: 4px; /* Przywróć domyślny padding */
+    
+    /* Ustaw domyślny kolor tekstu na biały dla GŁÓWNEGO pola */
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Wymuś ciemne tło i jasny tekst dla OPCJI w wyskakującej liście */
-/* Jeśli przeglądarka nadal użyje białego tła, to oznacza to jej ograniczenie systemowe. */
+/* Zredukowane style dla OPCJI - pozostawiamy tylko kolor tekstu */
+/* Usunięcie !important dla background-color pozwoli przeglądarce wrócić do motywu systemowego */
 .baddonz-input.baddonz-select option {
-    background-color: #000 !important; /* Pełna czerń, użycie !important */
-    color: #fff !important; /* Biały tekst, użycie !important */
+    color: #fff !important; 
     text-shadow: 1px 1px 1px #000;
     font-family: sans-serif;
     font-size: 12px;
     padding: 2px 3px;
+    /* Usunięto background-color, aby przeglądarka ustawiła tło zgodnie z motywem OS/dark mode */
 }
 
-/* Styl dla AKTYWNEJ (zaznaczonej) opcji na liście */
+/* Styl dla aktywnej opcji na liście */
 .baddonz-input.baddonz-select option:checked {
-    background-color: #3c3c3c99 !important; /* Ciemniejszy odcień dla aktywnej opcji */
+    /* Usuwamy styl tła, pozostawiamy decyzję systemowi */
     color: #fff !important;
 }
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
+
 
 .baddonz-input[type="number"] {
     text-align: right;
