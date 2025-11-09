@@ -11,11 +11,19 @@
     width: 512px;
 }
 
+/* KURSOR 5N DLA CAŁEGO MENEDŻERA */
 .baddonz-jsx-root {
     line-height: 1;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
 }
 
+/* KURSOR 1N DLA PÓL TEKSTOWYCH I OBSZARÓW DO PISANIA */
+.baddonz-jsx-root .baddonz-textarea,
+.baddonz-jsx-root .baddonz-input:not(.keybind):not(.color-selector) {
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, text !important;
+}
+
+/* SCROLLBARY */
 .baddonz-jsx-root ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -35,11 +43,7 @@
     background: #808080;
 }
 
-.baddonz-jsx-root .baddonz-textarea,
-.baddonz-jsx-root .baddonz-input:not(.keybind):not(.color-selector) {
-    cursor: url("https://gordion.margonem.pl/img/gui/cursor/1n.png") 4 0, text !important;
-}
-
+/* FLEX */
 .baddonz-flex {
     flex: 1;
     justify-content: center;
@@ -72,6 +76,7 @@
     justify-content: flex-end;
 }
 
+/* OKNO GŁÓWNE */
 .baddonz-window {
     pointer-events: all;
     text-shadow: 1px 1px 1px #000;
@@ -336,11 +341,11 @@
     max-width: 140px;
 }
 
-/* ZMIANA 2: Ustawienie tła inputów na prawie przezroczyste */
+/* INPUT ogólny */
 .baddonz-input {
     box-sizing: border-box;
     border: 1px solid #3b3b3b;
-    background-color: rgba(0, 0, 0, 0.05); /* Prawie przezroczyste tło */
+    background-color: rgba(0, 0, 0, 0.05);
     color: #fff;
     padding: 2px 4px;
     outline: none;
@@ -351,39 +356,63 @@
     box-shadow: inset 0 0 6px 1px #000000bf;
 }
 
-/* ZMIANA 1: Usuwamy zieloną ramkę dla większości inputów (.baddonz-input:focus, .baddonz-input.active) */
+/* Focus/Aktywny dla zwykłych inputów */
 .baddonz-input:focus,
 .baddonz-input.active {
-    border-color: #3b3b3b; /* Utrzymujemy domyślny kolor ramki */
-    box-shadow: inset 0 0 6px 1px #000000bf; /* Usuwamy zieloną poświatę */
+    border-color: #3b3b3b;
+    box-shadow: inset 0 0 6px 1px #000000bf;
 }
 
-/* ZMIANA 1: POZOSTAWIENIE/DODANIE zielonej ramki dla WSZYSTKICH keybindów i aktywnego trybu ustawiania skrótu */
+/* Focus/Aktywny dla keybindów (z zieloną ramką) */
 .baddonz-input.keybind:focus,
 .baddonz-input.active-keybind-mode {
     border-color: #96f096;
     box-shadow: inset 0 0 6px 1px #000000bf, 0 0 8px 1px #96f09680;
 }
 
+/* ---------------------------------------------------- */
+/* --- SEKCJA SELECT - NAJWAŻNIEJSZA DLA TWOJEGO PYTANIA --- */
+/* ---------------------------------------------------- */
+
 .baddonz-input.baddonz-select {
+    /* Wymuś rezygnację z systemowego wyglądu */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    /* Ustaw ciemne tło i kolor tekstu dla WŁAŚCIWEGO pola (nie opcji!) */
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    
+    /* Dodaj customową strzałkę SVG (biała, skierowana w dół) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 10px;
+    padding-right: 25px; /* Dodaj miejsce na strzałkę */
+    
+    /* Ustaw kursor 5n dla klikalnego pola */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
 }
 
-/* ZMIANA 3: POPRAWKA DLA OPCJI W ROZWIJANYM INPUT (SELECT) */
+/* Wymuś ciemne tło i jasny tekst dla OPCJI w wyskakującej liście */
+/* Jeśli przeglądarka nadal użyje białego tła, to oznacza to jej ograniczenie systemowe. */
 .baddonz-input.baddonz-select option {
-    background-color: #000 !important; /* Pełna czerń dla opcji */
-    color: #fff;
+    background-color: #000 !important; /* Pełna czerń, użycie !important */
+    color: #fff !important; /* Biały tekst, użycie !important */
     text-shadow: 1px 1px 1px #000;
     font-family: sans-serif;
     font-size: 12px;
     padding: 2px 3px;
 }
 
-/* ZMIANA 3: POPRAWKA DLA AKTYWNEJ OPCJI W ROZWIJANYM INPUT (SELECT) */
+/* Styl dla AKTYWNEJ (zaznaczonej) opcji na liście */
 .baddonz-input.baddonz-select option:checked {
     background-color: #3c3c3c99 !important; /* Ciemniejszy odcień dla aktywnej opcji */
-    color: #fff;
+    color: #fff !important;
 }
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
 
 .baddonz-input[type="number"] {
     text-align: right;
