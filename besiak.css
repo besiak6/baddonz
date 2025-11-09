@@ -371,37 +371,28 @@
 }
 
 /* ---------------------------------------------------- */
-/* --- SEKCJA SELECT - NAPRAWIONA STYLIZACJA TŁA OPCJI --- */
+/* --- SEKCJA SELECT - USUNIĘCIE STYLIZACJI OPCJI --- */
 /* ---------------------------------------------------- */
 
 .baddonz-input.baddonz-select {
-    /* Ustaw ciemne tło i kolor tekstu dla WŁAŚCIWEGO pola (nie opcji!) */
+    /* Ustaw ciemne tło i kolor tekstu dla WŁAŚCIWEGO pola */
     background-color: rgba(0, 0, 0, 0.2);
     
     /* Ustaw kursor 5n dla klikalnego pola */
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
     
-    /* Usuń strzałkę SVG i dodatkowy padding-right */
-    background-image: none;
-    padding-right: 4px; 
+    /* Upewnij się, że nie ma trików CSS, które zaburzą wygląd systemowy */
+    -webkit-appearance: menulist; /* Ustawienie domyślne dla Chrome/Edge */
+    -moz-appearance: menulist; /* Ustawienie domyślne dla Firefox */
+    appearance: menulist; /* Ustawienie domyślne */
+    
+    background-image: none; /* Usuń ewentualną strzałkę SVG */
+    padding-right: 4px; /* Domyślny padding */
 }
 
-/* Wymuś ciemne tło i jasny tekst dla OPCJI w wyskakującej liście */
-/* Ograniczenie "appearance: none;" usunięte, aby system operacyjny/przeglądarka mogła użyć swojego ciemnego motywu. */
-.baddonz-input.baddonz-select option {
-    background-color: #000 !important; /* Pełna czerń, użycie !important */
-    color: #fff !important; /* Biały tekst, użycie !important */
-    text-shadow: 1px 1px 1px #000;
-    font-family: sans-serif;
-    font-size: 12px;
-    padding: 2px 3px;
-}
+/* **CAŁKOWITE USUNIĘCIE STYLI DLA <option> I <option>:checked**
+   Pozwalamy systemowi operacyjnemu/przeglądarce na wyświetlenie domyślnego motywu (czarnego). */
 
-/* Styl dla AKTYWNEJ (zaznaczonej) opcji na liście */
-.baddonz-input.baddonz-select option:checked {
-    background-color: #3c3c3c99 !important; /* Ciemniejszy odcień dla aktywnej opcji */
-    color: #fff !important;
-}
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
 
