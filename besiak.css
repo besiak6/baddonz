@@ -371,20 +371,25 @@
 }
 
 /* ---------------------------------------------------- */
-/* --- SEKCJA SELECT - USUNIĘTO WSZYSTKIE STYLE --- */
+/* --- SEKCJA SELECT - POPRAWIONA STYLIZACJA TŁA DLA POLA --- */
 /* ---------------------------------------------------- */
 
 .baddonz-input.baddonz-select {
-    /* Usuwam kursor 5n dla select, aby nie nadpisywać systemowego renderowania */
-    /* Usuwam customowe tło, aby nie nadpisywać systemowego renderowania */
-    /* Usunięto wszelkie appearance: none, aby przywrócić domyślne systemowe renderowanie z ciemnym motywem */
+    /* Ustawia ciemne tło, biały tekst i kursor 5n DLA SAMEGO POLA SELECT */
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff; /* Ustawienie koloru tekstu na biały */
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer !important;
+    
+    /* Zresetowanie domyślnej strzałki przeglądarki */
+    -webkit-appearance: menulist-button; /* Wymuś z powrotem natywny wygląd przycisku (dla listy opcji) */
+    appearance: menulist-button;
 }
 
-/* Usunięto wszelkie style dla option, które zakłócały domyślny systemowy motyw */
+/* WAŻNE: Całkowicie usunięto style dla "option", 
+aby przeglądarka mogła sama zastosować systemowy motyw dla rozwijanej listy. */
 .baddonz-input.baddonz-select option {
     
 }
-
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
 
