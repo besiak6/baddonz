@@ -371,7 +371,7 @@
 }
 
 /* ---------------------------------------------------- */
-/* --- SEKCJA SELECT - NAPRAWIONA Z WŁASNYMI STYLAMI --- */
+/* --- SEKCJA SELECT - NAPRAWIONE Z WŁASNYMI STYLAMI --- */
 /* ---------------------------------------------------- */
 
 .baddonz-select {
@@ -386,20 +386,14 @@
     line-height: 1.5em;
     box-shadow: inset 0 0 6px 1px #000000bf; /* Wewnętrzny cień */
 
-    /* KLUCZOWA ZMIANA: Wymuszenie ciemnego schematu renderowania dla rozwijanej listy opcji */
-    color-scheme: dark;
+    /* USUNIĘTO color-scheme: dark; */
     -webkit-appearance: menulist; /* Zachowujemy natywny wygląd strzałki */
     -moz-appearance: menulist;
     appearance: menulist;
 }
 
-.baddonz-select option {
-    /* Twoje style dla opcji. color-scheme: dark; powinno zadbać o tło,
-       ale ustawienie tła i koloru tekstu w ten sposób jest próbą ostateczną. */
-    background: #090909; /* Ciemne tło dla opcji (dla przeglądarek, które pozwalają) */
-    color: #fff; /* Biały tekst dla lepszej czytelności na ciemnym tle */
-    border-color: #000;
-}
+/* USUNIĘTO STYLOWANIE DLA .baddonz-select option, aby przeglądarka użyła domyślnych, jasnych stylów dla rozwijanej listy. */
+/* Opcje w rozwijanym oknie są teraz kontrolowane przez ustawienia systemowe/przeglądarki, co powinno dać efekt 'jasnego okna wyboru'. */
 
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
@@ -1186,50 +1180,50 @@ min-width: 220px;
     border-color: #808080;
 }
  .baddonz-slider-wrapper {
-        position: relative;
-        width: 100%;
-        height: 4px;
-        background: #404040;
-        border-radius: 2px;
-    }
-    .baddonz-slider-fill {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 0;
-        background: linear-gradient(to right, #7CFC00, #32CD32);
-        border-radius: 2px;
-    }
-    .baddonz-slider-thumb {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #7e7474;
-        border: 1px solid #303030;
-        box-shadow: 0 0 3px #000;
-        transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
-    }
-    .baddonz-slider-thumb:hover {
-        background: #7CFC00;
-        border-color: #32CD32;
-        box-shadow: 0 0 5px #32CD32;
-    }
-    .baddonz-slider-value-display {
-        position: absolute;
-        top: -15px;
-        transform: translateX(-50%);
-        pointer-events: none;
-        font-size: 10px;
-        color: #FFFFFF;
-        text-shadow: 0 0 2px #000;
-        min-width: 30px;
-        text-align: center;
-        white-space: nowrap;
-    }
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background: #404040;
+    border-radius: 2px;
+}
+.baddonz-slider-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, #7CFC00, #32CD32);
+    border-radius: 2px;
+}
+.baddonz-slider-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #7e7474;
+    border: 1px solid #303030;
+    box-shadow: 0 0 3px #000;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.baddonz-slider-thumb:hover {
+    background: #7CFC00;
+    border-color: #32CD32;
+    box-shadow: 0 0 5px #32CD32;
+}
+.baddonz-slider-value-display {
+    position: absolute;
+    top: -15px;
+    transform: translateX(-50%);
+    pointer-events: none;
+    font-size: 10px;
+    color: #FFFFFF;
+    text-shadow: 0 0 2px #000;
+    min-width: 30px;
+    text-align: center;
+    white-space: nowrap;
+}
 .item-searcher-dimmed-item {
     opacity: 0.15;
 }
@@ -1294,71 +1288,71 @@ min-width: 220px;
     cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
 }
 .baddonz-type-icon {
-  width: 18px;
-  height: 18px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  background: url("https://gordion.margonem.pl/img/gui/notyfikacje-sprite.png");
-  cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("https://gordion.margonem.pl/img/gui/notyfikacje-sprite.png");
+    cursor: url("https://gordion.margonem.pl/img/gui/cursor/5n.png") 4 0, pointer;
 }
 
 .baddonz-type-icon.cl-1 {
-  background-position: -1px -100px;
+    background-position: -1px -100px;
 }
 
 .baddonz-type-icon.cl-2 {
-  background-position: -41px -100px;
+    background-position: -41px -100px;
 }
 
 .baddonz-type-icon.cl-3 {
-  background-position: -21px -100px;
+    background-position: -21px -100px;
 }
 
 .baddonz-type-icon.cl-4 {
-  background-position: -61px -100px;
+    background-position: -61px -100px;
 }
 
 .baddonz-type-icon.cl-5 {
-  background-position: -81px -100px;
+    background-position: -81px -100px;
 }
 
 .baddonz-type-icon.cl-6 {
-  background-position: -101px -100px;
+    background-position: -101px -100px;
 }
 
 .baddonz-type-icon.cl-7 {
-  background-position: -121px -100px;
+    background-position: -121px -100px;
 }
 
 .baddonz-type-icon.cl-8 {
-  background-position: -141px -100px;
+    background-position: -141px -100px;
 }
 
 .baddonz-type-icon.cl-9 {
-  background-position: -161px -100px;
+    background-position: -161px -100px;
 }
 
 .baddonz-type-icon.cl-10 {
-  background-position: -181px -100px;
+    background-position: -181px -100px;
 }
 
 .baddonz-type-icon.cl-11 {
-  background-position: -201px -100px;
+    background-position: -201px -100px;
 }
 
 .baddonz-type-icon.cl-12 {
-  background-position: -221px -100px;
+    background-position: -221px -100px;
 }
 
 .baddonz-type-icon.cl-13 {
-  background-position: -241px -100px;
+    background-position: -241px -100px;
 }
 
 .baddonz-type-icon.cl-14 {
-  background-position: -261px -100px;
+    background-position: -261px -100px;
 }
 
 .baddonz-type-icon.cl-29 {
-  background-position: -401px -100px;
+    background-position: -401px -100px;
 }
